@@ -4,7 +4,6 @@ import { FaFlask, FaChartLine, FaEye, FaUsers, FaRobot, FaCertificate } from 're
 const Research = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   
-  // Expanded research projects data
   const researchProjects = [
     {
       id: 1,
@@ -68,14 +67,13 @@ const Research = () => {
     }
   ];
 
-  // Filter projects based on status
   const filteredProjects = activeFilter === 'all' 
     ? researchProjects 
     : researchProjects.filter(project => project.status === activeFilter);
 
   return (
     <div className="research-page">
-      {/* Hero Section with Gradient Background */}
+      {/* Hero Section*/}
       <section className="hero-section text-white py-6" style={{
         background: 'linear-gradient(135deg, #17a2b8 0%, #1d4e89 100%)'
       }}>
@@ -262,8 +260,6 @@ const Research = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
       <section className="py-5 bg-dark text-white">
         <div className="container text-center py-4">
           <h2 className="display-6 fw-bold mb-4">Interested in our research?</h2>

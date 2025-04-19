@@ -5,7 +5,6 @@ const Events = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
   const [isLoading, setIsLoading] = useState(true);
   
-  // Expanded events data with more details
   const allEvents = [
     {
       id: 1,
@@ -66,12 +65,10 @@ const Events = () => {
     }
   ];
 
-  // Filter events based on active tab
   const filteredEvents = allEvents.filter(event => 
     activeTab === 'upcoming' ? event.status === 'upcoming' : event.status === 'past'
   );
 
-  // Simulate loading
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1000);
     return () => clearTimeout(timer);
@@ -79,7 +76,7 @@ const Events = () => {
 
   return (
     <div className="events-page">
-      {/* Hero Section with Parallax Effect */}
+      {/* Hero Section  */}
       <section className="hero-section bg-dark text-white py-6 position-relative overflow-hidden">
         <div className="position-absolute w-100 h-100 bg-dark opacity-75"></div>
         <div 

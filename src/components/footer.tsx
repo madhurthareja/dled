@@ -3,7 +3,7 @@ const Footer = () => {
       <footer className="bg-white pt-5 pb-4 border-top" style={{ borderTop: '1px solid rgba(0,0,0,0.1)' }}>
         <div className="container">
           <div className="row">
-            {/* Brand Column (larger) */}
+            {/* Brand Column */}
             <div className="col-lg-8 mb-4">
               <div className="pe-lg-5 me-lg-5">
                 <h5 className="text-dark mb-3 fw-bold" style={{ fontSize: '1.25rem', letterSpacing: '0.5px' }}>
