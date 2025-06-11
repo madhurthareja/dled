@@ -3,7 +3,7 @@ const Home = () => {
     <div className="container mt-4">
       {/* Hero Section */}
       <div className="jumbotron text-center bg-light p-5 rounded-3 shadow-sm">
-        <h1 className="display-4 fw-bold mb-4">Welcome to Dhananjaya Lab for Education Design</h1>
+        <h1 className="display-4 fw-bold mb-4">Redefining Education through Innovation</h1>
         <p className="lead fs-4">
           Innovating education for a better tomorrow through research, design, and collaboration.
         </p>
