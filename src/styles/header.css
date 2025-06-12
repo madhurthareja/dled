@@ -1,0 +1,321 @@
+/* Base styles */
+.header {
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.header .bg-top {
+  background-color: #fcefea;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header .bg-bottom {
+  background-color: #000000;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Navigation styles */
+.nav-bar {
+  position: absolute;
+  top: 32px;
+  width: calc(100% - 240px);
+  height: 52px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+  z-index: 10;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav-text {
+  color: #000;
+  font-family: "Manrope", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.36px;
+  line-height: 32px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-button-text {
+  font-family: "Manrope", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  line-height: 32px;
+  white-space: nowrap;
+}
+
+/* Content styles */
+.content {
+  position: absolute;
+  z-index: 5;
+}
+
+.subtitle {
+  color: #f0a082;
+  font-family: "Manrope", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.36px;
+  line-height: 32px;
+  white-space: nowrap;
+}
+
+.title {
+  font-family: "Manrope", Helvetica, sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 1.28px;
+  line-height: 83.2px;
+  margin: 48px 0 0 0;
+}
+
+.description {
+  font-family: "Manrope", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+  letter-spacing: 0.36px;
+  line-height: 32px;
+  opacity: 0.7;
+  margin: 16px 0 0 0;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0 0;
+}
+
+.btn-black, .btn-outline {
+  font-family: "Manrope", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-black {
+  background-color: #000;
+  color: #f9f08d;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #000;
+  border: 1px solid #000;
+}
+
+/* Image section */
+.image-group {
+  position: absolute;
+  z-index: 2;
+}
+
+.overlap-image {
+  height: 100%;
+  position: relative;
+}
+
+.subtract {
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.subtract-2 {
+  top: 166px;
+}
+
+.highschool-img {
+  position: absolute;
+  object-fit: cover;
+}
+
+/* Mobile menu icon */
+.menu-icon {
+  display: none;
+  background-image: url(https://c.animaapp.com/TbTDc2kR/img/list-1.svg);
+  background-size: 100% 100%;
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  top: 32px;
+  right: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 20;
+}
+
+/* Responsive styles */
+@media (min-width: 1441px) {
+  .header {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    height: 902px;
+  }
+
+  .bg-top {
+    height: 746px;
+  }
+
+  .bg-bottom {
+    height: 156px;
+  }
+
+  .nav-bar {
+    left: 120px;
+  }
+
+  .content {
+    top: 152px;
+    left: 120px;
+    width: 633px;
+  }
+
+  .title {
+    max-width: 627px;
+  }
+
+  .description {
+    max-width: 547px;
+  }
+
+  .image-group {
+    height: 794px;
+    top: 108px;
+    right: 0;
+    max-width: 628px;
+    width: 44%;
+  }
+
+  .subtract {
+    top: 480px;
+    height: 314px;
+  }
+
+  .subtract-2 {
+    height: 314px;
+  }
+
+  .highschool-img {
+    top: 0;
+    left: 7%;
+    width: 80%;
+    height: 794px;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    height: 1127px;
+  }
+
+  .bg-top {
+    height: 1009px;
+  }
+
+  .bg-bottom {
+    height: 118px;
+    top: 1009px;
+  }
+
+  .nav-bar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .content {
+    top: 104px;
+    left: 24px;
+    width: 343px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    letter-spacing: 0.28px;
+  }
+
+  .title {
+    font-size: 35px;
+    line-height: 45.5px;
+    letter-spacing: 0.7px;
+    margin-top: 40px;
+    width: 337px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.32px;
+    width: 327px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    margin-top: 24px;
+  }
+
+  .image-group {
+    top: 596px;
+    left: 24px;
+    width: 327px;
+    height: 413px;
+  }
+
+  .subtract {
+    top: 250px;
+    height: 163px;
+    width: 327px;
+  }
+
+  .subtract-2 {
+    top: 86px;
+    height: 163px;
+    width: 327px;
+  }
+
+  .highschool-img {
+    width: 262px;
+    height: 413px;
+    top: 0;
+    left: 23px;
+  }
+}

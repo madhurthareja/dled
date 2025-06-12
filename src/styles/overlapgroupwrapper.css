@@ -1,0 +1,284 @@
+/* Base styles */
+.research-initiatives-container {
+  position: relative;
+  width: 100%;
+  font-family: "Manrope", Helvetica, sans-serif;
+}
+
+.section-title {
+  color: #000000;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 67.2px;
+  text-align: center;
+  margin-bottom: 115px;
+}
+
+.research-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.research-card {
+  position: relative;
+  background-color: #fdf9f7;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.card-content {
+  position: relative;
+}
+
+.card-image-container {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.timeline-focus {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.timeline-focus-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #dadada;
+  opacity: 0.8;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.timeline, .focus {
+  position: relative;
+  z-index: 2;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 28px;
+  text-align: center;
+  margin: 0;
+}
+
+.focus {
+  margin-top: 8px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.card-title {
+  color: #000000;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 33.6px;
+  margin: 0 0 16px 0;
+}
+
+.card-description {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.32px;
+  line-height: 24px;
+  opacity: 0.4;
+  margin: 0 0 24px 0;
+}
+
+.card-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.research-team, .key-outcomes, .collaborators {
+  flex: 1;
+  min-width: 150px;
+}
+
+.detail-title {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 28px;
+  margin: 0 0 8px 0;
+}
+
+.detail-text {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 28px;
+  margin: 0;
+}
+
+.collaborator-list {
+  margin-bottom: 16px;
+}
+
+.collaborator-logos {
+  display: flex;
+  gap: 16px;
+}
+
+.logo-container {
+  background-color: #e3e3e3;
+  border-radius: 36px;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.decorative-image-1, .decorative-image-2 {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+
+/* Desktop styles */
+@media (min-width: 992px) {
+  .research-initiatives-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 102px;
+  }
+
+  .section-title {
+    width: 856px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .research-cards-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .research-card {
+    width: calc(33.333% - 48px);
+    height: 822px;
+  }
+
+  .main-image {
+    height: 238px;
+  }
+
+  .timeline-focus {
+    width: 356px;
+    height: 74px;
+    padding: 8px;
+  }
+
+  .timeline, .focus {
+    font-size: 20px;
+  }
+
+  .card-title {
+    font-size: 24px;
+  }
+
+  .card-description {
+    width: 319px;
+  }
+
+  .decorative-image-1 {
+    top: 480px;
+    height: 314px;
+  }
+
+  .decorative-image-2 {
+    top: 166px;
+    height: 314px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 991px) {
+  .research-initiatives-container {
+    padding: 0 16px;
+  }
+
+  .section-title {
+    font-size: 32px;
+    line-height: 44.8px;
+    width: 327px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 114px;
+  }
+
+  .research-card {
+    width: 100%;
+    margin-bottom: 72px;
+  }
+
+  .main-image {
+    height: 207px;
+  }
+
+  .timeline-focus {
+    width: 310px;
+    height: 46px;
+    padding: 4px;
+  }
+
+  .timeline, .focus {
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+
+  .card-title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .card-description {
+    width: 295px;
+    line-height: 23.2px;
+  }
+
+  .detail-title, .detail-text {
+    font-size: 13px;
+  }
+
+  .decorative-image-1 {
+    top: 250px;
+    height: 163px;
+  }
+
+  .decorative-image-2 {
+    top: 86px;
+    height: 163px;
+  }
+}
