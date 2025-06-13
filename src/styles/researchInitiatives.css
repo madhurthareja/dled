@@ -3,6 +3,7 @@
   position: relative;
   width: 100%;
   font-family: "Manrope", Helvetica, sans-serif;
+  background-color: white;
 }
 
 .section-title {
@@ -12,13 +13,16 @@
   letter-spacing: 0;
   line-height: 67.2px;
   text-align: center;
-  margin-bottom: 115px;
+  padding-top: 85px;
+  /* margin-top: 85px; */
+  margin-bottom: 50px;
 }
 
 .research-cards-container {
   display: flex;
   flex-direction: column;
   gap: 72px;
+  padding: 0 20px;
 }
 
 .research-card {
@@ -26,6 +30,7 @@
   background-color: #fdf9f7;
   border-radius: 16px;
   padding: 24px;
+  overflow: hidden;
 }
 
 .card-content {
@@ -35,23 +40,25 @@
 .card-image-container {
   position: relative;
   margin-bottom: 24px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .main-image {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 8px;
+  display: block;
 }
 
 .timeline-focus {
   position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 48px);
-  padding: 16px;
-  border-radius: 12px;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .timeline-focus-bg {
@@ -62,7 +69,6 @@
   height: 100%;
   background-color: #dadada;
   opacity: 0.8;
-  border-radius: 12px;
   z-index: 1;
 }
 
@@ -70,16 +76,16 @@
   position: relative;
   z-index: 2;
   color: rgba(0, 0, 0, 0.8);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0;
-  line-height: 28px;
-  text-align: center;
+  line-height: 1.4;
+  text-align: left;
   margin: 0;
 }
 
 .focus {
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .bold {
@@ -91,7 +97,7 @@
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 0;
-  line-height: 33.6px;
+  line-height: 1.4;
   margin: 0 0 16px 0;
 }
 
@@ -100,8 +106,8 @@
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.32px;
-  line-height: 24px;
-  opacity: 0.4;
+  line-height: 1.5;
+  opacity: 0.7;
   margin: 0 0 24px 0;
 }
 
@@ -113,7 +119,7 @@
 
 .research-team, .key-outcomes, .collaborators {
   flex: 1;
-  min-width: 150px;
+  min-width: 200px;
 }
 
 .detail-title {
@@ -121,7 +127,7 @@
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0;
-  line-height: 28px;
+  line-height: 1.5;
   margin: 0 0 8px 0;
 }
 
@@ -130,8 +136,8 @@
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0;
-  line-height: 28px;
-  margin: 0;
+  line-height: 1.5;
+  margin: 0 0 8px 0;
 }
 
 .collaborator-list {
@@ -141,6 +147,7 @@
 .collaborator-logos {
   display: flex;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .logo-container {
@@ -156,19 +163,14 @@
 .logo-container img {
   max-width: 50px;
   max-height: 50px;
-}
-
-.decorative-image-1, .decorative-image-2 {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  z-index: -1;
+  object-fit: contain;
 }
 
 /* Desktop styles */
 @media (min-width: 992px) {
   .research-initiatives-container {
-    max-width: 1440px;
+    width: 100%;
+    max-width: none;
     margin: 0 auto;
     padding: 0 102px;
   }
@@ -183,11 +185,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 0;
   }
 
   .research-card {
     width: calc(33.333% - 48px);
-    height: 822px;
+    min-height: 822px;
+    padding: 24px;
   }
 
   .main-image {
@@ -195,31 +199,12 @@
   }
 
   .timeline-focus {
-    width: 356px;
-    height: 74px;
-    padding: 8px;
-  }
-
-  .timeline, .focus {
-    font-size: 20px;
-  }
-
-  .card-title {
-    font-size: 24px;
+    width: auto;
+    padding: 12px 16px;
   }
 
   .card-description {
-    width: 319px;
-  }
-
-  .decorative-image-1 {
-    top: 480px;
-    height: 314px;
-  }
-
-  .decorative-image-2 {
-    top: 166px;
-    height: 314px;
+    width: auto;
   }
 }
 
@@ -232,53 +217,22 @@
   .section-title {
     font-size: 32px;
     line-height: 44.8px;
-    width: 327px;
+    width: auto;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 114px;
+    margin-bottom: 60px;
   }
 
   .research-card {
     width: 100%;
-    margin-bottom: 72px;
+    margin-bottom: 40px;
   }
 
   .main-image {
     height: 207px;
   }
 
-  .timeline-focus {
-    width: 310px;
-    height: 46px;
-    padding: 4px;
-  }
-
   .timeline, .focus {
-    font-size: 16px;
-    line-height: 22.4px;
-  }
-
-  .card-title {
-    font-size: 20px;
-    line-height: 24px;
-  }
-
-  .card-description {
-    width: 295px;
-    line-height: 23.2px;
-  }
-
-  .detail-title, .detail-text {
-    font-size: 13px;
-  }
-
-  .decorative-image-1 {
-    top: 250px;
-    height: 163px;
-  }
-
-  .decorative-image-2 {
-    top: 86px;
-    height: 163px;
+    font-size: 14px;
   }
 }

@@ -4,6 +4,25 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  display: block;
+  padding: 24px 40px;
+  background: #fff6f3;
+}
+
+.header-logo {
+  height: 120px;
+  margin-right: 75px;
+  object-fit: contain;
+  padding-left: 50px;
+  padding-top: 20px;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
 }
 
 .header .bg-top {
@@ -25,7 +44,7 @@
 /* Navigation styles */
 .nav-bar {
   position: absolute;
-  top: 32px;
+  top: 10px;
   width: calc(100% - 240px);
   height: 52px;
   display: flex;
@@ -224,11 +243,12 @@
   }
 
   .subtract {
-    top: 480px;
+    top: 495px;
     height: 314px;
   }
 
   .subtract-2 {
+    top: 300px;
     height: 314px;
   }
 

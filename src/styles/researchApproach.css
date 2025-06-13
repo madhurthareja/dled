@@ -55,13 +55,25 @@
   flex-direction: column;
 }
 
-.approach-card {
+.feature-card {
   position: relative;
   background-color: white;
   border-radius: 16px;
   display: flex;
   align-items: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card-purple {
+background: linear-gradient(105deg, #a18cd1 0%, #fbc2eb 100%);
+}
+
+.card-blue {
+background: linear-gradient(105deg, #89f7fe 0%, #66a6ff 100%);
+}
+
+.card-pink {
+background: linear-gradient(105deg, #fbc2eb 0%, #f7971e 100%);    
 }
 
 .card-icon {
@@ -97,14 +109,16 @@
 @media (min-width: 992px) {
   .research-approach-container {
     max-width: 1440px;
-    padding: 86px 120px;
+    padding: 46px 100px;
     display: flex;
     justify-content: space-between;
+    margin-top: 40px;
   }
 
   .content-section {
     width: 582px;
-    padding-top: 54px;
+    text-align: left;
+    padding: 40px 0 0 0px;
   }
 
   .research-title {
@@ -122,7 +136,7 @@
     font-size: 18px;
     line-height: 32px;
     width: 547px;
-    margin-bottom: 128px;
+    margin-bottom: 65px;
   }
 
   .about-button {
@@ -136,10 +150,9 @@
 
   .cards-section {
     width: 472px;
-    padding-top: 54px;
   }
 
-  .approach-card {
+  .feature-card {
     width: 465px;
     height: 114px;
     padding: 16px;
@@ -242,7 +255,7 @@
     width: 100%;
   }
 
-  .approach-card {
+  .feature-card {
     width: calc(100% - 22px); /* Adjusted width to account for rotation */
     height: auto;
     min-height: 75px;

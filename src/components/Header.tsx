@@ -1,26 +1,46 @@
+import { Link, useNavigate } from 'react-router-dom';
 import React from "react";
 import "../styles/header.css";
+import logo from '../assets/dled.jpg';
 
 export const Header: React.FC = () => {
+  const navigate = useNavigate();
+
+  const ButtonClickContact = () => {
+    navigate('/contact'); 
+    window.scrollTo(0, 0);
+  };
+  const ButtonClickAbout = () => {
+    navigate('/about'); 
+    window.scrollTo(0, 0);
+  };
+
   return (
     <header className="header">
+      
       {/* Background elements */}
       <div className="bg-top"></div>
       <div className="bg-bottom"></div>
 
+      <div className="header-top">
+      <Link to="/">
+          <img src={logo} alt="DLED Logo" className="header-logo" />
+      </Link>
+
       {/* Navigation - hidden on mobile, shown on desktop */}
       <nav className="nav-bar">
         <div className="nav-links">
-          <a href="/research" className="nav-text">Research</a>
-          <a href="/team" className="nav-text">Team</a>
-          <a href="/events" className="nav-text">Events</a>
-          <a href="/careers" className="nav-text">Careers</a>
-          <a href="/blog" className="nav-text">Blog</a>
+          <Link to="/research" className="nav-text">Research</Link>
+          <Link to="/team" className="nav-text">Team</Link>
+          <Link to="/events" className="nav-text">Events</Link>
+          <Link to="/careers" className="nav-text">Careers</Link>
+          <Link to="/blog" className="nav-text">Blog</Link>
         </div>
         <button className="nav-button">
           <span className="nav-button-text">View Publications</span>
         </button>
       </nav>
+      </div>
 
       {/* Mobile menu icon - shown only on mobile */}
       <button className="menu-icon" aria-label="Menu"></button>
@@ -34,10 +54,10 @@ export const Header: React.FC = () => {
           transformative approaches to learning in the digital age.
         </p>
         <div className="cta-buttons">
-          <button className="btn-black">
+          <button className="btn-black" onClick={ButtonClickAbout}>
             <span>Learn More</span>
           </button>
-          <button className="btn-outline">
+          <button className="btn-outline" onClick={ButtonClickContact}>
             <span>Contact us</span>
           </button>
         </div>

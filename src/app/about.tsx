@@ -276,7 +276,7 @@ const About = () => {
           </div>
           
           <div className="text-center mt-5">
-            <a href="/people" className="btn btn-outline-primary btn-lg px-4">
+            <a href="/team" className="btn btn-outline-primary btn-lg px-4">
               View Full Team <i className="fas fa-arrow-right ms-2"></i>
             </a>
           </div>
