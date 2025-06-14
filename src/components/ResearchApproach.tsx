@@ -7,7 +7,6 @@ export const ResearchApproach: React.FC = () => {
 
   const ButtonClickAboutUs = () => {
     navigate('/about'); 
-    window.scrollTo(0, 0);
   };
 
   return (

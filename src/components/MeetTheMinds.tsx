@@ -7,12 +7,10 @@ export const MeetTheMinds: React.FC = () => {
 
   const ButtonClickTeam = () => {
     navigate('/team'); 
-    window.scrollTo(0, 0);
   };
 
   const ButtonClickMentor = () => {
     navigate('/contact'); 
-    window.scrollTo(0, 0);
   };
 
   return (

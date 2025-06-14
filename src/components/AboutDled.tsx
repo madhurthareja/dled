@@ -7,7 +7,6 @@ export const AboutDLED: React.FC = () => {
 
   const ButtonClickAbout = () => {
     navigate('/team'); 
-    window.scrollTo(0, 0);
   };
   return (
     <section className="about-dled-section">

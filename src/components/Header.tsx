@@ -1,49 +1,71 @@
 import { Link, useNavigate } from 'react-router-dom';
-import React from "react";
+import React, { useState } from "react";
 import "../styles/header.css";
 import logo from '../assets/dled.jpg';
 
 export const Header: React.FC = () => {
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const ButtonClickContact = () => {
     navigate('/contact'); 
-    window.scrollTo(0, 0);
+    setMenuOpen(false);
   };
   const ButtonClickAbout = () => {
     navigate('/about'); 
-    window.scrollTo(0, 0);
+    setMenuOpen(false);
   };
+
+  // Close menu when a link is clicked
+  const handleNavLinkClick = () => setMenuOpen(false);
 
   return (
     <header className="header">
-      
       {/* Background elements */}
       <div className="bg-top"></div>
       <div className="bg-bottom"></div>
 
       <div className="header-top">
-      <Link to="/">
+        <Link to="/">
           <img src={logo} alt="DLED Logo" className="header-logo" />
-      </Link>
+        </Link>
 
-      {/* Navigation - hidden on mobile, shown on desktop */}
-      <nav className="nav-bar">
-        <div className="nav-links">
-          <Link to="/research" className="nav-text">Research</Link>
-          <Link to="/team" className="nav-text">Team</Link>
-          <Link to="/events" className="nav-text">Events</Link>
-          <Link to="/careers" className="nav-text">Careers</Link>
-          <Link to="/blog" className="nav-text">Blog</Link>
-        </div>
-        <button className="nav-button">
-          <span className="nav-button-text">View Publications</span>
-        </button>
-      </nav>
+        {/* Desktop Navigation */}
+        <nav className="nav-bar">
+          <div className="nav-links">
+            <Link to="/research" className="nav-text">Research</Link>
+            <Link to="/team" className="nav-text">Team</Link>
+            <Link to="/events" className="nav-text">Events</Link>
+            <Link to="/careers" className="nav-text">Careers</Link>
+            <Link to="/blog" className="nav-text">Blog</Link>
+          </div>
+          <button className="nav-button">
+            <span className="nav-button-text">View Publications</span>
+          </button>
+        </nav>
       </div>
 
-      {/* Mobile menu icon - shown only on mobile */}
-      <button className="menu-icon" aria-label="Menu"></button>
+      {/* Mobile menu icon */}
+      <button
+        className="menu-icon"
+        aria-label="Menu"
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen(!menuOpen)}
+      ></button>
+
+      {/* Mobile Dropdown Menu */}
+      {menuOpen && (
+        <nav className="mobile-nav-dropdown">
+          <Link to="/research" className="nav-text" onClick={handleNavLinkClick}>Research</Link>
+          <Link to="/team" className="nav-text" onClick={handleNavLinkClick}>Team</Link>
+          <Link to="/events" className="nav-text" onClick={handleNavLinkClick}>Events</Link>
+          <Link to="/careers" className="nav-text" onClick={handleNavLinkClick}>Careers</Link>
+          <Link to="/blog" className="nav-text" onClick={handleNavLinkClick}>Blog</Link>
+          <button className="nav-button" onClick={handleNavLinkClick}>
+            <span className="nav-button-text">View Publications</span>
+          </button>
+        </nav>
+      )}
 
       {/* Content section */}
       <div className="content">
