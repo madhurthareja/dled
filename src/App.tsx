@@ -7,6 +7,7 @@ import Contact from './app/contact';
 import Partners from './app/partners';
 import Events from './app/events';
 import About from './app/about';
+import { Blog } from './app/blog';
 import './index.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/partners" element={<Partners />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </Router>
   );

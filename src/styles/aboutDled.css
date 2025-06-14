@@ -10,7 +10,7 @@
 
 .content-section {
   position: relative;
-  padding: 40px 24px;
+  padding: 40px 2px;
 }
 
 .title {
@@ -96,7 +96,7 @@
 /* Desktop styles */
 @media (min-width: 992px) {
   .about-dled-section {
-    height: 787px;
+    height: 500px;
     max-width: 1328px;
     margin: 0 auto;
     flex-direction: row;

@@ -3,6 +3,8 @@ import { ResearchInitiatives } from "../components/ResearchInitiatives";
 import { ResearchApproach } from "../components/ResearchApproach";
 import { MeetTheMinds } from "../components/MeetTheMinds";
 import { AboutDLED } from "../components/AboutDled";
+import { ContactSection } from "../components/ContactSection";
+import { FooterWrapper } from "../components/FooterFile";
 
 const Home = () => {
   return (
@@ -22,7 +24,13 @@ const Home = () => {
       </div>
       <div>
         <AboutDLED/>
-    </div>
+      </div>
+      <div>
+        <ContactSection/>
+      </div>
+      <div>
+        <FooterWrapper/>
+      </div>
   </div>
   );
 };

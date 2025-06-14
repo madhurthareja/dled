@@ -10,11 +10,7 @@
 }
 
 .header-logo {
-  height: 120px;
-  margin-right: 75px;
   object-fit: contain;
-  padding-left: 50px;
-  padding-top: 20px;
 }
 
 .header-top {
@@ -198,7 +194,7 @@
 /* Responsive styles */
 @media (min-width: 1441px) {
   .header {
-    max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
   }
 }
@@ -206,6 +202,13 @@
 @media (min-width: 992px) {
   .header {
     height: 902px;
+  }
+
+  .header-logo{
+    height: 120px;
+    margin-right: 75px;
+    padding-left: 50px;
+    padding-top: 20px;
   }
 
   .bg-top {
@@ -263,6 +266,12 @@
 @media (max-width: 991px) {
   .header {
     height: 1127px;
+  }
+  
+  .header-logo {
+    height: 80px;
+    margin-right: 0;
+    
   }
 
   .bg-top {

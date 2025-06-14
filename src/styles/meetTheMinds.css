@@ -123,7 +123,7 @@
 /* Mobile styles */
 @media (max-width: 991px) {
   .meet-the-minds {
-    padding: 40px 24px;
+    padding: 0px 24px;
   }
 
   .image-grid {
