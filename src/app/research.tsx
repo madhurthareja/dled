@@ -75,7 +75,7 @@ const Research = () => {
     <div className="research-page">
       {/* Hero Section*/}
       <section className="hero-section text-white py-6" style={{
-        background: 'linear-gradient(135deg,rgb(241, 187, 87) 0%,rgb(253, 245, 234) 100%)'
+        background: 'linear-gradient(135deg,rgb(252, 200, 181) 0%,rgb(252, 239, 234) 100%)'
       }}>
         <div className="container py-5">
           <div className="row align-items-center">
