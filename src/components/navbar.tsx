@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import dled from '../assets/dled.jpg'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,8 +9,8 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom">
       <div className="container">
-        <Link className="navbar-brand" to="/">
-          <span className="fw-bold fs-4 text-dark">DLED</span>
+         <Link className="navbar-brand d-flex align-items-center" to="/">
+          <img src={dled} alt="DLED Logo" height="40" className="me-2" />
         </Link>
 
         {/* Mobile Toggle Button */}
@@ -26,15 +27,16 @@ const Navbar = () => {
         <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <NavItem path="/research" text="Research" currentPath={location.pathname} />
-            <NavItem path="/people" text="People" currentPath={location.pathname} />
+            <NavItem path="/team" text="Team" currentPath={location.pathname} />
             <NavItem path="/events" text="Events" currentPath={location.pathname} />
             <NavItem path="/careers" text="Careers" currentPath={location.pathname} />
+            <NavItem path="/blog" text="Blog" currentPath={location.pathname} />
             <li className="nav-item ms-lg-3">
-              <Link 
-                to="/contact" 
-                className="btn btn-primary rounded-pill px-3 py-2 mt-2 mt-lg-0"
+              <Link
+                to="/publications"
+                className="btn btn-dark rounded-pill px-4 py-2 ms-lg-2"
               >
-                Contact Us
+                View Publications
               </Link>
             </li>
           </ul>

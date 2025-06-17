@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const People = () => {
+const Team = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedMember, setSelectedMember] = useState<null | {
     id: number;
@@ -316,4 +316,4 @@ const People = () => {
   );
 };
 
-export default People;
+export default Team;

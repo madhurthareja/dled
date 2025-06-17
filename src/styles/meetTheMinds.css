@@ -1,0 +1,152 @@
+/* Base styles */
+.meet-the-minds {
+  position: relative;
+  width: 100%;
+  font-family: "Manrope", Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.image-grid {
+  display: grid;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.grid-item {
+  background-color: #c4c4c4;
+  border-radius: 8px;
+  aspect-ratio: 1;
+}
+
+.yellow-bg {
+  background-color: #f9f08d;
+}
+
+.content-section {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.title {
+  color: #000000;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  padding: 0;
+}
+
+.description {
+  color: #000000;
+  font-weight: 400;
+  opacity: 0.7;
+  margin: 0 0 32px 0;
+  padding: 0;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primary-button, .secondary-button {
+  border-radius: 8px;
+  padding: 10px 28px;
+  font-weight: 600;
+  line-height: 32px;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.primary-button {
+  background-color: #000000;
+  color: #f9f08d;
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+/* Desktop styles */
+@media (min-width: 992px) {
+  .meet-the-minds {
+    max-width: 1200px;
+    height: 657px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 60px;
+    padding-left: 40px;
+  }
+
+  .image-grid {
+    width: 514px;
+    grid-template-columns: repeat(3, 155px);
+    grid-template-rows: repeat(3, 153px);
+    gap: 25px;
+    margin-bottom: 0;
+  }
+
+  .content-section {
+    width: 582px;
+    text-align: left;
+    padding: 40px 0 0 50px;
+  }
+
+  .title {
+    font-size: 48px;
+    line-height: 67.2px;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: 0.36px;
+    width: 547px;
+    margin-bottom: 72px;
+  }
+
+  .button-group {
+    justify-content: flex-start;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 991px) {
+  .meet-the-minds {
+    padding: 0px 24px;
+  }
+
+  .image-grid {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 32px;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 44.8px;
+    margin-bottom: 16px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.32px;
+    margin-bottom: 24px;
+  }
+
+  .primary-button, .secondary-button {
+    font-size: 16px;
+    padding: 8px 20px;
+  }
+}
