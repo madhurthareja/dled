@@ -75,7 +75,7 @@ const Research = () => {
     <div className="research-page">
       {/* Hero Section*/}
       <section className="hero-section text-white py-6" style={{
-        background: 'linear-gradient(135deg,rgb(252, 200, 181) 0%,rgb(252, 239, 234) 100%)'
+        background: 'linear-gradient(120deg,rgb(255, 222, 210) 0%,rgb(252, 239, 234) 100%)'
       }}>
         <div className="container py-5">
           <div className="row align-items-center">
@@ -88,7 +88,7 @@ const Research = () => {
                 <button className="btn btn-light btn-lg px-4">
                   Collaborate With Us
                 </button>
-                <button className="btn btn-outline-light text-dark btn-lg px-4">
+                <button className="btn btn-outline-light text-dark btn-lg px-4" style ={{ borderWidth: '1.5px' }}>
                   View Publications
                 </button>
               </div>
