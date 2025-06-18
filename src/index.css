@@ -402,7 +402,7 @@
   height: 120px;
   background-size: cover;
   background-position: center;
-  border: 3px solid white;
+  border: 3px solid none;
 }
 
 .floating-head-1 {

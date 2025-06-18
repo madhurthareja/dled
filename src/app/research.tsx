@@ -75,30 +75,30 @@ const Research = () => {
     <div className="research-page">
       {/* Hero Section*/}
       <section className="hero-section text-white py-6" style={{
-        background: 'linear-gradient(120deg,rgb(255, 222, 210) 0%,rgb(252, 239, 234) 100%)'
+        background: 'linear-gradient(130deg,rgb(253, 232, 224) 0%,rgb(253, 249, 247) 85%)'
       }}>
         <div className="container py-5">
           <div className="row align-items-center">
             <div className="col-lg-8">
-              <h1 className="display-4 text-black fw-bold mb-4" style={{ marginLeft: '-4px' }}>Research at DLED</h1>
-              <p className="lead fs-4 mb-4 text-muted fw-normal">
+              <h1 className="display-4 text-black fw-bold mb-4 mt-4" style={{ marginLeft: '-4px' }}>Research at DLED</h1>
+              <p className="lead mb-4 fs-4 text-secondary">
                 Pioneering the future of education through technology and innovation
               </p>
               <div className="d-flex gap-3">
                 <button className="btn btn-light btn-lg px-4">
                   Collaborate With Us
                 </button>
-                <button className="btn btn-outline-light text-dark btn-lg px-4" style ={{ borderWidth: '1.5px' }}>
+                <button className="btn btn-outline-light text-dark btn-lg px-4" style ={{ borderWidth: '3.5px' }}>
                   View Publications
                 </button>
               </div>
             </div>
             <div className="col-lg-4 d-none d-lg-block">
               <img 
-                src="../public/images/brain.png" 
+                src="../images/brain.png" 
                 alt="Research Illustration" 
                 className="img-fluid"
-                style={{ maxWidth: "200px", height: "auto" }}
+                style={{ maxWidth: "200px", height: "auto", marginTop: "-10px" }}
               />
             </div>
           </div>
@@ -119,21 +119,21 @@ const Research = () => {
               <div className="btn-group" role="group">
                 <button
                   type="button"
-                  className={`btn btn-${activeFilter === 'all' ? 'secondary' : 'outline-warning'}`}
+                  className={`btn fw-semibold btn-${activeFilter === 'all' ? 'secondary' : 'outline-warning'}`}
                   onClick={() => setActiveFilter('all')}
                 >
                   All Projects
                 </button>
                 <button
                   type="button"
-                  className={`btn btn-${activeFilter === 'ongoing' ? 'secondary' : 'outline-warning'}`}
+                  className={`btn fw-semibold btn-${activeFilter === 'ongoing' ? 'secondary' : 'outline-warning'}`}
                   onClick={() => setActiveFilter('ongoing')}
                 >
                   Ongoing Research
                 </button>
                 <button
                   type="button"
-                  className={`btn btn-${activeFilter === 'completed' ? 'secondary' : 'outline-warning'}`}
+                  className={`btn fw-semibold btn-${activeFilter === 'completed' ? 'secondary' : 'outline-warning'}`}
                   onClick={() => setActiveFilter('completed')}
                 >
                   Completed Projects
