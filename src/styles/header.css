@@ -139,21 +139,41 @@
 .subtitle {
   color: #f0a082;
   font-family: "Manrope", Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
   font-weight: 600;
   letter-spacing: 0.36px;
   line-height: 32px;
   white-space: nowrap;
+  margin-left: 4px;
 }
 
 .title {
   font-family: "Manrope", Helvetica, sans-serif;
-  font-size: 64px;
+  font-size: 78px;
   font-weight: 700;
   color: #000;
   letter-spacing: 1.28px;
   line-height: 83.2px;
   margin: 48px 0 0 0;
+  cursor: pointer;
+}
+
+.word {
+  display: inline-block;
+  white-space: pre;
+}
+
+.letter {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+  cursor: pointer;
+}
+
+.letter:hover {
+  transform: translateY(-3px);
+  color:rgb(194, 17, 17);
+
 }
 
 .description {
@@ -220,21 +240,12 @@
 }
 
 .btn-outline:hover,
-.btn-outline:focus {
-  background: #000;
-  color: #f9f08d;
-  border-color: #f9f08d;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.14);
-  transform: translateY(-1px) scale(1.01);
-}
-
 .btn-outline:active {
-  background: #333;
+  background: #141414;
   color: #ffe066;
   border-color: #ffe066;
-  transform: translateY(1px) scale(0.98);
+  transform: translateY(-1px) scale(1.01);
 }
-
 
 /* Image section */
 .image-group {

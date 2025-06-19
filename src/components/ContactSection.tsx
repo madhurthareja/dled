@@ -2,8 +2,12 @@ import React from "react";
 import "../styles/contactSection.css";
 
 export const ContactSection: React.FC = () => {
+
+  const today = new Date();
+  const formattedDate = `${String(today.getMonth() + 1).padStart(2, '0')}/${String(today.getDate()).padStart(2, '0')}/${today.getFullYear()}`;
+
   return (
-    <div className="contact-container">
+    <div id="contact" className="contact-container">
       <div className="contact-text">
         <h2 className="contact-title">Get in touch with us</h2>
         <p className="contact-description">
@@ -25,19 +29,14 @@ export const ContactSection: React.FC = () => {
 
           <div className="form-row">
             <div className="form-group">
-              <input type="tel" id="phone" className="form-input" placeholder="Phone Number" />
-            </div>
-            <div className="form-group">
-              <input type="text" id="university" className="form-input" placeholder="University" />
-            </div>
-          </div>
-
-          <div className="form-row">
-            <div className="form-group">
-              <input type="text" id="course" className="form-input" placeholder="Course" />
-            </div>
-            <div className="form-group">
-              <input type="text" id="year" className="form-input" placeholder="mm/dd/yyyy" />
+              <input
+                type="text"
+                id="year"
+                className="form-input"
+                placeholder="mm/dd/yyyy"
+                value={formattedDate}
+                readOnly
+              />
             </div>
           </div>
 

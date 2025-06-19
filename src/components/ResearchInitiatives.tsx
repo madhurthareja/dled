@@ -146,6 +146,12 @@ export const ResearchInitiatives: React.FC = () => {
   return (
     <div className="research-initiatives-container">
       <h2 className="section-title">Check out our Research Initiatives</h2>
+
+      <div className="section-description" style= {{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <button className="visit-research-btn" style= {{ marginTop: '-25px', marginBottom: '25px' }} onClick={() => window.location.href = "/research"}>
+        <span className="btn-text">View More</span>
+      </button>
+      </div>
       
       <div className="research-cards-container">
         {researchData.map((research, index) => (

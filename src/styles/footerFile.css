@@ -1,12 +1,27 @@
 /* Base Footer Styles */
+
 .footer {
+  
   background-color: #fff6f3;
   background-image: url(https://c.animaapp.com/SP71lV0J/img/rectangle-5927.svg);
   background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
   padding: 60px 40px;
   position: relative;
+  overflow: hidden;
   width: 100%;
   font-family: "Manrope", Helvetica, sans-serif;
+}
+
+.footer-bg-img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .footer-content {
@@ -17,7 +32,15 @@
 
 /* Logo and Address Section */
 .footer-logo-section {
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  gap: 32px;
+  margin-left: 50px;
   margin-bottom: 40px;
+  max-width: 300px;
+  overflow: hidden;
+  /* border: solid 1px #000; */
 }
 
 .footer-logo {
@@ -84,12 +107,15 @@
 
 .footer-main-image {
   position: absolute;
-  left: 45px;
-  bottom: 0;
+  top: 50%;
+  left: 50%;
   width: 442px;
-  height: 244px;
-  object-fit: contain;
+  height: 320px;
+  object-fit: cover;
   top: 132px;
+  transform: scale(3.0);
+  transform: translate(-70%, -40%);
+  transform-origin: center center;
 }
 
 .footer-secondary-image {
@@ -108,11 +134,14 @@
   }
   
   .footer-logo-section {
-    position: absolute;
-    left: 47px;
-    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
   }
-  
+
   .footer-links {
     position: absolute;
     right: 47px;
@@ -123,6 +152,7 @@
 
 /* Mobile Styles (max-width: 991px) */
 @media (max-width: 991px) {
+
   .footer {
     padding: 30px 20px;
     height: auto;
@@ -146,7 +176,7 @@
 
   /* Address section under logo */
   .footer-address {
-    order: 2;
+    flex: 1;
     margin: 20px 0 30px 0;
   }
 
@@ -184,32 +214,64 @@
     line-height: 24px;
   }
 
-  /* Main image under address */
-  .footer-main-image {
-    position: static;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 30px;
-    order: 4;
-  }
+  /* Map under address */
 
-  /* Secondary image at bottom */
+  .footer-main-image {
+  display: block;
+  position: static;
+  width: 260px;
+  height: 230px;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+}
+
+  /* Logo image at bottom */
   .footer-secondary-image {
     position: static;
-    width: 100%;
-    max-width: 100%;
+    max-width: 85%;
     height: auto;
     order: 5;
     margin-top: 20px;
     margin-bottom: 30px;
   }
-
-  /* Remove absolute positioning for mobile */
-  .footer-logo-section,
-  .footer-links,
-  .footer-images {
-    position: static;
-    width: 100%;
-  }
 }
+
+  /* CSS rules here will apply to screens narrower than 1375px */
+@media (max-width: 1374px) {
+
+  .footer {
+    background-image: url('https://c.animaapp.com/SP71lV0J/img/rectangle-5927.svg');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 500px;
+  }
+
+  .footer-logo-section {
+    flex-direction: column;
+    align-items: flex-start;
+    position: static;
+    left: 0;
+    bottom: 0;
+    max-width: none;
+    margin-bottom: 100px;
+    overflow: visible;
+  }
+
+  /* Map image */
+  .footer-main-image {
+    left: 580px;
+    transform: translate(-120%, 0%);
+  }
+
+  /* Rectangle svg
+  .footer-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+    */
+}
+

@@ -1,18 +1,23 @@
 import { Link, useNavigate } from 'react-router-dom';
-import React, { useState } from "react";
+import React, { useState} from 'react';
 import "../styles/header.css";
 import logo from '../assets/dled-clear.png';
 
 export const Header: React.FC = () => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
+  const title = "Redefining Education Through Innovation";
 
   const ButtonClickContact = () => {
-    navigate('/contact'); 
-    setMenuOpen(false);
+  const contactSection = document.getElementById('contact');
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+  setMenuOpen(false);
   };
+
   const ButtonClickAbout = () => {
-    navigate('/about'); 
+    navigate('/about');
     setMenuOpen(false);
   };
 
@@ -69,8 +74,19 @@ export const Header: React.FC = () => {
 
       {/* Content section */}
       <div className="content">
-        <span className="subtitle">An IIT Ropar Initiative</span>
-        <h1 className="title">Redefining Education Through Innovation</h1>
+      <span className="subtitle">An IIT Ropar Initiative</span>
+      <h1 className="title">
+      {title.split(" ").map((word, wordIdx) => (
+        <span key={wordIdx} className="word" style={{ whiteSpace: "pre" }}>
+          {word.split("").map((char, i) => (
+            <span key={i} className="letter">{char}</span>
+          ))}
+          {/* Add space after each word except the last */}
+          {wordIdx !== title.split(" ").length - 1 && " "}
+        </span>
+      ))}
+      </h1>
+
         <p className="description">
           The Dhananjaya Lab for Education Design (DLED) at IIT Ropar is pioneering
           transformative approaches to learning in the digital age.
@@ -99,9 +115,9 @@ export const Header: React.FC = () => {
             alt="Decorative element"
           />
           <img
-            className="highschool-img"
+            className="highschool-img" 
             src="https://c.animaapp.com/SP71lV0J/img/highschool-student-2021-09-24-03-36-25-utc-min-ccexpress-1.png"
-            alt="Highschool student"
+            alt="Microscrope"
           />
         </div>
       </div>

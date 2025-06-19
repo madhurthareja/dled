@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaFlask, FaChartLine, FaEye, FaUsers, FaRobot, FaCertificate } from 'react-icons/fa';
+import { FaFlask, FaChartLine, FaEye, FaUsers, FaRobot, FaCertificate, FaChartBar } from 'react-icons/fa';
 
 const Research = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -64,7 +64,26 @@ const Research = () => {
         'Reduced verification time by 80%'
       ],
       icon: <FaCertificate className="text-warning" size={32} />
+    },
+
+    {
+      id: 5,
+      title: 'Dopamine Driving through Dashboard (DDD)',
+      status: 'ongoing',
+      description: 'The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at DLED Lab, enabling data-informed decision-making.',
+      focusArea: 'Educational Technology',
+      team: ['Sakshi (Ph.D. Scholar, CSE, under Dr. Sudarshan Iyengar)'],
+      partners: ['DLED Lab'],
+      timeline: '2023-2025',
+      outcomes: [
+        'Modular dashboard system for live tracking of research and product initiatives',
+        'Improved visibility into student/faculty engagement and contributions',
+        'Scalable design supporting multiple datasets and real-time visualisation'
+      ],
+      icon: <FaChartBar className="text-info" size={32} />
     }
+
+
   ];
 
   const filteredProjects = activeFilter === 'all' 
