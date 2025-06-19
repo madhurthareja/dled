@@ -222,7 +222,7 @@ background: linear-gradient(105deg, #fbc2eb 0%, #f7971e 100%);
     font-weight: 400;
     line-height: 27.5px;
     display: block;
-    margin-top: 8px;
+    margin-top: 0px !important;
   }
 
   .research-description {

@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from "react";
 import "../styles/header.css";
-import logo from '../assets/dled.jpg';
+import logo from '../assets/dled-clear.png';
 
 export const Header: React.FC = () => {
   const navigate = useNavigate();

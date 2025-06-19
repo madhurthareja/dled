@@ -83,20 +83,20 @@ const Team = () => {
   return (
     <div className="people-page">
       {/* Hero Section */}
-      <section className="hero-section bg-primary text-white py-6">
+      <section className="hero-section text-white py-6" style ={{ background: 'linear-gradient(130deg,rgb(253, 232, 224) 0%,rgb(253, 249, 247) 75%)' }}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
-              <h1 className="display-4 fw-bold mb-4">Our People</h1>
-              <p className="lead mb-4">
-                Meet the brilliant minds behind Dhananjaya Lab's innovative research and educational designs.
+              <h1 className="display-4 fw-bold text-dark mb-4 mt-5">Our People</h1>
+              <p className="lead mb-4 fs-4 text-secondary">
+                Meet the brilliant minds behind Dhananjaya Lab's innovative research and educational designs
               </p>
               <a href="#team" className="btn btn-light btn-lg px-4">
                 Explore Team
               </a>
             </div>
             <div className="col-lg-6">
-              <div className="people-illustration position-relative">
+              <div className="people-illustration position-relative mt-4">
                 <div className="floating-head floating-head-1 rounded-circle overflow-hidden shadow-lg"></div>
                 <div className="floating-head floating-head-2 rounded-circle overflow-hidden shadow-lg"></div>
                 <div className="floating-head floating-head-3 rounded-circle overflow-hidden shadow-lg"></div>
@@ -120,25 +120,25 @@ const Team = () => {
 
           <div className="filter-buttons d-flex justify-content-center flex-wrap gap-3 mb-5">
             <button 
-              className={`btn ${activeFilter === 'all' ? 'btn-primary' : 'btn-outline-primary'}`}
+              className={`btn fw-semibold ${activeFilter === 'all' ? 'btn-secondary' : 'btn-outline-warning'}`}
               onClick={() => setActiveFilter('all')}
             >
               All Members
             </button>
             <button 
-              className={`btn ${activeFilter === 'faculty' ? 'btn-primary' : 'btn-outline-primary'}`}
+              className={`btn fw-semibold ${activeFilter === 'faculty' ? 'btn-secondary' : 'btn-outline-warning'}`}
               onClick={() => setActiveFilter('faculty')}
             >
               Faculty
             </button>
             <button 
-              className={`btn ${activeFilter === 'staff' ? 'btn-primary' : 'btn-outline-primary'}`}
+              className={`btn fw-semibold ${activeFilter === 'staff' ? 'btn-secondary' : 'btn-outline-warning'}`}
               onClick={() => setActiveFilter('staff')}
             >
               Staff
             </button>
             <button 
-              className={`btn ${activeFilter === 'students' ? 'btn-primary' : 'btn-outline-primary'}`}
+              className={`btn fw-semibold ${activeFilter === 'students' ? 'btn-secondary' : 'btn-outline-warning'}`}
               onClick={() => setActiveFilter('students')}
             >
               Students
@@ -155,7 +155,7 @@ const Team = () => {
                 >
                   <div className="team-member-img position-relative">
                     <img src={member.img} alt={member.name} className="img-fluid w-100" />
-                    <div className="member-badge bg-primary text-white px-3 py-1 rounded-pill position-absolute">
+                    <div className="member-badge bg-primary-subtle text-dark fw-semibold px-3 py-1 rounded-pill position-absolute">
                       {member.department}
                     </div>
                   </div>
@@ -261,9 +261,9 @@ const Team = () => {
       {/* Alumni Section */}
       <section className="py-6">
         <div className="container">
-          <div className="row justify-content-center mb-5">
+          <div className="row justify-content-center mb-2">
             <div className="col-lg-8 text-center">
-              <h2 className="display-5 fw-bold mb-3">Alumni Network</h2>
+              <h2 className="display-5 fw-bold mb-1 mt-4">Alumni Network</h2>
               <p className="lead text-muted">
                 Where our former members are making an impact
               </p>
@@ -291,7 +291,7 @@ const Team = () => {
               <div key={index} className="col-md-4">
                 <div className="alumni-card p-4 rounded-3 shadow-sm h-100">
                   <div className="d-flex align-items-center mb-3">
-                    <div className="alumni-avatar bg-primary bg-opacity-10 text-primary rounded-circle me-3">
+                    <div className="alumni-avatar bg-primary bg-opacity-10 text-secondary rounded-circle me-3">
                       {alum.name.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>
@@ -306,7 +306,7 @@ const Team = () => {
           </div>
 
           <div className="text-center mt-5">
-            <a href="/alumni" className="btn btn-outline-primary">
+            <a href="/alumni" className="btn btn-outline-warning mb-4 fw-semibold">
               View Full Alumni List <i className="fas fa-arrow-right ms-2"></i>
             </a>
           </div>

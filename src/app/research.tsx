@@ -75,30 +75,30 @@ const Research = () => {
     <div className="research-page">
       {/* Hero Section*/}
       <section className="hero-section text-white py-6" style={{
-        background: 'linear-gradient(135deg, #17a2b8 0%, #1d4e89 100%)'
+        background: 'linear-gradient(130deg,rgb(253, 232, 224) 0%,rgb(253, 249, 247) 85%)'
       }}>
         <div className="container py-5">
           <div className="row align-items-center">
             <div className="col-lg-8">
-              <h1 className="display-4 fw-bold mb-4">Research at DLED</h1>
-              <p className="lead fs-3 mb-4">
+              <h1 className="display-4 text-black fw-bold mb-4 mt-4" style={{ marginLeft: '-4px' }}>Research at DLED</h1>
+              <p className="lead mb-4 fs-4 text-secondary">
                 Pioneering the future of education through technology and innovation
               </p>
               <div className="d-flex gap-3">
                 <button className="btn btn-light btn-lg px-4">
                   Collaborate With Us
                 </button>
-                <button className="btn btn-outline-light btn-lg px-4">
+                <button className="btn btn-outline-light text-dark btn-lg px-4" style ={{ borderWidth: '3.5px' }}>
                   View Publications
                 </button>
               </div>
             </div>
             <div className="col-lg-4 d-none d-lg-block">
               <img 
-                src="/images/research-hero.png" 
+                src="../images/brain.png" 
                 alt="Research Illustration" 
                 className="img-fluid"
-                style={{filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.2))'}}
+                style={{ maxWidth: "200px", height: "auto", marginTop: "-10px" }}
               />
             </div>
           </div>
@@ -119,21 +119,21 @@ const Research = () => {
               <div className="btn-group" role="group">
                 <button
                   type="button"
-                  className={`btn btn-${activeFilter === 'all' ? 'primary' : 'outline-primary'}`}
+                  className={`btn fw-semibold btn-${activeFilter === 'all' ? 'secondary' : 'outline-warning'}`}
                   onClick={() => setActiveFilter('all')}
                 >
                   All Projects
                 </button>
                 <button
                   type="button"
-                  className={`btn btn-${activeFilter === 'ongoing' ? 'primary' : 'outline-primary'}`}
+                  className={`btn fw-semibold btn-${activeFilter === 'ongoing' ? 'secondary' : 'outline-warning'}`}
                   onClick={() => setActiveFilter('ongoing')}
                 >
                   Ongoing Research
                 </button>
                 <button
                   type="button"
-                  className={`btn btn-${activeFilter === 'completed' ? 'primary' : 'outline-primary'}`}
+                  className={`btn fw-semibold btn-${activeFilter === 'completed' ? 'secondary' : 'outline-warning'}`}
                   onClick={() => setActiveFilter('completed')}
                 >
                   Completed Projects
@@ -146,7 +146,7 @@ const Research = () => {
             {filteredProjects.map((project) => (
               <div key={project.id} className="col-lg-6">
                 <div className={`project-card card h-100 border-0 shadow-sm overflow-hidden transition-all hover-shadow-lg ${
-                  project.status === 'ongoing' ? 'border-start border-4 border-primary' : 'border-start border-4 border-success'
+                  project.status === 'ongoing' ? 'border-start border-4 border-primary-subtle' : 'border-start border-4 border-success-subtle text-dark'
                 }`}>
                   <div className="card-body p-4">
                     <div className="d-flex align-items-start gap-4">
@@ -157,15 +157,15 @@ const Research = () => {
                       </div>
                       <div className="flex-grow-1">
                         <div className="d-flex justify-content-between align-items-start">
-                          <h3 className="h4 card-title fw-bold mb-3">{project.title}</h3>
+                          <h3 className="h4 card-title fw-bold mb-3" style={{ marginLeft: '-8px' }}>{project.title}</h3>
                           <span className={`badge ${
-                            project.status === 'ongoing' ? 'bg-primary' : 'bg-success'
+                            project.status === 'ongoing' ? 'bg-primary-subtle text-dark' : 'bg-success-subtle text-dark'
                           }`}>
                             {project.status === 'ongoing' ? 'In Progress' : 'Completed'}
                           </span>
                         </div>
                         
-                        <p className="card-text mb-4">{project.description}</p>
+                        <p className="card-text mb-4" style={{ marginLeft: '-8px' }}>{project.description}</p>
                         
                         <div className="row g-3 mb-4">
                           <div className="col-md-6">
@@ -199,8 +199,8 @@ const Research = () => {
                             <h6 className="text-muted small mb-2">Collaborators</h6>
                             <p className="small fw-bold">{project.partners.join(', ')}</p>
                           </div>
-                          <button className="btn btn-sm btn-outline-primary">
-                            Learn More <i className="fas fa-arrow-right ms-2"></i>
+                          <button className="btn btn-sm btn-outline-secondary" style={{ marginLeft: '8px' }}>
+                            Learn More <i className="fas fa-arrow-right ms-1"></i>
                           </button>
                         </div>
                       </div>
