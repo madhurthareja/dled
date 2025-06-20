@@ -54,7 +54,7 @@ export const researchProjects = [
     'Meenakshi (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)'
     ],
     partners: ['Dopamine Driving through Dashboard (DDD)', 'Peer Evaluation System (PES)'],
-    timeline: 'Feb 2025 – Dec 2025',
+    timeline: '2025-2025',
     outcomes: [
     'Real-time speech-to-text transcription system for live classes',
     'Automated, context-aware poll generation with instructor override features',
