@@ -72,68 +72,6 @@ const Research = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   
   const researchProjects = [
-    /*
-    {
-      id: 1,
-      title: 'Continuous Active Learning Platform',
-      status: 'ongoing',
-      description: 'Developing an AI-assisted Learning Management System that adapts in real-time to student performance and engagement levels, providing personalized learning pathways.',
-      focusArea: 'AI in Education',
-      team: ['Dr. Sharma (PI)', '2 PhD Students', '3 Research Assistants'],
-      partners: ['Ministry of Education', 'Google EDU'],
-      timeline: '2023-2026',
-      outcomes: [
-        'Patent pending for adaptive algorithm',
-        'Pilot testing in 5 schools'
-      ],
-      icon: <FaRobot className="text-primary" size={32} />
-    },
-    {
-      id: 2,
-      title: 'Automated Peer Evaluation System',
-      status: 'ongoing',
-      description: 'Creating a machine learning-based system that facilitates and enhances peer review processes in massive online courses with fairness and accuracy metrics.',
-      focusArea: 'Educational Assessment',
-      team: ['Prof. Gupta (PI)', '1 Postdoc', '4 Graduate Students'],
-      partners: ['Coursera', 'IIT Bombay'],
-      timeline: '2024-2025',
-      outcomes: [
-        'Framework published in IEEE TLT',
-        'Integration with 3 MOOC platforms'
-      ],
-      icon: <FaUsers className="text-success" size={32} />
-    },
-    {
-      id: 3,
-      title: 'Computer Vision for Engagement Detection',
-      status: 'ongoing',
-      description: 'Using gaze detection and facial expression analysis to measure student engagement in digital learning environments with privacy-preserving techniques.',
-      focusArea: 'Computer Vision',
-      team: ['Dr. Patel (PI)', '3 PhD Students'],
-      partners: ['Microsoft Research', 'NSF'],
-      timeline: '2024-2027',
-      outcomes: [
-        '90% accuracy in engagement prediction',
-        'Real-time dashboard for instructors'
-      ],
-      icon: <FaEye className="text-danger" size={32} />
-    },
-    {
-      id: 4,
-      title: 'Blockchain for Credential Verification',
-      status: 'completed',
-      description: 'Developed a decentralized system for secure and tamper-proof academic credential verification using blockchain technology.',
-      focusArea: 'Educational Technology',
-      team: ['Prof. Kumar (PI)', '2 Research Engineers'],
-      partners: ['Ethereum Foundation', 'UGC'],
-      timeline: '2021-2023',
-      outcomes: [
-        'Implemented at 3 universities',
-        'Reduced verification time by 80%'
-      ],
-      icon: <FaCertificate className="text-warning" size={32} />
-    },
-    */
 
     {
       id: 1,
