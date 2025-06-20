@@ -1,5 +1,72 @@
 import { useState } from 'react';
-import { FaFlask, FaChartLine, FaRobot, FaUsers, FaChartBar } from 'react-icons/fa'; // FaEye, FaRobot, FaCertificate, FaChartBar
+import { FaFlask, FaChartLine, FaRobot, FaUsers,  FaChartBar } from 'react-icons/fa'; // FaEye, FaRobot, FaCertificate, FaChartBar
+
+
+// Export the array so it can be imported in ResearchInitiatives.tsx
+export const researchProjects = [
+    {
+      id: 1,
+      title: 'Dopamine Driving through Dashboard (DDD)',
+      status: 'ongoing',
+      description: 'The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at DLED Lab, enabling data-informed decision-making.',
+      focusArea: 'Educational Technology',
+      team: ['Sakshi (Ph.D. Scholar, CSE, under Dr. Sudarshan Iyengar)'],
+      partners: ['DLED Lab'],
+      timeline: '2023-2025',
+      outcomes: [
+        'Modular dashboard system for live tracking of research and product initiatives',
+        'Improved visibility into student/faculty engagement and contributions',
+        'Scalable design supporting multiple datasets and real-time visualisation'
+      ],
+      imageUrl: "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      icon: <FaChartBar className="text-info" size={32} />
+    }, 
+
+    {
+      id: 2,
+      title: 'Peer Evaluation System (PES)',
+      status: 'ongoing',
+      description: 'The Peer Evaluation System (PES) is a scalable, web-based tool designed to streamline and enhance peer assessment workflows in educational settings. Developed with a focus on transparency, fairness, and feedback quality, PES supports structured evaluation in both individual and group activities, empowering instructors and learners through data-driven insights.',
+      focusArea: 'Educational Technology',
+      team: ['Rohit Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)'],
+      partners: [],
+      timeline: '2023-2025',
+      outcomes: [
+      'Customizable peer evaluation forms integrated with participation data',
+      'Analytics dashboard for instructors to identify patterns, biases, and anomalies',
+      'Integration-ready system for LMS platforms and classroom tools',
+      'Support for both formative and summative peer assessments',
+      'Poll automation'
+      ],
+      imageUrl: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      icon: <FaUsers className="text-dark" size={32} />
+    },
+
+    {
+    id: 3,
+    title: 'Poll Automation',
+    status: 'ongoing',
+    description: 'The Poll Automation project is a real-time classroom intelligence system designed to enhance interactivity in live teaching sessions. By leveraging live audio transcripts, the web application listens to ongoing lectures, generates summaries, and automatically crafts contextual polls every five minutes (adjustable by the instructor). This fosters continuous engagement, checks comprehension, and provides instructors with live feedback loops.',
+    focusArea: 'Educational Technology',
+    team: [
+    'Sakshi Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)',
+    'Rohit Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)',
+    'Meenakshi (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)'
+    ],
+    partners: ['Dopamine Driving through Dashboard (DDD)', 'Peer Evaluation System (PES)'],
+    timeline: 'Feb 2025 – Dec 2025',
+    outcomes: [
+    'Real-time speech-to-text transcription system for live classes',
+    'Automated, context-aware poll generation with instructor override features',
+    'Seamless integration with dashboards (DDD) and feedback mechanisms (PES)',
+    'Enhanced classroom interactivity and adaptive teaching support'
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1576400883215-7083980b6193?q=80&w=1626&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    icon: <FaRobot className="text-primary" size={32} />
+    }
+];
+
+
 
 const Research = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -105,25 +172,25 @@ const Research = () => {
     },
 
     {
-    id: 3,
-    title: 'Poll Automation',
-    status: 'ongoing',
-    description: 'The Poll Automation project is a real-time classroom intelligence system designed to enhance interactivity in live teaching sessions. By leveraging live audio transcripts, the web application listens to ongoing lectures, generates summaries, and automatically crafts contextual polls every five minutes (adjustable by the instructor). This fosters continuous engagement, checks comprehension, and provides instructors with live feedback loops.',
-    focusArea: 'Educational Technology',
-    team: [
-    'Sakshi Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)',
-    'Rohit Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)',
-    'Meenakshi (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)'
-    ],
-    partners: ['Dopamine Driving through Dashboard (DDD)', 'Peer Evaluation System (PES)'],
-    timeline: 'Feb 2025 – Dec 2025',
-    outcomes: [
-    'Real-time speech-to-text transcription system for live classes',
-    'Automated, context-aware poll generation with instructor override features',
-    'Seamless integration with dashboards (DDD) and feedback mechanisms (PES)',
-    'Enhanced classroom interactivity and adaptive teaching support'
-    ],
-    icon: <FaRobot className="text-primary" size={32} />
+      id: 3,
+      title: 'Poll Automation',
+      status: 'ongoing',
+      description: 'The Poll Automation project is a real-time classroom intelligence system designed to enhance interactivity in live teaching sessions. By leveraging live audio transcripts, the web application listens to ongoing lectures, generates summaries, and automatically crafts contextual polls every five minutes (adjustable by the instructor). This fosters continuous engagement, checks comprehension, and provides instructors with live feedback loops.',
+      focusArea: 'Educational Technology',
+      team: [
+      'Sakshi Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)',
+      'Rohit Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)',
+      'Meenakshi (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)'
+      ],
+      partners: ['Dopamine Driving through Dashboard (DDD)', 'Peer Evaluation System (PES)'],
+      timeline: 'Feb 2025 – Dec 2025',
+      outcomes: [
+      'Real-time speech-to-text transcription system for live classes',
+      'Automated, context-aware poll generation with instructor override features',
+      'Seamless integration with dashboards (DDD) and feedback mechanisms (PES)',
+      'Enhanced classroom interactivity and adaptive teaching support'
+      ],
+      icon: <FaRobot className="text-primary" size={32} />
     }
 
   ];

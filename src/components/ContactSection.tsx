@@ -5,7 +5,7 @@ export const ContactSection: React.FC = () => {
 
   const today = new Date();
   const formattedDate = `${String(today.getMonth() + 1).padStart(2, '0')}/${String(today.getDate()).padStart(2, '0')}/${today.getFullYear()}`;
-  const title = "Get in Touch with DLED Lab";
+  const title = "Get in Touch with Us";
 
   return (
     <div id="contact" className="contact-container">

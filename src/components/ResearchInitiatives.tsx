@@ -1,4 +1,5 @@
 import "../styles/researchInitiatives.css";
+import { researchProjects } from '../app/research';
 
 interface ResearchCardProps {
   title: string;
@@ -13,6 +14,31 @@ interface ResearchCardProps {
 }
 
 const title = "Check Out Our Research Initiatives";
+
+// Utility function to extract end year from timeline string
+const getEndYear = (timeline: string) => {
+  // Handles formats like "2024-2026" or "2025"
+  const parts = timeline.split('-');
+  return parseInt(parts[1] || parts[0], 10);
+};
+
+const latestThreeProjects = researchProjects
+  .slice() // Copy to avoid mutating the original
+  .sort((a, b) => getEndYear(b.timeline) - getEndYear(a.timeline))
+  .slice(0, 3);
+
+
+const mapToResearchCardProps = (project: any): ResearchCardProps => ({
+  title: project.title,
+  description: project.description,
+  timeline: project.timeline,
+  focus: project.focusArea,
+  researchTeam: project.team,
+  keyOutcomes: project.outcomes,
+  collaborators: project.partners,
+  imageUrl: project.imageUrl || "https://via.placeholder.com/400x200?text=No+Image",
+  collaboratorLogos: project.collaboratorLogos || [],
+});
 
 
 const ResearchCard: React.FC<ResearchCardProps> = ({
@@ -89,62 +115,6 @@ const ResearchCard: React.FC<ResearchCardProps> = ({
 };
 
 export const ResearchInitiatives: React.FC = () => {
-  const researchData = [
-    {
-      title: "Continuous Active Learning Platform",
-      description:
-        "Developing an AI-assisted Learning Management System that adapts in real-time to student performance and engagement levels, providing personalized learning pathways.",
-      timeline: "2024-26",
-      focus: "AI in Education",
-      researchTeam: ["Dr. Sharma (PI)", "2 PhD Students", "3 Research Assistants"],
-      keyOutcomes: [
-        "Patent pending for adaptive algorithm",
-        "Pilot testing in 5 schools"
-      ],
-      collaborators: ["Connerra", "IIT Bombay"],
-      imageUrl: "https://c.animaapp.com/SP71lV0J/img/interior-of-a-modern-bright-classroom-or-office-2025-03-15-19-39@2x.png",
-      collaboratorLogos: [
-        "https://c.animaapp.com/SP71lV0J/img/image-4@2x.png",
-        "https://c.animaapp.com/SP71lV0J/img/image-3@2x.png"
-      ]
-    },
-    {
-      title: "Automated Peer Evaluation System",
-      description:
-        "Improved predictive learning-based system that facilitates the continuous peer review processes in practice on the courses with fairness and standard metrics.",
-      timeline: "2024-26",
-      focus: "Educational Assessment",
-      researchTeam: ["Prof. Gupta (PI)", "1 Postdoc", "4 Graduate Students"],
-      keyOutcomes: [
-        "Framework published in IEEE TLT",
-        "Integration with 3 MOOC platforms"
-      ],
-      collaborators: ["Microsoft Research", "NSF"],
-      imageUrl: "https://c.animaapp.com/SP71lV0J/img/hexagons-with-businessmen-employees-are-connected-2025-03-18-18-@2x.png",
-      collaboratorLogos: [
-        "https://c.animaapp.com/SP71lV0J/img/image-8@2x.png",
-        "https://c.animaapp.com/SP71lV0J/img/image-7@2x.png"
-      ]
-    },
-    {
-      title: "Computer Vision for Engagement Detection",
-      description:
-        "Using gaze detection and facial expression analysis to measure student engagement in digital learning environments with privacy-preserving techniques.",
-      timeline: "2024-27",
-      focus: "Computer Vision",
-      researchTeam: ["Dr. Paidi (PI)", "3 PhD Students"],
-      keyOutcomes: [
-        "80% accuracy in engagement prediction",
-        "Real-time dashboard for instructors"
-      ],
-      collaborators: ["Ministry of Education", "Google EDU"],
-      imageUrl: "https://c.animaapp.com/SP71lV0J/img/facial-recognition-technology-concept-as-woman-has-2024-10-19-06@2x.png",
-      collaboratorLogos: [
-        "https://c.animaapp.com/SP71lV0J/img/image-5@2x.png",
-        "https://c.animaapp.com/SP71lV0J/img/image-6@2x.png"
-      ]
-    }
-  ];
 
   return (
     <div className="research-initiatives-container">
@@ -165,11 +135,11 @@ export const ResearchInitiatives: React.FC = () => {
         <span className="btn-text">View More</span>
       </button>
       </div>
-      
+
       <div className="research-cards-container">
-        {researchData.map((research, index) => (
-          <ResearchCard key={index} {...research} />
-        ))}
+      {latestThreeProjects.map((project, index) => (
+        <ResearchCard key={index} {...mapToResearchCardProps(project)} />
+      ))}
       </div>
     </div>
   );
