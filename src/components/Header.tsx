@@ -2,11 +2,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import React, { useState} from 'react';
 import "../styles/header.css";
 import logo from '../assets/dled-clear.png';
+import { TypedText } from './TypedText';
 
 export const Header: React.FC = () => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
-  const title = "Redefining Education Through Innovation";
 
   const ButtonClickContact = () => {
   const contactSection = document.getElementById('contact');
@@ -76,15 +76,7 @@ export const Header: React.FC = () => {
       <div className="content">
       <span className="subtitle">An IIT Ropar Initiative</span>
       <h1 className="title">
-      {title.split(" ").map((word, wordIdx) => (
-        <span key={wordIdx} className="word" style={{ whiteSpace: "pre" }}>
-          {word.split("").map((char, i) => (
-            <span key={i} className="letter">{char}</span>
-          ))}
-          {/* Add space after each word except the last */}
-          {wordIdx !== title.split(" ").length - 1 && " "}
-        </span>
-      ))}
+        <TypedText text="Redefining Education Through Innovation" />
       </h1>
 
         <p className="description">

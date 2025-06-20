@@ -4,6 +4,7 @@ import "../styles/meetTheMinds.css";
 
 export const MeetTheMinds: React.FC = () => {
   const navigate = useNavigate();
+  const title = "Meet the Minds Powering DLED Innovation";
 
   const ButtonClickTeam = () => {
     navigate('/team'); 
@@ -30,7 +31,17 @@ export const MeetTheMinds: React.FC = () => {
 
       {/* Content Section */}
       <div className="content-section">
-        <h2 className="title">Meet the Minds Powering DLED Innovation</h2>
+        <h2 className="title">
+          {title.split(" ").map((word, wordIdx) => (
+              <span key={wordIdx} className="word" style={{ whiteSpace: "pre" }}>
+                {word.split("").map((char, i) => (
+                  <span key={i} className="letter">{char}</span>
+                ))}
+                {/* Add space after each word except the last */}
+                {wordIdx !== title.split(" ").length - 1 && " "}
+              </span>
+            ))}
+        </h2>
         <p className="description">
           Meet the brilliant minds behind Dhananjaya Lab's innovative research and educational designs.
         </p>

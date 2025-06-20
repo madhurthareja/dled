@@ -4,6 +4,7 @@ import "../styles/researchApproach.css";
 
 export const ResearchApproach: React.FC = () => {
   const navigate = useNavigate();
+  const title = "Our Research Approach";
 
   const ButtonClickAboutUs = () => {
     navigate('/about'); 
@@ -13,7 +14,17 @@ export const ResearchApproach: React.FC = () => {
     <div className="research-approach-container">
       <div className="content-section">
         <h2 className="research-title">
-          <span className="title-line-1">Our Research Approach</span>
+          <span className="title-line-1">
+            {title.split(" ").map((word, wordIdx) => (
+              <span key={wordIdx} className="word" style={{ whiteSpace: "pre" }}>
+                {word.split("").map((char, i) => (
+                  <span key={i} className="letter">{char}</span>
+                ))}
+                {/* Add space after each word except the last */}
+                {wordIdx !== title.split(" ").length - 1 && " "}
+              </span>
+            ))}
+          </span>
           <span className="title-line-2">Combining rigorous academic research with practical implementation</span>
         </h2>
         

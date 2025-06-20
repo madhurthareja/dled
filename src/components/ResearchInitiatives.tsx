@@ -12,6 +12,9 @@ interface ResearchCardProps {
   collaboratorLogos: string[];
 }
 
+const title = "Check Out Our Research Initiatives";
+
+
 const ResearchCard: React.FC<ResearchCardProps> = ({
   title,
   description,
@@ -145,7 +148,17 @@ export const ResearchInitiatives: React.FC = () => {
 
   return (
     <div className="research-initiatives-container">
-      <h2 className="section-title">Check out our Research Initiatives</h2>
+      <h2 className="section-title">
+      {title.split(" ").map((word, wordIdx) => (
+        <span key={wordIdx} className="word" style={{ whiteSpace: "pre" }}>
+          {word.split("").map((char, i) => (
+            <span key={i} className="letter">{char}</span>
+          ))}
+          {/* Add space after each word except the last */}
+          {wordIdx !== title.split(" ").length - 1 && " "}
+        </span>
+      ))}
+      </h2>
 
       <div className="section-description" style= {{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <button className="visit-research-btn" style= {{ marginTop: '-25px', marginBottom: '25px' }} onClick={() => window.location.href = "/research"}>
