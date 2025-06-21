@@ -12,7 +12,8 @@ export const ResearchApproach: React.FC = () => {
 
   return (
     <div className="research-approach-container">
-      <div className="content-section">
+      <div className="main-content-layout">
+      <div className="content-section content-wrapper">
         <h2 className="research-title">
           <span className="title-line-1">
             {title.split(" ").map((word, wordIdx) => (
@@ -46,7 +47,7 @@ export const ResearchApproach: React.FC = () => {
           <div className="card-content">
             <h3 className="card-title">Interdisciplinary Teams</h3>
             <p className="card-description">
-              Combining expertise from education, computer science, and cognitive psychology
+              Expertise in education, computer science, and cognitive psychology
             </p>
           </div>
         </div>
@@ -76,6 +77,7 @@ export const ResearchApproach: React.FC = () => {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

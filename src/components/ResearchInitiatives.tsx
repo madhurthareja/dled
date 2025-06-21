@@ -1,5 +1,6 @@
 import "../styles/researchInitiatives.css";
 import { researchProjects } from '../app/research';
+import React from 'react';
 
 interface ResearchCardProps {
   title: string;
@@ -119,20 +120,25 @@ export const ResearchInitiatives: React.FC = () => {
   return (
     <div className="research-initiatives-container">
       <h2 className="section-title">
-      {title.split(" ").map((word, wordIdx) => (
-        <span key={wordIdx} className="word" style={{ whiteSpace: "pre" }}>
-          {word.split("").map((char, i) => (
-            <span key={i} className="letter">{char}</span>
-          ))}
+      {title.split(" ").map((word, wordIdx, arr) => (
+        <React.Fragment key={wordIdx}>
+          <span className="word" style={{ whiteSpace: "pre" }}>
+            {word.split("").map((char, i) => (
+              <span key={i} className="letter">{char}</span>
+            ))}
+          </span>
           {/* Add space after each word except the last */}
-          {wordIdx !== title.split(" ").length - 1 && " "}
-        </span>
+          {wordIdx !== arr.length - 1 && " "}
+          {/* Insert a line break after "Our" */}
+          {word === "Our" && <br />}
+        </React.Fragment>
       ))}
-      </h2>
+    </h2>
+      
 
       <div className="section-description" style= {{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <button className="visit-research-btn" style= {{ marginTop: '-25px', marginBottom: '25px' }} onClick={() => window.location.href = "/research"}>
-        <span className="btn-text">View More</span>
+        <span className="btn-text">Explore Our Research</span>
       </button>
       </div>
 
