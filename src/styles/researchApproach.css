@@ -73,6 +73,13 @@ html, body {
   justify-content: center;
 }
 
+.about-button:hover {
+  background-color: #5e5c47;
+  transform:
+    scale(1.02);
+  transition: background-color 0.1s ease, transform 0.1s ease;
+}
+
 .button-text {
   color: #f9f08d;
   font-weight: 600;
@@ -310,7 +317,7 @@ background: linear-gradient(105deg, #f8bce7 0%, #fdd9ac 100%);
 
   .research-description {
     color: #383434;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 28px;
     opacity: 0.7;

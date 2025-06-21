@@ -67,16 +67,39 @@
 }
 
 .submit-btn {
-  background-color: #000000;
+  background-color: #383434;
   color: #f9f08d;
   border: none;
   border-radius: 8px;
   padding: 12px 28px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   margin-top: 16px;
   width: fit-content;
+}
+
+.about-button {
+  color: #383434;
+  border-radius: 8px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-button:hover {
+  background-color: #5e5c47;
+  transform:
+    scale(1.02);
+  transition: background-color 0.1s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+  background-color: #5e5c47;
+  transform:
+    scale(1.02);
+  transition: background-color 0.1s ease, transform 0.1s ease;
 }
 
 /* Desktop styles */

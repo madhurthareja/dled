@@ -9,6 +9,8 @@
   padding: 0;
   margin: 0 auto;
   background-color: white;
+
+  gap: 56px;
 }
 
 .image-grid {
@@ -33,14 +35,14 @@
 }
 
 .title {
-  color: #000000;
+  color: #383434;
   font-weight: 700;
   margin: 0 0 24px 0;
   padding: 0;
 }
 
 .description {
-  color: #000000;
+  color: #383434;
   font-weight: 400;
   opacity: 0.7;
   margin: 0 0 32px 0;
@@ -66,14 +68,28 @@
 }
 
 .primary-button {
-  background-color: #000000;
+  background-color: #383434;
   color: #f9f08d;
+}
+
+.primary-button:hover {
+  background-color: #5e5c47;
+  transform:
+    scale(1.02);
+  transition: background-color 0.1s ease, transform 0.1s ease;
 }
 
 .secondary-button {
   background-color: transparent;
-  color: #000000;
-  border: 1px solid #000000;
+  color: #383434;
+  border: 1px solid #383434;
+}
+
+.secondary-button:hover {
+  background-color: #eeebcd;
+  transform:
+    scale(1.02);
+  transition: background-color 0.1s ease, transform 0.1s ease;
 }
 
 /* Desktop styles */
