@@ -4,7 +4,7 @@ import "../styles/meetTheMinds.css";
 
 export const MeetTheMinds: React.FC = () => {
   const navigate = useNavigate();
-  const title = "Meet the Minds Powering DLED's Innovation";
+  const title = "Meet the Minds Powering DLED";
 
   const ButtonClickTeam = () => {
     navigate('/team'); 
@@ -47,7 +47,7 @@ export const MeetTheMinds: React.FC = () => {
         </p>
         
         <div className="button-group">
-          <button className="primary-button" onClick={ButtonClickTeam}>Browse Team</button>
+          <button className="primary-button" onClick={ButtonClickTeam}>Browse Our Teams</button>
           <button className="secondary-button" onClick={ButtonClickMentor}>Become a Mentor</button>
         </div>
       </div>

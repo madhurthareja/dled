@@ -213,7 +213,7 @@ background: linear-gradient(105deg, #f8bce7 0%, #fdd9ac 100%);
     flex-direction: row;
     justify-content: space-between; 
     align-items: flex-start;
-    gap: 3rem; /* controls the gap between research and cards */
+    gap: 7rem; /* controls the gap between research and cards */
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -347,12 +347,13 @@ background: linear-gradient(105deg, #f8bce7 0%, #fdd9ac 100%);
   }
 
   .feature-card {
-    width: calc(100% - 22px); /* Adjusted width to account for rotation */
+    width: calc(100% - 322px); /* Adjusted width to account for rotation */
     height: auto;
     min-height: 75px;
     background-color: white;
     border-radius: 16px;
     padding: 12px 16px;
+    margin-left: 230px;
     margin-bottom: 24px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     box-sizing: border-box; /* Ensure padding is included in width */
@@ -360,12 +361,12 @@ background: linear-gradient(105deg, #f8bce7 0%, #fdd9ac 100%);
 
   .card-rotate-left {
     transform: rotate(-4deg);
-    margin-left: 4px;
+    margin-left: 160px;
   }
 
   .card-rotate-right {
     transform: rotate(4deg);
-    margin-left: 4px;
+    margin-left: 140px;
   }
 
   .card-icon {
@@ -393,7 +394,7 @@ background: linear-gradient(105deg, #f8bce7 0%, #fdd9ac 100%);
 
   .card-title {
     color: #383434;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 21px;
     margin-bottom: 4px;
@@ -402,7 +403,7 @@ background: linear-gradient(105deg, #f8bce7 0%, #fdd9ac 100%);
 
   .card-description {
     color: #3b3b62;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 12.6px;
     word-break: break-word; /* Prevent description overflow */
