@@ -2,10 +2,25 @@ import React from "react";
 import "../styles/contactSection.css";
 
 export const ContactSection: React.FC = () => {
+
+  const today = new Date();
+  const formattedDate = `${String(today.getMonth() + 1).padStart(2, '0')}/${String(today.getDate()).padStart(2, '0')}/${today.getFullYear()}`;
+  const title = "Get in Touch with Us";
+
   return (
-    <div className="contact-container">
+    <div id="contact" className="contact-container">
       <div className="contact-text">
-        <h2 className="contact-title">Get in touch with us</h2>
+        <h2 className="contact-title">
+          {title.split(" ").map((word, wordIdx) => (
+            <span key={wordIdx} className="word" style={{ whiteSpace: "pre" }}>
+              {word.split("").map((char, i) => (
+                <span key={i} className="letter">{char}</span>
+              ))}
+              {/* Add space after each word except the last */}
+              {wordIdx !== title.split(" ").length - 1 && " "}
+            </span>
+          ))}
+        </h2>
         <p className="contact-description">
           Discover the vision, values, and innovations driving DLED Lab as we explore how design, research, and technology come together to transform education.
         </p>
@@ -25,19 +40,14 @@ export const ContactSection: React.FC = () => {
 
           <div className="form-row">
             <div className="form-group">
-              <input type="tel" id="phone" className="form-input" placeholder="Phone Number" />
-            </div>
-            <div className="form-group">
-              <input type="text" id="university" className="form-input" placeholder="University" />
-            </div>
-          </div>
-
-          <div className="form-row">
-            <div className="form-group">
-              <input type="text" id="course" className="form-input" placeholder="Course" />
-            </div>
-            <div className="form-group">
-              <input type="text" id="year" className="form-input" placeholder="mm/dd/yyyy" />
+              <input
+                type="text"
+                id="year"
+                className="form-input"
+                placeholder="mm/dd/yyyy"
+                value={formattedDate}
+                readOnly
+              />
             </div>
           </div>
 

@@ -10,7 +10,7 @@ const About = () => {
         <div className="container py-6">
           <div className="row align-items-center min-vh-60">
             <div className="col-lg-7">
-              <h1 className="display-3 fw-bold text-white mb-4">
+              <h1 className="display-3 fw-bold mb-4">
                 Redefining Education Through <span className="text-primary">Innovation</span>
               </h1>
               <p className="lead text-white-80 mb-4">

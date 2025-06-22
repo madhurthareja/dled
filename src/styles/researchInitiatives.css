@@ -7,11 +7,11 @@
 }
 
 .section-title {
-  color: #000000;
-  font-size: 48px;
+  color: #383434;
+  font-size: 3.5rem;
   font-weight: 700;
   letter-spacing: 0;
-  line-height: 67.2px;
+  line-height: 77.2px;
   text-align: center;
   padding-top: 85px;
   /* margin-top: 85px; */
@@ -92,6 +92,40 @@
   font-weight: 700;
 }
 
+.visit-research-btn {
+  font-family: "Manrope", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 7px 24px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.1s;
+  outline: none;
+
+  background-color: rgb(221, 109, 161);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border: none;
+}
+
+.visit-research-btn:focus, .visit-research-btn:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  background-color: #ca4382;
+  color: #f8f8f8;
+  transform: translateY(-1px) scale(1.01);
+}
+
+.visit-research-btn:active {
+  background-color: #333;
+  color: #fffbe0;
+  transform: translateY(-1px) scale(1.01);
+}
+
 .card-title {
   color: #000000;
   font-size: 24px;
@@ -102,7 +136,7 @@
 }
 
 .card-description {
-  color: #000000;
+  color: #383434;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.32px;
@@ -123,7 +157,7 @@
 }
 
 .detail-title {
-  color: #000000;
+  color: #383434;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 0;
@@ -132,7 +166,7 @@
 }
 
 .detail-text {
-  color: #000000;
+  color: #383434;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0;
@@ -190,7 +224,7 @@
 
   .research-card {
     width: calc(33.333% - 48px);
-    min-height: 822px;
+    min-height: 542px;
     padding: 24px;
   }
 

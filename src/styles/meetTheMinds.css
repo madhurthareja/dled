@@ -4,17 +4,21 @@
   width: 100%;
   font-family: "Manrope", Helvetica, sans-serif;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   padding: 0;
   margin: 0 auto;
   background-color: white;
+
+  gap: 36px;
 }
 
 .image-grid {
   display: grid;
-  gap: 25px;
   margin-bottom: 40px;
+  gap: 18px;
+  margin-bottom: 0;
+  width: 320px; 
 }
 
 .grid-item {
@@ -33,14 +37,15 @@
 }
 
 .title {
-  color: #000000;
+  color: #443f3f;
   font-weight: 700;
   margin: 0 0 24px 0;
   padding: 0;
 }
 
-.description {
-  color: #000000;
+p.description {
+  color: #443f3f;
+  font-size: 1.3rem;
   font-weight: 400;
   opacity: 0.7;
   margin: 0 0 32px 0;
@@ -66,14 +71,33 @@
 }
 
 .primary-button {
-  background-color: #000000;
+  background-color: #383434;
   color: #f9f08d;
+}
+
+.primary-button:hover {
+  background-color: #5e5c47;
+  transform:
+    scale(1.02);
+  transition: background-color 0.1s ease, transform 0.1s ease;
 }
 
 .secondary-button {
   background-color: transparent;
-  color: #000000;
-  border: 1px solid #000000;
+  color: #383434;
+  border: 1px solid #383434;
+}
+
+.secondary-button:hover {
+  background-color: #eeebcd;
+  transform:
+    scale(1.02);
+  transition: background-color 0.1s ease, transform 0.1s ease;
+}
+
+.content-section .title {
+  color: #443f3f;
+  font-size: 4rem;
 }
 
 /* Desktop styles */
@@ -89,7 +113,8 @@
   }
 
   .image-grid {
-    width: 514px;
+    display: grid;
+    width: 75%;
     grid-template-columns: repeat(3, 155px);
     grid-template-rows: repeat(3, 153px);
     gap: 25px;
@@ -105,11 +130,12 @@
   .title {
     font-size: 48px;
     line-height: 67.2px;
+    font-size: 34px;
   }
 
-  .description {
+  p.description {
     font-size: 18px;
-    line-height: 32px;
+    line-height: 28px;
     letter-spacing: 0.36px;
     width: 547px;
     margin-bottom: 72px;
@@ -123,22 +149,37 @@
 /* Mobile styles */
 @media (max-width: 991px) {
   .meet-the-minds {
+    color: #443f3f;
     padding: 0px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+  }
+
+  .content-section {
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
   }
 
   .image-grid {
-    width: 100%;
+    display: grid;
+    width: 75%;
     grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 32px;
+    margin: 0 auto 0 auto;
   }
 
-  .title {
+  .content-section .title {
     font-size: 32px;
+    font-weight: 700;
     line-height: 44.8px;
     margin-bottom: 16px;
+    text-align: center;
   }
 
-  .description {
+  p.description {
     font-size: 16px;
     line-height: 28px;
     letter-spacing: 0.32px;

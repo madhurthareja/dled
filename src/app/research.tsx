@@ -1,70 +1,136 @@
 import { useState } from 'react';
-import { FaFlask, FaChartLine, FaEye, FaUsers, FaRobot, FaCertificate } from 'react-icons/fa';
+import { FaFlask, FaChartLine, FaRobot, FaUsers,  FaChartBar } from 'react-icons/fa'; // FaEye, FaRobot, FaCertificate, FaChartBar
+
+
+// Export the array so it can be imported in ResearchInitiatives.tsx
+export const researchProjects = [
+    {
+      id: 1,
+      title: 'Dopamine Driving through Dashboard (DDD)',
+      status: 'ongoing',
+      description: 'The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at DLED Lab, enabling data-informed decision-making.',
+      focusArea: 'Educational Technology',
+      team: ['Sakshi (Ph.D. Scholar, CSE, under Dr. Sudarshan Iyengar)'],
+      partners: ['DLED Lab'],
+      timeline: '2023-2025',
+      outcomes: [
+        'Modular dashboard system for live tracking of research and product initiatives',
+        'Improved visibility into student/faculty engagement and contributions',
+        'Scalable design supporting multiple datasets and real-time visualisation'
+      ],
+      imageUrl: "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      icon: <FaChartBar className="text-info" size={32} />
+    }, 
+
+    {
+      id: 2,
+      title: 'Peer Evaluation System (PES)',
+      status: 'ongoing',
+      description: 'The Peer Evaluation System (PES) is a scalable, web-based tool designed to streamline and enhance peer assessment workflows in educational settings. Developed with a focus on transparency, fairness, and feedback quality, PES supports structured evaluation in both individual and group activities, empowering instructors and learners through data-driven insights.',
+      focusArea: 'Educational Technology',
+      team: ['Rohit Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)'],
+      partners: [],
+      timeline: '2023-2025',
+      outcomes: [
+      'Customizable peer evaluation forms integrated with participation data',
+      'Analytics dashboard for instructors to identify patterns, biases, and anomalies',
+      'Integration-ready system for LMS platforms and classroom tools',
+      'Support for both formative and summative peer assessments',
+      'Poll automation'
+      ],
+      imageUrl: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      icon: <FaUsers className="text-dark" size={32} />
+    },
+
+    {
+    id: 3,
+    title: 'Poll Automation',
+    status: 'ongoing',
+    description: 'The Poll Automation project is a real-time classroom intelligence system designed to enhance interactivity in live teaching sessions. By leveraging live audio transcripts, the web application listens to ongoing lectures, generates summaries, and automatically crafts contextual polls every five minutes (adjustable by the instructor). This fosters continuous engagement, checks comprehension, and provides instructors with live feedback loops.',
+    focusArea: 'Educational Technology',
+    team: [
+    'Sakshi Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)',
+    'Rohit Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)',
+    'Meenakshi (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)'
+    ],
+    partners: ['Dopamine Driving through Dashboard (DDD)', 'Peer Evaluation System (PES)'],
+    timeline: '2025-2025',
+    outcomes: [
+    'Real-time speech-to-text transcription system for live classes',
+    'Automated, context-aware poll generation with instructor override features',
+    'Seamless integration with dashboards (DDD) and feedback mechanisms (PES)',
+    'Enhanced classroom interactivity and adaptive teaching support'
+    ],
+    imageUrl: "https://images.unsplash.com/photo-1576400883215-7083980b6193?q=80&w=1626&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    icon: <FaRobot className="text-primary" size={32} />
+    }
+];
+
+
 
 const Research = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   
   const researchProjects = [
+
     {
       id: 1,
-      title: 'Continuous Active Learning Platform',
+      title: 'Dopamine Driving through Dashboard (DDD)',
       status: 'ongoing',
-      description: 'Developing an AI-assisted Learning Management System that adapts in real-time to student performance and engagement levels, providing personalized learning pathways.',
-      focusArea: 'AI in Education',
-      team: ['Dr. Sharma (PI)', '2 PhD Students', '3 Research Assistants'],
-      partners: ['Ministry of Education', 'Google EDU'],
-      timeline: '2023-2026',
+      description: 'The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at DLED Lab, enabling data-informed decision-making.',
+      focusArea: 'Educational Technology',
+      team: ['Sakshi (Ph.D. Scholar, CSE, under Dr. Sudarshan Iyengar)'],
+      partners: ['DLED Lab'],
+      timeline: '2023-2025',
       outcomes: [
-        'Patent pending for adaptive algorithm',
-        'Pilot testing in 5 schools'
+        'Modular dashboard system for live tracking of research and product initiatives',
+        'Improved visibility into student/faculty engagement and contributions',
+        'Scalable design supporting multiple datasets and real-time visualisation'
       ],
-      icon: <FaRobot className="text-primary" size={32} />
-    },
+      icon: <FaChartBar className="text-info" size={32} />
+    }, 
+
     {
       id: 2,
-      title: 'Automated Peer Evaluation System',
+      title: 'Peer Evaluation System (PES)',
       status: 'ongoing',
-      description: 'Creating a machine learning-based system that facilitates and enhances peer review processes in massive online courses with fairness and accuracy metrics.',
-      focusArea: 'Educational Assessment',
-      team: ['Prof. Gupta (PI)', '1 Postdoc', '4 Graduate Students'],
-      partners: ['Coursera', 'IIT Bombay'],
-      timeline: '2024-2025',
+      description: 'The Peer Evaluation System (PES) is a scalable, web-based tool designed to streamline and enhance peer assessment workflows in educational settings. Developed with a focus on transparency, fairness, and feedback quality, PES supports structured evaluation in both individual and group activities, empowering instructors and learners through data-driven insights.',
+      focusArea: 'Educational Technology',
+      team: ['Rohit Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)'],
+      partners: [],
+      timeline: '2023-2025',
       outcomes: [
-        'Framework published in IEEE TLT',
-        'Integration with 3 MOOC platforms'
+      'Customizable peer evaluation forms integrated with participation data',
+      'Analytics dashboard for instructors to identify patterns, biases, and anomalies',
+      'Integration-ready system for LMS platforms and classroom tools',
+      'Support for both formative and summative peer assessments',
+      'Poll automation'
       ],
-      icon: <FaUsers className="text-success" size={32} />
+      icon: <FaUsers className="text-dark" size={32} />
     },
+
     {
       id: 3,
-      title: 'Computer Vision for Engagement Detection',
+      title: 'Poll Automation',
       status: 'ongoing',
-      description: 'Using gaze detection and facial expression analysis to measure student engagement in digital learning environments with privacy-preserving techniques.',
-      focusArea: 'Computer Vision',
-      team: ['Dr. Patel (PI)', '3 PhD Students'],
-      partners: ['Microsoft Research', 'NSF'],
-      timeline: '2024-2027',
-      outcomes: [
-        '90% accuracy in engagement prediction',
-        'Real-time dashboard for instructors'
-      ],
-      icon: <FaEye className="text-danger" size={32} />
-    },
-    {
-      id: 4,
-      title: 'Blockchain for Credential Verification',
-      status: 'completed',
-      description: 'Developed a decentralized system for secure and tamper-proof academic credential verification using blockchain technology.',
+      description: 'The Poll Automation project is a real-time classroom intelligence system designed to enhance interactivity in live teaching sessions. By leveraging live audio transcripts, the web application listens to ongoing lectures, generates summaries, and automatically crafts contextual polls every five minutes (adjustable by the instructor). This fosters continuous engagement, checks comprehension, and provides instructors with live feedback loops.',
       focusArea: 'Educational Technology',
-      team: ['Prof. Kumar (PI)', '2 Research Engineers'],
-      partners: ['Ethereum Foundation', 'UGC'],
-      timeline: '2021-2023',
-      outcomes: [
-        'Implemented at 3 universities',
-        'Reduced verification time by 80%'
+      team: [
+      'Sakshi Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)',
+      'Rohit Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)',
+      'Meenakshi (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)'
       ],
-      icon: <FaCertificate className="text-warning" size={32} />
+      partners: ['Dopamine Driving through Dashboard (DDD)', 'Peer Evaluation System (PES)'],
+      timeline: 'Feb 2025 – Dec 2025',
+      outcomes: [
+      'Real-time speech-to-text transcription system for live classes',
+      'Automated, context-aware poll generation with instructor override features',
+      'Seamless integration with dashboards (DDD) and feedback mechanisms (PES)',
+      'Enhanced classroom interactivity and adaptive teaching support'
+      ],
+      icon: <FaRobot className="text-primary" size={32} />
     }
+
   ];
 
   const filteredProjects = activeFilter === 'all' 

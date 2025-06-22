@@ -1,35 +1,37 @@
 import "../styles/footerFile.css";
 import { Link } from 'react-router-dom';
+import logo from '../assets/dled-clear.png'; // Adjust the path as necessary
 
 export const FooterWrapper = () => {
   return (
     <footer className="footer">
+      <img className="footer-bg-img" src="https://c.animaapp.com/SP71lV0J/img/rectangle-5927.svg" alt="" />
       <div className="footer-content">
 
         <div className="footer-images">
           <img 
             className="footer-secondary-image" 
-            src="https://c.animaapp.com/SP71lV0J/img/whatsapp-image-2025-05-28-at-21-40-01-657f409f-1-1.png" 
-            alt="Secondary graphic"
+            src= {logo}
+            alt="DLED Logo"
           />
         </div>
 
+        
         <div className="footer-logo-section">
-          <div className="footer-address">
-            <h2>Our Location</h2>
-            <p>DLED, Viswesarya Block</p>
-            <p>Indian Institute of Technology Ropar</p>
-            <p>Rupnagar, Punjab 140001</p>
-          </div>
-          
-          <div className="footer-address"></div>
-          <img 
-              className="footer-main-image" 
-              src="https://c.animaapp.com/SP71lV0J/img/image-9@2x.png" 
-              alt="Footer graphic"
-            />
-          <div/>
+        <div className="footer-address">
+          <h2>Our Location</h2>
+          <p>DLED, Viswesarya Block</p>
+          <p>Indian Institute of Technology, Ropar</p>
+          <p>Rupnagar, Punjab 140001</p>
         </div>
+
+          <img 
+            className="footer-main-image"
+            src="https://c.animaapp.com/SP71lV0J/img/image-9@2x.png"
+            alt="Map of DLED Location"
+          />
+        </div>
+
 
         <div className="footer-links">
           <div className="footer-column">
