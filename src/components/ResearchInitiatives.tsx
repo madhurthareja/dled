@@ -57,21 +57,21 @@ const ResearchCard: React.FC<ResearchCardProps> = ({
     <div className="research-card">
       <div className="card-content">
         <div className="card-image-container">
-          <img className="main-image" src={imageUrl} alt={title} />
+          <img className="main-image" style = {{ opacity: 0.9 }} src={imageUrl} alt={title} />
           <div className="timeline-focus">
             <div className="timeline-focus-bg"></div>
-            <p className="timeline">
+            <p className="timeline" style = {{ fontFamily: 'monospace, sans serif' }}>
               <span className="bold">TIMELINE:&nbsp;&nbsp;</span>
               {timeline}
             </p>
-            <p className="focus">
+            <p className="focus" style = {{ fontFamily: 'monospace, sans serif' }}>
               <span className="bold">FOCUS: </span>
               {focus}
             </p>
           </div>
         </div>
         <h3 className="card-title">{title}</h3>
-        <p className="card-description">{description}</p>
+        <p className="card-description detail-text" style={{ marginTop: '20px', marginBottom : '25px', fontWeight: "normal" , fontFamily : "Segoe UI, Tahoma, Geneva, Verdana, sans-serif" , fontSize: "20px", opacity: "0.7" }}>{description}</p>
       </div>
 
       <div className="card-details">
