@@ -70,7 +70,7 @@ const ResearchCard: React.FC<ResearchCardProps> = ({
             </p>
           </div>
         </div>
-        <h3 className="card-title">{title}</h3>
+        <h3 className="card-title" style = {{ color: "#0c5ca7" }}>{title}</h3>
         <p className="card-description detail-text" style={{ marginTop: '20px', marginBottom : '25px', fontWeight: "normal" , fontFamily : "Segoe UI, Tahoma, Geneva, Verdana, sans-serif" , fontSize: "20px", opacity: "0.7" }}>{description}</p>
       </div>
 

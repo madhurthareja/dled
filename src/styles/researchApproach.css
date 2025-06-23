@@ -259,12 +259,17 @@ background: linear-gradient(105deg, #f8bce7 0%, #fdd9ac 100%);
 
   .card-title {
     font-size: 26px;
+    font-weight: 700;
     line-height: 30px;
+    font-family: "Manrope", Helvetica, sans-serif;
   }
 
   .card-description {
     font-size: 20px;
+    font-weight: 400;
     line-height: 22px;
+    color: #72726b;
+    font-family: "Manrope", Helvetica, sans-serif;
   }
 }
 
