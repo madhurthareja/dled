@@ -8,7 +8,7 @@ export const researchProjects = [
       id: 1,
       title: 'Dopamine Driving through Dashboard (DDD)',
       status: 'ongoing',
-      description: 'The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at DLED Lab, enabling data-informed decision-making.',
+      description: 'The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at DLED Lab, enabling intuitive decision-making.',
       focusArea: 'Educational Technology',
       team: ['Sakshi (Ph.D. Scholar, CSE, under Dr. Sudarshan Iyengar)'],
       partners: ['DLED Lab'],
@@ -26,17 +26,17 @@ export const researchProjects = [
       id: 2,
       title: 'Peer Evaluation System (PES)',
       status: 'ongoing',
-      description: 'The Peer Evaluation System (PES) is a scalable, web-based tool designed to streamline and enhance peer assessment workflows in educational settings. Developed with a focus on transparency, fairness, and feedback quality, PES supports structured evaluation in both individual and group activities, empowering instructors and learners through data-driven insights.',
+      description: 'The Peer Evaluation System (PES) is a scalable web tool that streamlines peer assessment in education. Designed for transparency, fairness, and quality feedback, PES supports structured evaluations for both individual and group activities, providing data-driven insights to instructors and learners.',
       focusArea: 'Educational Technology',
       team: ['Rohit Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)'],
-      partners: [],
+      partners: ['-'],
       timeline: '2023-2025',
       outcomes: [
       'Customizable peer evaluation forms integrated with participation data',
       'Analytics dashboard for instructors to identify patterns, biases, and anomalies',
       'Integration-ready system for LMS platforms and classroom tools',
-      'Support for both formative and summative peer assessments',
-      'Poll automation'
+      // 'Support for both formative and summative peer assessments',
+      // 'Poll automation'
       ],
       imageUrl: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       icon: <FaUsers className="text-dark" size={32} />
@@ -46,7 +46,7 @@ export const researchProjects = [
     id: 3,
     title: 'Poll Automation',
     status: 'ongoing',
-    description: 'The Poll Automation project is a real-time classroom intelligence system designed to enhance interactivity in live teaching sessions. By leveraging live audio transcripts, the web application listens to ongoing lectures, generates summaries, and automatically crafts contextual polls every five minutes (adjustable by the instructor). This fosters continuous engagement, checks comprehension, and provides instructors with live feedback loops.',
+    description: 'The Poll Automation project is a real-time classroom tool that uses live audio transcripts to generate lecture summaries and create contextual polls every five minutes (or as set by the instructor). This system boosts interactivity, checks comprehension, and gives instructors instant feedback during teaching sessions.',
     focusArea: 'Educational Technology',
     team: [
     'Sakshi Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)',
@@ -59,7 +59,7 @@ export const researchProjects = [
     'Real-time speech-to-text transcription system for live classes',
     'Automated, context-aware poll generation with instructor override features',
     'Seamless integration with dashboards (DDD) and feedback mechanisms (PES)',
-    'Enhanced classroom interactivity and adaptive teaching support'
+    // 'Enhanced classroom interactivity and adaptive teaching support'
     ],
     imageUrl: "https://images.unsplash.com/photo-1576400883215-7083980b6193?q=80&w=1626&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: <FaRobot className="text-primary" size={32} />
