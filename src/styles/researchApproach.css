@@ -184,8 +184,9 @@ background: linear-gradient(105deg, #f8bce7 0%, #fdd9ac 100%);
   .research-description {
     font-size: 18px;
     line-height: 32px;
-    width: 547px;
+    max-width: 547px;
     margin-top: 0;
+    margin-right: 20px;
     margin-bottom: 65px;
   }
 
@@ -207,6 +208,7 @@ background: linear-gradient(105deg, #f8bce7 0%, #fdd9ac 100%);
     max-width: 465px;
     height: 114px;
     padding: 16px;
+    margin-left: 45px;
     margin-bottom: 46px;
     padding: 5rem 3.5rem;
   }
@@ -216,7 +218,7 @@ background: linear-gradient(105deg, #f8bce7 0%, #fdd9ac 100%);
     flex-direction: row;
     justify-content: space-between; 
     align-items: flex-start;
-    gap: 2rem; /* controls the gap between research and cards */
+    gap: 1.3rem; /* controls the gap between research and cards */
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -225,7 +227,7 @@ background: linear-gradient(105deg, #f8bce7 0%, #fdd9ac 100%);
   }
 
   .content-section {
-    flex: 2 1 0;
+    flex: 1 1 0;
     min-width: 300px;
   }
 
@@ -433,5 +435,23 @@ background: linear-gradient(105deg, #f8bce7 0%, #fdd9ac 100%);
     font-weight: 400;
     line-height: 12.6px;
     word-break: break-word; /* Prevent description overflow */
+  }
+}
+
+/* For smaller devices */
+@media (max-width: 684px) { 
+  .cards-section {
+    width: auto;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .feature-card {
+    width: auto;
+    max-width: 75%;
+    margin-left: 0;
+    padding: 12px 16px;
+    box-sizing: border-box;
   }
 }
