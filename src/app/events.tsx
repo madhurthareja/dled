@@ -272,7 +272,7 @@ const Events = () => {
       <section className="py-5 text-white" style ={{ backgroundColor: 'rgb(233, 103, 52)' }}>
         <div className="container text-center py-4">
           <h2 className="display-6 fw-bold mb-4" style={{ color: 'rgb(252, 251, 196)' }}  >Have an event idea?</h2>
-          <p className="lead mb-4">We're always looking for collaborators and interesting topics</p>
+          <p className="lead mb-4">We're always looking for collaborators and interesting topics.</p>
           <button className="btn btn-light btn-lg px-4">
             Propose an Event <i className="fas fa-arrow-right ms-2"></i>
           </button>
