@@ -203,7 +203,7 @@ const Events = () => {
                             <div className="d-flex justify-content-between align-items-start mb-2">
                               <span className="badge" style={{ backgroundColor: 'rgb(223, 94, 8)', color: 'rgb(252, 251, 196)' }}  >{event.category}</span>
                               {event.status === 'upcoming' && (
-                                <span className="badge" style={{ backgroundColor: 'rgb(229, 250, 222)', color: 'rgb(59, 58, 58)' }} >Registration Open</span>
+                                <span className="badge" style={{ backgroundColor: 'rgb(248, 229, 201)', color: 'rgb(59, 58, 58)' }} >Registration Open</span>
                               )}
                             </div>
                             <h3 className="h4 card-title fw-bold">{event.title}</h3>
