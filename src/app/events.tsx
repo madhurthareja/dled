@@ -1,5 +1,71 @@
 import { useState, useEffect } from 'react';
-import { FaCalendarAlt, FaMapMarkerAlt, FaRegClock, FaTicketAlt, FaUsers } from 'react-icons/fa';
+import { FaCalendarAlt, FaMapMarkerAlt, FaRegClock } from 'react-icons/fa'; // FaTicketAlt, FaUsers
+
+// Google Calendar Functionality
+// Helper to format date and time for Google Calendar and ICS
+function parseDateTime(dateStr: string, timeStr: string) {
+  // This is a simple parser for your sample data format.
+  // You may need to enhance this for more robust parsing.
+  // Example: dateStr = 'May 15, 2025', timeStr = '10:00 AM - 4:00 PM'
+  const [startTime, endTime] = timeStr.split(" - ");
+  const start = new Date(`${dateStr} ${startTime}`);
+  const end = endTime ? new Date(`${dateStr} ${endTime}`) : new Date(start.getTime() + 60 * 60 * 1000);
+
+  // Google Calendar and ICS use UTC in YYYYMMDDTHHmmssZ format
+  const pad = (n: number) => n.toString().padStart(2, "0");
+  const format = (d: Date) =>
+    `${d.getUTCFullYear()}${pad(d.getUTCMonth() + 1)}${pad(d.getUTCDate())}T${pad(d.getUTCHours())}${pad(d.getUTCMinutes())}${pad(d.getUTCSeconds())}Z`;
+
+  return {
+    gcStart: format(start),
+    gcEnd: format(end),
+    icsStart: format(start),
+    icsEnd: format(end),
+  };
+}
+
+// Helper to generate Google Calendar link
+function getGoogleCalendarUrl(event: any) {
+  const { gcStart, gcEnd } = parseDateTime(event.date, event.time);
+  const base = "https://calendar.google.com/calendar/render?action=TEMPLATE";
+  const params = [
+    `text=${encodeURIComponent(event.title)}`,
+    `dates=${gcStart}/${gcEnd}`,
+    `details=${encodeURIComponent(event.description || "")}`,
+    `location=${encodeURIComponent(event.location || "")}`,
+  ];
+  return `${base}&${params.join("&")}`;
+}
+
+// Helper to generate and download ICS file
+function downloadICS(event: any) {
+  const { icsStart, icsEnd } = parseDateTime(event.date, event.time);
+  const icsContent = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "BEGIN:VEVENT",
+    `SUMMARY:${event.title}`,
+    `DTSTART:${icsStart}`,
+    `DTEND:${icsEnd}`,
+    `DESCRIPTION:${event.description || ""}`,
+    `LOCATION:${event.location || ""}`,
+    "END:VEVENT",
+    "END:VCALENDAR",
+  ].join("\r\n");
+
+  const blob = new Blob([icsContent], { type: "text/calendar" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `${event.title.replace(/\s+/g, "_")}.ics`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+
 
 const Events = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
@@ -14,11 +80,8 @@ const Events = () => {
       location: 'IIT Ropar Campus, Innovation Center',
       description: 'A hands-on workshop exploring the applications of AI in personalized learning systems.',
       image: '/images/events.jpg',
-      category: 'workshop',
+      category: 'Workshop',
       status: 'upcoming',
-      seats: 30,
-      registered: 24,
-      price: 'Free',
       speakers: ['Dr. Rajesh Sharma', 'Prof. Ananya Gupta']
     },
     {
@@ -29,11 +92,8 @@ const Events = () => {
       location: 'Online',
       description: 'Join us for a 48-hour hackathon to develop innovative solutions for education challenges. Prizes include incubation support and research grants.',
       image: '/images/events.jpg',
-      category: 'hackathon',
+      category: 'Hackathon',
       status: 'upcoming',
-      seats: 100,
-      registered: 78,
-      price: 'Free',
       partners: ['Google EDU', 'Microsoft Research']
     },
     {
@@ -44,11 +104,8 @@ const Events = () => {
       location: 'IIT Ropar Campus, Auditorium',
       description: 'A symposium to present and discuss the latest research in educational technology with keynote speakers from academia and industry.',
       image: '/images/events.jpg',
-      category: 'conference',
+      category: 'Conference',
       status: 'upcoming',
-      seats: 150,
-      registered: 112,
-      price: '₹500 (Students ₹200)',
       keynote: 'Dr. Priya Nair, MIT'
     },
     {
@@ -59,7 +116,7 @@ const Events = () => {
       location: 'Online',
       description: 'Learn innovative digital teaching methods from award-winning educators.',
       image: '/images/masterclass.jpg',
-      category: 'workshop',
+      category: 'Workshop',
       status: 'past',
       recording: 'Available for registered participants'
     }
@@ -152,7 +209,7 @@ const Events = () => {
                         <div className="col-md-7">
                           <div className="card-body p-4 d-flex flex-column h-100">
                             <div className="d-flex justify-content-between align-items-start mb-2">
-                              <span className="badge bg-secondary">{event.category}</span>
+                              <span className="badge text-light bg-danger">{event.category}</span>
                               {event.status === 'upcoming' && (
                                 <span className="badge bg-success">Open Registration</span>
                               )}
@@ -175,31 +232,32 @@ const Events = () => {
                             </div>
                             
                             <p className="card-text flex-grow-1">{event.description}</p>
-                            
-                            {event.status === 'upcoming' && (
-                              <div className="d-flex flex-wrap justify-content-between align-items-center mt-3 pt-3 border-top">
-                                <div className="d-flex align-items-center">
-                                  <FaUsers className="me-2 text-muted" />
-                                  <small className="text-muted">
-                                    {event.registered}/{event.seats} registered
-                                  </small>
-                                </div>
-                                <div className="d-flex align-items-center">
-                                  <FaTicketAlt className="me-2 text-muted" />
-                                  <small className="text-muted">{event.price}</small>
-                                </div>
-                              </div>
-                            )}
-                            
+
                             <div className="mt-4 d-flex gap-2">
-                              <button className="btn btn-primary flex-grow-1">
-                                {event.status === 'upcoming' ? 'Register Now' : 'View Details'}
-                              </button>
-                              <button className="btn btn-outline-secondary" title="Add to Calendar">
-                                <i className="far fa-calendar-plus" aria-hidden="true"></i>
-                                <span className="visually-hidden">Add to Calendar</span>
-                              </button>
-                            </div>
+                            <button className="btn btn-primary flex-grow-1">
+                              {event.status === 'upcoming' ? 'Register Now' : 'View Details'}
+                            </button>
+                            <a
+                              href={getGoogleCalendarUrl(event)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-outline-secondary"
+                              title="Add this event to your Google Calendar"
+                            >
+                              <i className="far fa-calendar-plus" aria-hidden="true"></i>
+                              <span className="visually-hidden">Add to Google Calendar</span>
+                            </a>
+                            <button
+                              className="btn btn-outline-secondary"
+                              title="Download .ics file to add this event to any calendar app"
+                              onClick={() => downloadICS(event)}
+                              type="button"
+                            >
+                              <i className="far fa-calendar-alt" aria-hidden="true"></i>
+                              <span className="visually-hidden">Download ICS</span>
+                            </button>
+                          </div>
+                          
                           </div>
                         </div>
                       </div>

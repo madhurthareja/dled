@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import "../styles/team.css";
 
 const Team = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -91,8 +92,8 @@ const Team = () => {
               <p className="lead mb-4 fs-4 text-secondary">
                 Meet the brilliant minds behind Dhananjaya Lab's innovative research and educational designs
               </p>
-              <a href="#team" className="btn btn-light btn-lg px-4">
-                Explore Team
+              <a href="#team" className="btn btn-lg px-4 text-light dark-button" style= {{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)' }}>
+                Explore the Team
               </a>
             </div>
             <div className="col-lg-6">

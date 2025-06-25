@@ -9,12 +9,14 @@ import Events from './app/events';
 import About from './app/about';
 import { Blog } from './app/blog';
 import ScrollToTop from './components/ScrollToTop';
+import HashScroller from './components/HashScroller';
 import './index.css';
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
+      <HashScroller />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

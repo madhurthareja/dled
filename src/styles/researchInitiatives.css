@@ -172,6 +172,7 @@
   line-height: 1.5;
   opacity: 0.8;
   margin: 0 0 8px 0;
+  cursor: pointer;
 }
 
 .collaborator-list {
@@ -246,6 +247,12 @@
 @media (max-width: 991px) {
   .research-initiatives-container {
     padding: 0 16px;
+  }
+
+  .card-description {
+    font-size: 16px;
+    line-height: 30px !important;
+    margin-bottom: 16px;
   }
 
   .section-title {

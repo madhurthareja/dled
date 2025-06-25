@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Careers = () => {
   const openings = [
     {
@@ -52,12 +54,16 @@ const Careers = () => {
               <p className="lead mb-4">
                 Join DLED and contribute to innovative educational technologies through development and research.
               </p>
+              {/*
               <a href="#openings" className="btn btn-light btn-lg me-2">
                 View Openings
               </a>
-              <a href="/contact?tab=join" className="btn btn-outline-light btn-lg">
-                Contact About Jobs
-              </a>
+              */}
+              <Link to="/#contact">
+              <button className="btn btn-outline-light btn-lg">
+              Contact Us
+              </button>
+              </Link>
             </div>
           </div>
         </div>
