@@ -161,14 +161,14 @@ const Events = () => {
               <div className="btn-group" role="group">
                 <button
                   type="button"
-                  className={`btn btn-${activeTab === 'upcoming' ? 'dark' : 'outline-dark-subtle'}`}
+                  className={`btn btn-${activeTab === 'upcoming' ? 'warning fw-bold' : 'outline-dark-subtle'}`}
                   onClick={() => setActiveTab('upcoming')}
                 >
                   Upcoming Events
                 </button>
                 <button
                   type="button"
-                  className={`btn btn-${activeTab === 'past' ? 'dark' : 'outline-dark'}`}
+                  className={`btn btn-${activeTab === 'past' ? 'warning fw-bold' : 'outline-warning'}`}
                   onClick={() => setActiveTab('past')}
                 >
                   Past Events
