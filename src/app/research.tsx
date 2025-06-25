@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 import { FaFlask, FaChartLine, FaRobot, FaUsers,  FaChartBar } from 'react-icons/fa'; // FaEye, FaRobot, FaCertificate, FaChartBar
-
+import "../styles/researchPage.css";
 
 // Export the array so it can be imported in ResearchInitiatives.tsx
 export const researchProjects = [
@@ -10,7 +11,7 @@ export const researchProjects = [
       status: 'ongoing',
       description: 'The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at DLED Lab, enabling intuitive decision-making.',
       focusArea: 'Educational Technology',
-      team: ['Sakshi (Ph.D. Scholar, CSE, under Dr. Sudarshan Iyengar)'],
+      team: ['Sakshi (Ph.D. Scholar)'],
       partners: ['DLED Lab'],
       timeline: '2023-2025',
       outcomes: [
@@ -28,7 +29,7 @@ export const researchProjects = [
       status: 'ongoing',
       description: 'The Peer Evaluation System (PES) is a scalable web tool that streamlines peer assessment in education. Designed for transparency, fairness, and quality feedback, PES supports structured evaluations for both individual and group activities, providing data-driven insights to instructors and learners.',
       focusArea: 'Educational Technology',
-      team: ['Rohit Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)'],
+      team: ['Rohit Sharma (Ph.D. Scholar)'],
       partners: ['-'],
       timeline: '2023-2025',
       outcomes: [
@@ -49,9 +50,9 @@ export const researchProjects = [
     description: 'The Poll Automation project is a real-time classroom tool that uses live audio transcripts to generate lecture summaries and create contextual polls every five minutes (or as set by the instructor). This system boosts interactivity, checks comprehension, and gives instructors instant feedback during teaching sessions.',
     focusArea: 'Educational Technology',
     team: [
-    'Sakshi Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)',
-    'Rohit Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)',
-    'Meenakshi (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)'
+    'Sakshi Sharma (Ph.D. Scholar)',
+    'Rohit Sharma (Ph.D. Scholar)',
+    'Meenakshi (Ph.D. Scholar)'
     ],
     partners: ['Dopamine Driving through Dashboard (DDD)', 'Peer Evaluation System (PES)'],
     timeline: '2025-2025',
@@ -79,7 +80,7 @@ const Research = () => {
       status: 'ongoing',
       description: 'The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at DLED Lab, enabling data-informed decision-making.',
       focusArea: 'Educational Technology',
-      team: ['Sakshi (Ph.D. Scholar, CSE, under Dr. Sudarshan Iyengar)'],
+      team: ['Sakshi (Ph.D. Scholar)'],
       partners: ['DLED Lab'],
       timeline: '2023-2025',
       outcomes: [
@@ -96,8 +97,8 @@ const Research = () => {
       status: 'ongoing',
       description: 'The Peer Evaluation System (PES) is a scalable, web-based tool designed to streamline and enhance peer assessment workflows in educational settings. Developed with a focus on transparency, fairness, and feedback quality, PES supports structured evaluation in both individual and group activities, empowering instructors and learners through data-driven insights.',
       focusArea: 'Educational Technology',
-      team: ['Rohit Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)'],
-      partners: [],
+      team: ['Rohit Sharma (Ph.D. Scholar)'],
+      partners: ['-'],
       timeline: '2023-2025',
       outcomes: [
       'Customizable peer evaluation forms integrated with participation data',
@@ -116,9 +117,9 @@ const Research = () => {
       description: 'The Poll Automation project is a real-time classroom intelligence system designed to enhance interactivity in live teaching sessions. By leveraging live audio transcripts, the web application listens to ongoing lectures, generates summaries, and automatically crafts contextual polls every five minutes (adjustable by the instructor). This fosters continuous engagement, checks comprehension, and provides instructors with live feedback loops.',
       focusArea: 'Educational Technology',
       team: [
-      'Sakshi Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)',
-      'Rohit Sharma (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)',
-      'Meenakshi (Ph.D. Scholar, IIT Ropar, under Dr. Sudarshan Iyengar)'
+      'Sakshi Sharma (Ph.D. Scholar)',
+      'Rohit Sharma (Ph.D. Scholar)',
+      'Meenakshi (Ph.D. Scholar)'
       ],
       partners: ['Dopamine Driving through Dashboard (DDD)', 'Peer Evaluation System (PES)'],
       timeline: 'Feb 2025 – Dec 2025',
@@ -151,10 +152,10 @@ const Research = () => {
                 Pioneering the future of education through technology and innovation
               </p>
               <div className="d-flex gap-3">
-                <button className="btn btn-light btn-lg px-4">
+                <button className="btn btn-lg px-4 text-light dark-button" style= {{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)' }}>
                   Collaborate With Us
                 </button>
-                <button className="btn btn-outline-light text-dark btn-lg px-4" style ={{ borderWidth: '3.5px' }}>
+                <button className="btn btn-lg px-4 light-button" style ={{ borderWidth: '1.3px', borderColor: 'rgb(233, 103, 52)', color: 'rgb(233, 103, 52)' }}>
                   View Publications
                 </button>
               </div>
@@ -265,9 +266,11 @@ const Research = () => {
                             <h6 className="text-muted small mb-2">Collaborators</h6>
                             <p className="small fw-bold">{project.partners.join(', ')}</p>
                           </div>
+                          {/*
                           <button className="btn btn-sm btn-outline-secondary" style={{ marginLeft: '8px' }}>
                             Learn More <i className="fas fa-arrow-right ms-1"></i>
                           </button>
+                          */}
                         </div>
                       </div>
                     </div>
@@ -330,13 +333,13 @@ const Research = () => {
         <div className="container text-center py-4">
           <h2 className="display-6 fw-bold mb-4">Interested in our research?</h2>
           <p className="lead mb-4">We welcome collaborations with academia and industry</p>
+
           <div className="d-flex justify-content-center gap-3">
+          <Link to="/#contact">
             <button className="btn btn-light btn-lg px-4">
-              Join as Researcher <i className="fas fa-user-graduate ms-2"></i>
+              Contact Us
             </button>
-            <button className="btn btn-outline-light btn-lg px-4">
-              Partner With Us <i className="fas fa-handshake ms-2"></i>
-            </button>
+          </Link>
           </div>
         </div>
       </section>

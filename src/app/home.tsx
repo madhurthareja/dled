@@ -5,6 +5,8 @@ import { MeetTheMinds } from "../components/MeetTheMinds";
 import { AboutDLED } from "../components/AboutDled";
 import { ContactSection } from "../components/ContactSection";
 import { FooterWrapper } from "../components/FooterFile";
+// import { useEffect } from "react";
+// import { useLocation } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -34,5 +36,4 @@ const Home = () => {
   </div>
   );
 };
-
 export default Home;

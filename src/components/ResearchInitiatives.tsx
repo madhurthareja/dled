@@ -76,7 +76,7 @@ const ResearchCard: React.FC<ResearchCardProps> = ({
 
       <div className="card-details">
         <div className="research-team">
-          <p className="detail-title bold">Research team</p>
+          <p className="detail-title bold">Research Team</p>
           {researchTeam.map((member, index) => (
             <p key={index} className="detail-text">
               {member}
