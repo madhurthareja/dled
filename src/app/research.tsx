@@ -345,9 +345,9 @@ const Research = () => {
           </div>
         </div>
       </section>
-      <section className="py-5 bg-dark text-white">
+      <section className="py-5 text-white" style ={{ backgroundColor: 'rgb(233, 103, 52)' }}>
         <div className="container text-center py-4">
-          <h2 className="display-6 fw-bold mb-4">Interested in our research?</h2>
+          <h2 className= "display-6 fw-bold mb-4" style={{ color: 'rgb(252, 251, 196)' }} >Interested in our research?</h2>
           <p className="lead mb-4">We welcome collaborations with academia and industry</p>
 
           <div className="d-flex justify-content-center gap-3">
