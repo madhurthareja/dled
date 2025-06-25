@@ -134,23 +134,15 @@ const Events = () => {
   return (
     <div className="events-page">
       {/* Hero Section  */}
-      <section className="hero-section bg-dark text-white py-6 position-relative overflow-hidden">
-        <div className="position-absolute w-100 h-100 bg-dark opacity-75"></div>
-        <div 
-          className="position-absolute w-100 h-100 bg-cover bg-center" 
-          style={{
-            backgroundImage: 'url(/images/events-hero.jpg)',
-            backgroundAttachment: 'fixed'
-          }}
-        ></div>
+      <section className="hero-section text-white py-6" style={{ background: 'linear-gradient(130deg,rgb(253, 232, 224) 0%,rgb(253, 249, 247) 85%)' }}>
         <div className="container position-relative py-5">
-          <h1 className="display-4 fw-bold mb-4 animate__animated animate__fadeInDown">Events at DLED</h1>
-          <p className="lead fs-3 mb-4 animate__animated animate__fadeIn animate__delay-1s">
+          <h1 className="display-4 text-black fw-bold mb-4 mt-4">Events at DLED</h1>
+          <p className="lead mb-4 fs-4 text-secondary">
             Join our knowledge-sharing community
           </p>
-          <div className="d-flex gap-3 animate__animated animate__fadeIn animate__delay-2s">
-            <button className="btn btn-primary btn-lg px-4">Subscribe to Updates</button>
-            <button className="btn btn-outline-light btn-lg px-4">Past Events Archive</button>
+          <div>
+            <button className="btn btn-lg px-4 text-light dark-button" style={{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)', marginRight: '20px'}} >Subscribe to Updates </button>
+            <button className="btn btn-lg px-4 light-button" style ={{ borderWidth: '1.3px', borderColor: 'rgb(233, 103, 52)', color: 'rgb(233, 103, 52)' }} >Past Events Archive</button>
           </div>
         </div>
       </section>
@@ -169,14 +161,14 @@ const Events = () => {
               <div className="btn-group" role="group">
                 <button
                   type="button"
-                  className={`btn btn-${activeTab === 'upcoming' ? 'primary' : 'outline-primary'}`}
+                  className={`btn btn-${activeTab === 'upcoming' ? 'dark' : 'outline-dark-subtle'}`}
                   onClick={() => setActiveTab('upcoming')}
                 >
                   Upcoming Events
                 </button>
                 <button
                   type="button"
-                  className={`btn btn-${activeTab === 'past' ? 'primary' : 'outline-primary'}`}
+                  className={`btn btn-${activeTab === 'past' ? 'dark' : 'outline-dark'}`}
                   onClick={() => setActiveTab('past')}
                 >
                   Past Events
@@ -209,9 +201,9 @@ const Events = () => {
                         <div className="col-md-7">
                           <div className="card-body p-4 d-flex flex-column h-100">
                             <div className="d-flex justify-content-between align-items-start mb-2">
-                              <span className="badge text-light bg-danger">{event.category}</span>
+                              <span className="badge" style={{ backgroundColor: 'rgb(223, 94, 8)', color: 'rgb(252, 251, 196)' }}  >{event.category}</span>
                               {event.status === 'upcoming' && (
-                                <span className="badge bg-success">Open Registration</span>
+                                <span className="badge" style={{ backgroundColor: 'rgb(229, 250, 222)', color: 'rgb(59, 58, 58)' }} >Registration Open</span>
                               )}
                             </div>
                             <h3 className="h4 card-title fw-bold">{event.title}</h3>
@@ -234,7 +226,7 @@ const Events = () => {
                             <p className="card-text flex-grow-1">{event.description}</p>
 
                             <div className="mt-4 d-flex gap-2">
-                            <button className="btn btn-primary flex-grow-1">
+                            <button className="btn btn-warning text-dark fw-bold flex-grow-1">
                               {event.status === 'upcoming' ? 'Register Now' : 'View Details'}
                             </button>
                             <a
@@ -257,7 +249,7 @@ const Events = () => {
                               <span className="visually-hidden">Download ICS</span>
                             </button>
                           </div>
-                          
+
                           </div>
                         </div>
                       </div>
@@ -277,9 +269,9 @@ const Events = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-5 bg-primary text-white">
+      <section className="py-5 text-white" style ={{ backgroundColor: 'rgb(233, 103, 52)' }}>
         <div className="container text-center py-4">
-          <h2 className="display-6 fw-bold mb-4">Have an event idea?</h2>
+          <h2 className="display-6 fw-bold mb-4" style={{ color: 'rgb(252, 251, 196)' }}  >Have an event idea?</h2>
           <p className="lead mb-4">We're always looking for collaborators and interesting topics</p>
           <button className="btn btn-light btn-lg px-4">
             Propose an Event <i className="fas fa-arrow-right ms-2"></i>
