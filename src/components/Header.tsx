@@ -114,7 +114,7 @@ export const Header: React.FC = () => {
           <img
             className="subtract"
             src="https://c.animaapp.com/SP71lV0J/img/subtract.svg"
-            alt="Decorative element"
+            alt="Yellow semicircle"
           />
           <img
             className="subtract subtract-2"
