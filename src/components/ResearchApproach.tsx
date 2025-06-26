@@ -1,14 +1,16 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import "../styles/researchApproach.css";
 
 export const ResearchApproach: React.FC = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const title = "Our Research Approach";
-
+ 
+  /*
   const ButtonClickResearchPage = () => {
     navigate('/research'); 
   };
+  */
 
   return (
     <div id="research-approach" className="research-approach-container">
@@ -33,8 +35,8 @@ export const ResearchApproach: React.FC = () => {
           At DLED Lab, we blend rigorous academic research with real-world implementation to create impactful, practical solutions.
         </p>
         
-        <button className="about-button" onClick={ButtonClickResearchPage} >
-          <span className="button-text">About Us</span>
+        <button className="about-button" /* onClick={ButtonClickResearchPage} */ >
+          <span className="button-text">Collaborate with Us</span>
         </button>
       </div>
       
