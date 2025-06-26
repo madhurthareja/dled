@@ -122,7 +122,7 @@ const Research = () => {
       'Meenakshi (Ph.D. Scholar)'
       ],
       partners: ['Dopamine Driving through Dashboard (DDD)', 'Peer Evaluation System (PES)'],
-      timeline: 'Feb 2025 – Dec 2025',
+      timeline: '2025 - 2025',
       outcomes: [
       'Real-time speech-to-text transcription system for live classes',
       'Automated, context-aware poll generation with instructor override features',
@@ -130,8 +130,24 @@ const Research = () => {
       'Enhanced classroom interactivity and adaptive teaching support'
       ],
       icon: <FaRobot className="text-primary" size={32} />
-    }
+    },
 
+    {
+      id: 4,
+      title: 'ViBe',
+      status: 'completed',
+      description: 'ViBe is an innovative open-source online learning platform transforming education with Continuous Active Learning (CAL) principles. It significantly boosts student engagement and comprehension, aiming for deeper understanding and retention. The platform employs AI-enhanced question generation, smart checks, and quick quizzes for active participation. It fosters knowledge mastery through adaptive challenges, ensuring learners fully grasp concepts before progressing.',
+      focusArea: 'Educational Technology',
+      team: ['Dr. Sudarshan Iyengar (Principal Investigator)', 'Meenakshi V. (Research Scholar)', 'Aditya BMV. (Technical Lead)'],
+      partners: ['-'],
+      timeline: '2024 - 2024',
+      outcomes: [
+        'ViBe is an AI-powered learning guide that fosters active, distraction-free engagement',
+        'Utilizes smart checks, quick quizzes, and adaptive challenges',
+        'Ensures mastery-based learning, deep comprehension, and knowledge retention'
+      ],
+      icon: <FaFlask className="text-success" size={32} />
+    }
   ];
 
   const filteredProjects = activeFilter === 'all' 
@@ -329,10 +345,10 @@ const Research = () => {
           </div>
         </div>
       </section>
-      <section className="py-5 bg-dark text-white">
+      <section className="py-5 text-white" style ={{ backgroundColor: 'rgb(233, 103, 52)' }}>
         <div className="container text-center py-4">
-          <h2 className="display-6 fw-bold mb-4">Interested in our research?</h2>
-          <p className="lead mb-4">We welcome collaborations with academia and industry</p>
+          <h2 className= "display-6 fw-bold mb-4" style={{ color: 'rgb(252, 251, 196)' }} >Interested in our research?</h2>
+          <p className="lead mb-4">We welcome collaborations with academia and industry.</p>
 
           <div className="d-flex justify-content-center gap-3">
           <Link to="/#contact">

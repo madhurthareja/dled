@@ -46,12 +46,12 @@ const Careers = () => {
   return (
     <div className="careers-page">
       {/* Hero Section */}
-      <section className="hero-section bg-primary text-white py-5">
+      <section className="hero-section text-white py-5" style={{ background: 'linear-gradient(130deg,rgb(253, 232, 224) 0%,rgb(253, 249, 247) 85%)', marginTop: '-20px' }}>
         <div className="container py-4">
           <div className="row align-items-center">
             <div className="col-lg-8">
-              <h1 className="display-4 fw-bold mb-4">Shape the Future of Education</h1>
-              <p className="lead mb-4">
+              <h1 className="display-4 text-black fw-bold mb-4 mt-4">Shape the Future of Education</h1>
+              <p className="lead mb-4 fs-4 text-secondary">
                 Join DLED and contribute to innovative educational technologies through development and research.
               </p>
               {/*
@@ -60,7 +60,7 @@ const Careers = () => {
               </a>
               */}
               <Link to="/#contact">
-              <button className="btn btn-outline-light btn-lg">
+              <button className="btn btn-lg px-4 text-light dark-button" style= {{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)' }}>
               Contact Us
               </button>
               </Link>
@@ -74,7 +74,9 @@ const Careers = () => {
         <div className="container">
           <div className="row justify-content-center mb-5">
             <div className="col-lg-8 text-center">
-              <h2 className="display-5 fw-bold mb-3">Current Opportunities</h2>
+              <h2 className="display-5 fw-bold mb-3">
+                Current Opportunities
+              </h2>
               <p className="lead text-muted">
                 We're looking for passionate individuals to join our team
               </p>
@@ -88,7 +90,7 @@ const Careers = () => {
                   <div className="card-body p-4">
                     <div className="d-flex justify-content-between align-items-start mb-3">
                       <h5 className="card-title fw-bold mb-0">{opening.title}</h5>
-                      <span className="badge bg-primary bg-opacity-10 text-primary">
+                      <span className="badge bg-primary-subtle bg-opacity-10 text-dark">
                         {opening.type}
                       </span>
                     </div>
@@ -101,12 +103,12 @@ const Careers = () => {
                     <ul className="list-unstyled mb-4">
                       {opening.requirements.map((req, i) => (
                         <li key={i} className="mb-2">
-                          <i className="fas fa-check-circle text-primary me-2"></i>
+                          <i className="fas fa-check-circle text-success me-2"></i>
                           <small>{req}</small>
                         </li>
                       ))}
                     </ul>
-                    <a href={opening.applyLink} className="btn btn-primary w-100">
+                    <a href={opening.applyLink} className="btn btn-warning text-dark w-100">
                       Apply Now
                     </a>
                   </div>
