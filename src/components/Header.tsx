@@ -1,11 +1,11 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // useNavigate
 import React, { useState} from 'react';
 import "../styles/header.css";
 import logo from '../assets/dled-clear.png';
 import { TypedText } from './TypedText';
 
 export const Header: React.FC = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const ButtonClickContact = () => {
@@ -16,10 +16,12 @@ export const Header: React.FC = () => {
   setMenuOpen(false);
   };
 
+  /*
   const ButtonClickAbout = () => {
     navigate('/about');
     setMenuOpen(false);
   };
+  */
 
   // Close menu when a link is clicked
   const handleNavLinkClick = () => setMenuOpen(false);
@@ -44,7 +46,7 @@ export const Header: React.FC = () => {
             <Link to="/careers" className="nav-text">Careers</Link>
             <Link to="/comingsoon" className="nav-text">Blog</Link>
           </div>
-          
+
           <Link to="/comingsoon">
           <button className="nav-button">
             <span className="nav-button-text">View Publications</span>
@@ -89,8 +91,15 @@ export const Header: React.FC = () => {
           The Dhananjaya Lab for Education Design (DLED) at IIT Ropar is pioneering
           transformative approaches to learning in the digital age.
         </p>
-        <div className="cta-buttons">
-          <button className="btn-black" onClick={ButtonClickAbout}>
+        <div className="cta-buttons"
+          onClick={() => {
+          const element = document.getElementById('research-approach');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+        >
+          <button className="btn-black" /* </div>onClick={ButtonClickAbout} */>
             <span>Learn More</span>
           </button>
           <button className="btn-outline" onClick={ButtonClickContact}>

@@ -6,12 +6,12 @@ export const ResearchApproach: React.FC = () => {
   const navigate = useNavigate();
   const title = "Our Research Approach";
 
-  const ButtonClickAboutUs = () => {
-    navigate('/about'); 
+  const ButtonClickResearchPage = () => {
+    navigate('/research'); 
   };
 
   return (
-    <div className="research-approach-container">
+    <div id="research-approach" className="research-approach-container">
       <div className="main-content-layout">
       <div className="content-section content-wrapper">
         <h2 className="research-title">
@@ -33,7 +33,7 @@ export const ResearchApproach: React.FC = () => {
           At DLED Lab, we blend rigorous academic research with real-world implementation to create impactful, practical solutions.
         </p>
         
-        <button className="about-button" onClick={ButtonClickAboutUs}>
+        <button className="about-button" onClick={ButtonClickResearchPage} >
           <span className="button-text">About Us</span>
         </button>
       </div>

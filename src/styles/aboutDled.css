@@ -20,6 +20,10 @@
   padding: 0;
 }
 
+.dled-video {
+  margin-right: 40px;
+}
+
 .description {
   color: #000000;
   font-weight: 400;
@@ -111,8 +115,14 @@
 
   .title {
     font-size: 48px;
+    margin-right: 20px;
     line-height: 67.2px;
     width: 514px;
+  }
+
+  .dled-video {
+    width: 80%;
+    margin-left: 50px !important;
   }
 
   .description {
@@ -120,6 +130,7 @@
     line-height: 32px;
     letter-spacing: 0.36px;
     width: 547px;
+    margin-right: 20px;
     margin-bottom: 72px;
   }
 
