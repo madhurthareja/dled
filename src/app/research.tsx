@@ -171,9 +171,12 @@ const Research = () => {
                 <button className="btn btn-lg px-4 text-light dark-button" style= {{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)' }}>
                   Collaborate With Us
                 </button>
+                <Link to="/comingsoon">
                 <button className="btn btn-lg px-4 light-button" style ={{ borderWidth: '1.3px', borderColor: 'rgb(233, 103, 52)', color: 'rgb(233, 103, 52)' }}>
                   View Publications
                 </button>
+                </Link>
+
               </div>
             </div>
             <div className="col-lg-4 d-none d-lg-block">

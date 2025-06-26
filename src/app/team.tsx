@@ -307,10 +307,11 @@ const Team = () => {
           </div>
 
           <div className="text-center mt-5">
-            <a href="/alumni" className="btn btn-outline-warning mb-4 fw-semibold">
+             <a href="/comingsoon" className="btn btn-outline-warning mb-4 fw-bold">
               View Full Alumni List <i className="fas fa-arrow-right ms-2"></i>
             </a>
           </div>
+
         </div>
       </section>
     </div>

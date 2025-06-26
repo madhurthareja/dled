@@ -142,7 +142,8 @@ const Events = () => {
           </p>
           <div>
             <button className="btn btn-lg px-4 text-light dark-button" style={{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)', marginRight: '20px'}} >Subscribe to Updates </button>
-            <button className="btn btn-lg px-4 light-button" style ={{ borderWidth: '1.3px', borderColor: 'rgb(233, 103, 52)', color: 'rgb(233, 103, 52)' }} >Past Events Archive</button>
+            
+            {/* <button className="btn btn-lg px-4 light-button" style ={{ borderWidth: '1.3px', borderColor: 'rgb(233, 103, 52)', color: 'rgb(233, 103, 52)' }} >Past Events Archive</button> */}
           </div>
         </div>
       </section>
@@ -161,14 +162,14 @@ const Events = () => {
               <div className="btn-group" role="group">
                 <button
                   type="button"
-                  className={`btn btn-${activeTab === 'upcoming' ? 'warning fw-bold' : 'outline-dark-subtle'}`}
+                  className={`btn btn-${activeTab === 'upcoming' ? 'warning fw-bold' : 'outline-dark-subtle fw-bold'}`}
                   onClick={() => setActiveTab('upcoming')}
                 >
                   Upcoming Events
                 </button>
                 <button
                   type="button"
-                  className={`btn btn-${activeTab === 'past' ? 'warning fw-bold' : 'outline-warning'}`}
+                  className={`btn btn-${activeTab === 'past' ? 'warning fw-bold' : 'outline-warning fw-bold'}`}
                   onClick={() => setActiveTab('past')}
                 >
                   Past Events

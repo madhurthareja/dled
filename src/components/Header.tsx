@@ -42,11 +42,14 @@ export const Header: React.FC = () => {
             <Link to="/team" className="nav-text">Team</Link>
             <Link to="/events" className="nav-text">Events</Link>
             <Link to="/careers" className="nav-text">Careers</Link>
-            <Link to="/blog" className="nav-text">Blog</Link>
+            <Link to="/comingsoon" className="nav-text">Blog</Link>
           </div>
+          
+          <Link to="/comingsoon">
           <button className="nav-button">
             <span className="nav-button-text">View Publications</span>
           </button>
+          </Link>
         </nav>
       </div>
 
@@ -65,10 +68,13 @@ export const Header: React.FC = () => {
           <Link to="/team" className="nav-text" onClick={handleNavLinkClick}>Team</Link>
           <Link to="/events" className="nav-text" onClick={handleNavLinkClick}>Events</Link>
           <Link to="/careers" className="nav-text" onClick={handleNavLinkClick}>Careers</Link>
-          <Link to="/blog" className="nav-text" onClick={handleNavLinkClick}>Blog</Link>
-          <button className="nav-button" onClick={handleNavLinkClick}>
+          <Link to="/comingsoon" className="nav-text" onClick={handleNavLinkClick}>Blog</Link>
+
+          <Link to="/comingsoon">
+          <button className="nav-button">
             <span className="nav-button-text">View Publications</span>
           </button>
+          </Link>
         </nav>
       )}
 
