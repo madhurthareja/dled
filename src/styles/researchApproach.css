@@ -94,7 +94,7 @@ html, body {
   gap: 2rem;
   margin-top: 1.2rem;
   justify-content: center;
-  padding-left: 3rem;
+  padding-left: 7rem;
 }
 
 .feature-card {
@@ -210,7 +210,7 @@ background: linear-gradient(105deg, #f8bce7 0%, #fdd9ac 100%);
     padding: 16px;
     margin-left: 45px;
     margin-bottom: 46px;
-    padding: 5rem 3.5rem;
+    padding: 5rem 3rem;
   }
 
   .main-content-layout {

@@ -1,17 +1,14 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import "../styles/aboutDled.css";
 
 export const AboutDLED: React.FC = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const title = "Learn DLED's Story";
 
-  const ButtonClickAbout = () => {
-    navigate('/team'); 
-  };
   return (
     <section className="about-dled-section">
-      <div className="content-section">
+      <div className="content-section" >
         <h1 className="title">
           {title.split(" ").map((word, wordIdx) => (
             <span key={wordIdx} className="word" style={{ whiteSpace: "pre" }}>
@@ -28,21 +25,20 @@ export const AboutDLED: React.FC = () => {
           explore how design, research, and technology come together to
           transform education.
         </p>
-        <button className="about-button" onClick={ButtonClickAbout}>
-          <span>About Us</span>
-        </button>
       </div>
 
       <div className="image-section">
         <div className="image-container">
-          <div className="image-background"></div>
-          <div className="frame-wrapper">
-            <div className="frame-icon">
-              {/* To insert video here */}
-            </div>
-          </div>
+            <video
+              className="dled-video"
+              controls
+              width="100%"
+              style={{ maxHeight: '100%', objectFit: 'cover', margin: '0 auto', marginTop: '65px', marginLeft: '10px', marginRight: '10px' }}
+            >
+              <source src="/videos/dled-intro.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
         </div>
-        <div></div>
       </div>
     </section>
   );

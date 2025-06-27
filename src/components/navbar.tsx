@@ -30,7 +30,7 @@ const Navbar = () => {
             <NavItem path="/team" text="Team" currentPath={location.pathname} />
             <NavItem path="/events" text="Events" currentPath={location.pathname} />
             <NavItem path="/careers" text="Careers" currentPath={location.pathname} />
-            <NavItem path="/blog" text="Blog" currentPath={location.pathname} />
+            <NavItem path="/comingsoon" text="Blog" currentPath={location.pathname} />
             <li className="nav-item ms-lg-3">
               <Link
                 to="/publications"

@@ -1,11 +1,11 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // useNavigate
 import React, { useState} from 'react';
 import "../styles/header.css";
 import logo from '../assets/dled-clear.png';
 import { TypedText } from './TypedText';
 
 export const Header: React.FC = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const ButtonClickContact = () => {
@@ -16,10 +16,12 @@ export const Header: React.FC = () => {
   setMenuOpen(false);
   };
 
+  /*
   const ButtonClickAbout = () => {
     navigate('/about');
     setMenuOpen(false);
   };
+  */
 
   // Close menu when a link is clicked
   const handleNavLinkClick = () => setMenuOpen(false);
@@ -42,11 +44,14 @@ export const Header: React.FC = () => {
             <Link to="/team" className="nav-text">Team</Link>
             <Link to="/events" className="nav-text">Events</Link>
             <Link to="/careers" className="nav-text">Careers</Link>
-            <Link to="/blog" className="nav-text">Blog</Link>
+            <Link to="/comingsoon" className="nav-text">Blog</Link>
           </div>
+
+          <Link to="/comingsoon">
           <button className="nav-button">
             <span className="nav-button-text">View Publications</span>
           </button>
+          </Link>
         </nav>
       </div>
 
@@ -65,10 +70,13 @@ export const Header: React.FC = () => {
           <Link to="/team" className="nav-text" onClick={handleNavLinkClick}>Team</Link>
           <Link to="/events" className="nav-text" onClick={handleNavLinkClick}>Events</Link>
           <Link to="/careers" className="nav-text" onClick={handleNavLinkClick}>Careers</Link>
-          <Link to="/blog" className="nav-text" onClick={handleNavLinkClick}>Blog</Link>
-          <button className="nav-button" onClick={handleNavLinkClick}>
+          <Link to="/comingsoon" className="nav-text" onClick={handleNavLinkClick}>Blog</Link>
+
+          <Link to="/comingsoon">
+          <button className="nav-button">
             <span className="nav-button-text">View Publications</span>
           </button>
+          </Link>
         </nav>
       )}
 
@@ -83,8 +91,15 @@ export const Header: React.FC = () => {
           The Dhananjaya Lab for Education Design (DLED) at IIT Ropar is pioneering
           transformative approaches to learning in the digital age.
         </p>
-        <div className="cta-buttons">
-          <button className="btn-black" onClick={ButtonClickAbout}>
+        <div className="cta-buttons"
+          onClick={() => {
+          const element = document.getElementById('research-approach');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+        >
+          <button className="btn-black" /* </div>onClick={ButtonClickAbout} */>
             <span>Learn More</span>
           </button>
           <button className="btn-outline" onClick={ButtonClickContact}>
@@ -99,7 +114,7 @@ export const Header: React.FC = () => {
           <img
             className="subtract"
             src="https://c.animaapp.com/SP71lV0J/img/subtract.svg"
-            alt="Decorative element"
+            alt="Yellow semicircle"
           />
           <img
             className="subtract subtract-2"
