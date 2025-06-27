@@ -12,9 +12,12 @@ const Contact = () => {
     subject: '',
     message: '',
   });
+  
   const [searchParams, setSearchParams] = useSearchParams();
   const tabFromUrl = searchParams.get('tab');
+  const subjectFromUrl = searchParams.get('subject');
   const [activeTab, setActiveTab] = useState(tabFromUrl === 'collaborate' ? 'collaborate' : 'join');
+
 
   useEffect(() => {
     const tabFromUrl = searchParams.get('tab');
@@ -22,6 +25,15 @@ const Contact = () => {
       setActiveTab(tabFromUrl);
     }
   }, [searchParams]);
+
+  useEffect(() => {
+    if (subjectFromUrl) {
+      setFormData(prev => ({
+        ...prev,
+        subject: subjectFromUrl,
+      }));
+    }
+  }, [subjectFromUrl]);
 
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
