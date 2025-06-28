@@ -91,17 +91,16 @@ export const Header: React.FC = () => {
           The Dhananjaya Lab for Education Design (DLED) at IIT Ropar is pioneering
           transformative approaches to learning in the digital age.
         </p>
-        <div className="cta-buttons"
-          onClick={() => {
+        <div className="cta-buttons">
+          <button className="btn-black" onClick={() => {
           const element = document.getElementById('research-approach');
           if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
             }
-          }}
-        >
-          <button className="btn-black" /* </div>onClick={ButtonClickAbout} */>
+          }}>
             <span>Learn More</span>
           </button>
+
           <button className="btn-outline" onClick={ButtonClickContact}>
             <span>Contact us</span>
           </button>

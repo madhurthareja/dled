@@ -142,7 +142,9 @@ const Events = () => {
             Join our knowledge-sharing community
           </p>
           <div>
-            <button className="btn btn-lg px-4 text-light dark-button" style={{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)', marginRight: '20px'}} >Subscribe to Updates </button>
+            <button className="btn btn-lg px-4 text-light dark-button" style={{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)', marginRight: '20px'}} >
+              Subscribe to Updates
+            </button>
             
             {/* <button className="btn btn-lg px-4 light-button" style ={{ borderWidth: '1.3px', borderColor: 'rgb(233, 103, 52)', color: 'rgb(233, 103, 52)' }} >Past Events Archive</button> */}
           </div>
