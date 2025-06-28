@@ -80,7 +80,7 @@ const Events = () => {
       time: '10:00 AM - 4:00 PM',
       location: 'IIT Ropar Campus, Innovation Center',
       description: 'A hands-on workshop exploring the applications of AI in personalized learning systems.',
-      image: '/images/events.jpg',
+      image: 'https://images.unsplash.com/photo-1680783954745-3249be59e527?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       category: 'Workshop',
       status: 'upcoming',
       speakers: ['Dr. Rajesh Sharma', 'Prof. Ananya Gupta']
@@ -92,7 +92,7 @@ const Events = () => {
       time: '48-hour event starting at 9:00 AM',
       location: 'Online',
       description: 'Join us for a 48-hour hackathon to develop innovative solutions for education challenges. Prizes include incubation support and research grants.',
-      image: '/images/events.jpg',
+      image: 'https://images.unsplash.com/photo-1633102313141-8f2ab45c0202?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       category: 'Hackathon',
       status: 'upcoming',
       partners: ['Google EDU', 'Microsoft Research']
@@ -104,7 +104,7 @@ const Events = () => {
       time: '9:30 AM - 6:00 PM',
       location: 'IIT Ropar Campus, Auditorium',
       description: 'A symposium to present and discuss the latest research in educational technology with keynote speakers from academia and industry.',
-      image: '/images/events.jpg',
+      image: 'https://images.unsplash.com/photo-1652081140966-6bed5c5815ad?q=80&w=914&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       category: 'Conference',
       status: 'upcoming',
       keynote: 'Dr. Priya Nair, MIT'
@@ -116,7 +116,7 @@ const Events = () => {
       time: '2:00 PM - 5:00 PM',
       location: 'Online',
       description: 'Learn innovative digital teaching methods from award-winning educators.',
-      image: '/images/masterclass.jpg',
+      image: 'https://images.unsplash.com/photo-1619633376278-d8652961ce02?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       category: 'Workshop',
       status: 'past',
       recording: 'Available for registered participants'
