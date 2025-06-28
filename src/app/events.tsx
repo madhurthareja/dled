@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FaCalendarAlt, FaMapMarkerAlt, FaRegClock } from 'react-icons/fa'; // FaTicketAlt, FaUsers
+import { Link } from 'react-router-dom';
 
 // Google Calendar Functionality
 // Helper to format date and time for Google Calendar and ICS
@@ -274,9 +275,12 @@ const Events = () => {
         <div className="container text-center py-4">
           <h2 className="display-6 fw-bold mb-4" style={{ color: 'rgb(252, 251, 196)' }}  >Have an event idea?</h2>
           <p className="lead mb-4">We're always looking for collaborators and interesting topics.</p>
+
+          <Link to="/contact?tab=collaborate&subject=Other">
           <button className="btn btn-light btn-lg px-4">
             Propose an Event <i className="fas fa-arrow-right ms-2"></i>
           </button>
+          </Link>
         </div>
       </section>
     </div>

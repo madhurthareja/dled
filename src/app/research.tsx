@@ -168,9 +168,12 @@ const Research = () => {
                 Pioneering the future of education through technology and innovation
               </p>
               <div className="d-flex gap-3">
+                <Link to="/contact?tab=collaborate">
                 <button className="btn btn-lg px-4 text-light dark-button" style= {{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)' }}>
                   Collaborate With Us
                 </button>
+                </Link>
+
                 <Link to="/comingsoon">
                 <button className="btn btn-lg px-4 light-button" style ={{ borderWidth: '1.3px', borderColor: 'rgb(233, 103, 52)', color: 'rgb(233, 103, 52)' }}>
                   View Publications

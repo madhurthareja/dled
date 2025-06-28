@@ -1,14 +1,52 @@
 // pages/contact.tsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import "../styles/researchPage.css";
+
+// https://script.google.com/macros/s/AKfycbzTeD58qfv5Q1lPbmV4U1757lpjSoNMCfp1Jh6tsFeOsAhKTcJ8P_OkaQPxbcZyQhi9ag/exec
 
 const Contact = () => {
-  const [activeTab, setActiveTab] = useState<'join' | 'collaborate'>('join');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: '',
   });
+  
+  const [searchParams, setSearchParams] = useSearchParams();
+  const tabFromUrl = searchParams.get('tab');
+  const subjectFromUrl = searchParams.get('subject');
+  const [activeTab, setActiveTab] = useState(tabFromUrl === 'collaborate' ? 'collaborate' : 'join');
+
+
+  useEffect(() => {
+    const tabFromUrl = searchParams.get('tab');
+    if (tabFromUrl === 'collaborate' || tabFromUrl === 'join') {
+      setActiveTab(tabFromUrl);
+    }
+  }, [searchParams]);
+
+  useEffect(() => {
+    if (subjectFromUrl) {
+      setFormData(prev => ({
+        ...prev,
+        subject: subjectFromUrl,
+      }));
+    }
+  }, [subjectFromUrl]);
+
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+    setSearchParams({ tab });
+  };
+
+  const initialFormData = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+  };
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
@@ -16,31 +54,67 @@ const Contact = () => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
+  
 
+  // submits form to Google Sheet
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setSubmitSuccess(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setSubmitSuccess(false), 5000);
-    } finally {
-      setIsSubmitting(false);
-    }
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitSuccess(false);
+
+  const category = activeTab; // "join" or "collaborate"
+  const payload = {
+    category,
+    name: formData.name,
+    email: formData.email,
+    subject: formData.subject,
+    message: formData.message,
   };
+
+  try {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbzTeD58qfv5Q1lPbmV4U1757lpjSoNMCfp1Jh6tsFeOsAhKTcJ8P_OkaQPxbcZyQhi9ag/exec', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+      headers: {
+        'Content-Type': 'text/plain', // for Apps Script CORS - Google Sheet compatibility
+      },
+    });
+    if (response.ok) {
+      setSubmitSuccess(true);
+      setFormData(initialFormData); // clears the form
+    } else {
+      alert("Submission failed: " + response.statusText);
+    }
+  } catch (err) {
+    alert("Submission error: " + err);
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
+  useEffect(() => {
+  let timer: number;
+  if (submitSuccess) {
+    timer = setTimeout(() => {
+      setSubmitSuccess(false);
+    }, 10000); // 10 seconds
+  }
+  return () => clearTimeout(timer);
+}, [submitSuccess]);
+
 
   return (
     <div className="contact-page">
       {/* Hero Section */}
-      <section className="hero-section bg-primary text-white py-5">
+      <section className="hero-section text-dark py-5" style={{
+        background: 'linear-gradient(130deg,rgb(253, 232, 224) 0%,rgb(253, 249, 247) 85%)'
+      }}>
         <div className="container py-4">
           <div className="row align-items-center">
             <div className="col-lg-8">
               <h1 className="display-4 fw-bold mb-4">Get In Touch</h1>
-              <p className="lead mb-4">
-                Interested in joining our team or collaborating on a project? We'd love to hear from you.
+              <p className="lead text-secondary mb-4 fs-4">
+                Interested in joining our team or collaborating on a project? <br></br> We'd love to hear from you.
               </p>
             </div>
           </div>
@@ -56,15 +130,13 @@ const Contact = () => {
                 <li className="nav-item">
                   <button
                     className={`nav-link ${activeTab === 'join' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('join')}
+                    onClick={() => handleTabChange('join')}
                   >
                     Join Our Team
                   </button>
-                </li>
-                <li className="nav-item">
                   <button
                     className={`nav-link ${activeTab === 'collaborate' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('collaborate')}
+                    onClick={() => handleTabChange('collaborate')}
                   >
                     Collaborate With Us
                   </button>
@@ -90,6 +162,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        autoComplete="name"
                       />
                     </div>
                     <div className="mb-3">
@@ -102,6 +175,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
+                        autoComplete="email"
                       />
                     </div>
                     <div className="mb-3">
@@ -114,6 +188,7 @@ const Contact = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         required
+                        autoComplete="off"
                       />
                     </div>
                     <div className="mb-3">
@@ -126,6 +201,7 @@ const Contact = () => {
                         value={formData.message}
                         onChange={handleChange}
                         required
+                        autoComplete="off"
                       ></textarea>
                     </div>
                     <div className="mb-3">
@@ -138,7 +214,7 @@ const Contact = () => {
                         accept=".pdf,.doc,.docx"
                       />
                     </div>
-                    <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+                    <button type="submit" className="btn btn-primary" disabled={isSubmitting} style= {{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)' }}>
                       {isSubmitting ? 'Sending...' : 'Submit'}
                     </button>
                     {submitSuccess && (
@@ -167,6 +243,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        autoComplete="name"
                       />
                     </div>
                     <div className="mb-3">
@@ -179,6 +256,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
+                        autoComplete="email"
                       />
                     </div>
                     <div className="mb-3">
@@ -203,7 +281,7 @@ const Contact = () => {
                         required
                       ></textarea>
                     </div>
-                    <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+                    <button type="submit" className="btn btn-primary" disabled={isSubmitting} style= {{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)' }}>
                       {isSubmitting ? 'Sending...' : 'Submit'}
                     </button>
                     {submitSuccess && (
