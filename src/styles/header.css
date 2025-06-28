@@ -110,6 +110,7 @@
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.1s, transform 0.2s;
+  position: relative;
 }
 
 .nav-text:hover {
@@ -138,7 +139,7 @@
 
 .nav-text:hover::after,
 .nav-text:focus::after {
-  transform: scaleX(1.05);
+  transform: scaleX(1);
 }
 
 
