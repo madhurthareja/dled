@@ -47,7 +47,7 @@ const ResearchCard: React.FC<ResearchCardProps> = ({
   description,
   timeline,
   focus,
-  researchTeam,
+  // researchTeam,
   keyOutcomes,
   collaborators,
   imageUrl,
@@ -74,7 +74,10 @@ const ResearchCard: React.FC<ResearchCardProps> = ({
         <p className="card-description detail-text" style={{ marginTop: '20px', marginBottom : '25px', fontWeight: "normal" , fontFamily : "Segoe UI, Tahoma, Geneva, Verdana, sans-serif" , fontSize: "20px", opacity: "0.7" }}>{description}</p>
       </div>
 
+      
       <div className="card-details">
+
+        {/*
         <div className="research-team">
           <p className="detail-title bold">Research Team</p>
           {researchTeam.map((member, index) => (
@@ -83,6 +86,7 @@ const ResearchCard: React.FC<ResearchCardProps> = ({
             </p>
           ))}
         </div>
+        */}
 
         <div className="key-outcomes">
           <p className="detail-title bold">Key Outcomes</p>
