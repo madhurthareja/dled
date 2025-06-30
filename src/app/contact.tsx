@@ -1,6 +1,6 @@
 // pages/contact.tsx
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import "../styles/researchPage.css";
 
 // https://script.google.com/macros/s/AKfycbzTeD58qfv5Q1lPbmV4U1757lpjSoNMCfp1Jh6tsFeOsAhKTcJ8P_OkaQPxbcZyQhi9ag/exec
@@ -103,6 +103,18 @@ const Contact = () => {
 }, [submitSuccess]);
 
 
+  function HomeButton() {
+    return (
+      <Link to="/">
+      <img
+      src="../../public/images/home.png"
+      alt="Home"
+      style={{ width: 32, height: 32, cursor: "pointer" }}
+      />
+      </Link>
+    );
+  }
+
   return (
     <div className="contact-page">
       {/* Hero Section */}
@@ -112,7 +124,8 @@ const Contact = () => {
         <div className="container py-4">
           <div className="row align-items-center">
             <div className="col-lg-8">
-              <h1 className="display-4 fw-bold mb-4">Get In Touch</h1>
+              <HomeButton/>
+              <h1 className="display-4 fw-bold mb-4 mt-3">Get In Touch</h1>
               <p className="lead text-secondary mb-4 fs-4">
                 Interested in joining our team or collaborating on a project? <br></br> We'd love to hear from you.
               </p>

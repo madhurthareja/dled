@@ -303,6 +303,7 @@
 .highschool-img {
   position: absolute;
   object-fit: cover;
+  object-position: 60% 20%;
 }
 
 /* Mobile menu icon */

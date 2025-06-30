@@ -1,5 +1,13 @@
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 import "../styles/team.css";
+import drSudarshan from '/images/dr-sudarshan2.png';
+import sakshi from '/images/sakshi-sharma2.jpg';
+import meenakshi from '/images/meenakshi2.png';
+import rohit from '/images/rohit-sharma.jpg';
+import aditya from '/images/aditya2.jpeg';
+import shivani from '/images/shivani-aggarwal2.png';
+import rajan from '/images/rajan.png';
 
 const Team = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -19,61 +27,71 @@ const Team = () => {
       id: 1,
       name: 'Dr. Sudarshan Iyengar',
       role: 'Principal Investigator',
-      department: 'Leadership',
-      bio: 'Education technology specialist with 15+ years experience in learning design and cognitive science.',
+      department: 'Computer Science',
+      bio: 'A faculty member in the CSE Department at IIT Ropar, who currently serves as Director of Annam.AI- a major Center of Excellence in Artificial Intelligence at IIT Ropar. As a PhD graduate from IISc, he is known for his engaging approach to technical education, delivering over 400 science talks, conducting 120+ Faculty Development Programs, and creating online courses that have reached more than 900,000 students. His SWAYAM course, The Joy of Computing, consistently ranks first in enrollments. He leads the Minor in AI initiative, aiming to train one million students, and heads the Education Design Lab at IIT Ropar. Dr. Sudarshan also coordinates the Prime Minister Research Fellowship and PM SHRI programs, and is a founding faculty member of the IIT Madras BS Programme. He has graduated 10 PhD students, currently supervises five more, and focuses his research on AI for Social Good and Education Design. Beyond academia, he is a homeschooling father of two and an avid reader, committed to making education inspiring and accessible.',
       research: 'Adaptive learning systems, Educational data mining',
-      img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80',
+      img: drSudarshan,
       category: 'faculty'
     },
     {
       id: 2,
       name: 'Sakshi Sharma',
       role: 'PhD Researcher',
-      department: 'Cognitive Science',
-      bio: 'Expert in human-computer interaction and learning analytics with a focus on personalized education.',
-      research: 'Learning analytics, HCI for education',
-      img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=761&q=80',
+      department: 'Computer Science',
+      bio: 'An educator and research scholar at DLED Lab, IIT Ropar. My work centers around education design, integrating technology and innovation to create impactful learning experiences.',
+      research: 'DDD, ViBe, PES, Poll Automation, ',
+      img: sakshi,
       category: 'students'
     },
     {
       id: 3,
       name: 'Meenakshi V',
       role: 'PhD Researcher',
-      department: 'Education Design',
+      department: 'Computer Science',
       bio: 'Full-stack developer specializing in educational technology platforms and scalable architectures.',
-      research: 'EdTech infrastructure, Learning platforms',
-      img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=761&q=80',
+      research: 'ViBe/CAL, Poll Automation',
+      img: meenakshi,
       category: 'students'
     },
     {
       id: 4,
-      name: 'Aditya BMV',
-      role: 'Software Developer',
-      department: 'Software Engineering',
-      bio: 'Software engineer with a passion for creating user-friendly educational applications and tools.',
-      research: 'Software development, UX design',
-      img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80',
-      category: 'staff'
+      name: 'Rohit Sharma',
+      role: 'PhD Researcher',
+      department: 'Computer Science',
+      bio: 'A research scholar focused on integrating artificial intelligence into education to enhance teaching and learning experiences. Through my research and development efforts, I strive to create impactful tools that promote meaningful and effective learning.',
+      research: 'PES, Poll Automation',
+      img: rohit,
+      category: 'students'
     },
     {
       id: 5,
       name: 'Shivani Aggarwal',
-      role: 'Junior Research Fellow',
-      department: 'Learning Sciences',
+      role: 'PhD Researcher',
+      department: 'Computer Science',
       bio: 'Investigating the impact of AI tutors on student engagement and learning outcomes.',
       research: 'AI in education, Student engagement',
-      img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=761&q=80',
+      img: shivani,
       category: 'students'
     },
     {
       id: 6,
-      name: 'Ashu Kaushik',
-      role: 'PhD Researcher',
-      department: 'Educational Psychology',
-      bio: 'Researching motivation and self-regulation in online learning environments.',
-      research: 'Learning motivation, Self-regulation',
-      img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80',
-      category: 'students'
+      name: 'Aditya BMV',
+      role: 'Software Developer',
+      department: 'Computer Science',
+      bio: 'Software engineer with a passion for creating user-friendly educational applications and tools.',
+      research: 'ViBe/CAL',
+      img: aditya,
+      category: 'staff'
+    },
+    {
+      id: 7,
+      name: 'Rajan Gupta',
+      role: 'Software Developer',
+      department: 'Computer Science',
+      bio: 'Weaving technology, education, and collaboration into transformative initiatives. Passionate about storytelling and upskilling, driving scalable impact for communities.',
+      research: 'ViBe/CAL',
+      img: rajan,
+      category: 'staff'
     }
   ];
 
@@ -81,14 +99,27 @@ const Team = () => {
     ? teamMembers 
     : teamMembers.filter(member => member.category === activeFilter);
 
+  function HomeButton() {
+    return (
+      <Link to="/">
+      <img
+      src="../../public/images/home.png"
+      alt="Home"
+      style={{ width: 32, height: 32, cursor: "pointer" }}
+      />
+      </Link>
+    );
+  }
+
   return (
     <div className="people-page">
       {/* Hero Section */}
       <section className="hero-section text-white py-6" style ={{ background: 'linear-gradient(130deg,rgb(253, 232, 224) 0%,rgb(253, 249, 247) 75%)' }}>
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-6">
-              <h1 className="display-4 fw-bold text-dark mb-4 mt-5">Our People</h1>
+            <div className="col-lg-6" style = {{marginTop:'20px'}} >
+              <HomeButton/>
+              <h1 className="display-4 fw-bold text-dark mb-4 mt-3"> Our People</h1>
               <p className="lead mb-4 fs-4 text-secondary">
                 Meet the brilliant minds behind Dhananjaya Lab's innovative research and educational designs
               </p>
@@ -155,7 +186,7 @@ const Team = () => {
                   onClick={() => setSelectedMember(member)}
                 >
                   <div className="team-member-img position-relative">
-                    <img src={member.img} alt={member.name} className="img-fluid w-100" />
+                    <img src={member.img} alt={member.name} className="img-fluid w-50" />
                     <div className="member-badge bg-primary-subtle text-dark fw-semibold px-3 py-1 rounded-pill position-absolute">
                       {member.department}
                     </div>
@@ -224,6 +255,7 @@ const Team = () => {
                       ))}
                     </div>
                     
+                    {/*
                     <h6 className="fw-bold">Recent Publications</h6>
                     <ul className="list-unstyled">
                       <li className="mb-2">
@@ -239,6 +271,8 @@ const Team = () => {
                         </a>
                       </li>
                     </ul>
+                    */}
+
                   </div>
                 </div>
               </div>
@@ -250,9 +284,13 @@ const Team = () => {
                 >
                   Close
                 </button>
+
+                {/*
                 <a href={`mailto:${selectedMember.name.split(' ')[0].toLowerCase()}@iitrpr.ac.in`} className="btn btn-primary">
                   Contact {selectedMember.name.split(' ')[0]}
                 </a>
+                */}
+
               </div>
             </div>
           </div>

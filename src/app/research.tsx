@@ -80,7 +80,7 @@ const Research = () => {
       status: 'ongoing',
       description: 'The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at DLED Lab, enabling data-informed decision-making.',
       focusArea: 'Educational Technology',
-      team: ['Sakshi (Ph.D. Scholar)'],
+      team: ['Dr. Sudarshan Iyengar (Principal Investigator)', 'Sakshi (Ph.D. Scholar)'],
       partners: ['DLED Lab'],
       timeline: '2023-2025',
       outcomes: [
@@ -97,7 +97,7 @@ const Research = () => {
       status: 'ongoing',
       description: 'The Peer Evaluation System (PES) is a scalable, web-based tool designed to streamline and enhance peer assessment workflows in educational settings. Developed with a focus on transparency, fairness, and feedback quality, PES supports structured evaluation in both individual and group activities, empowering instructors and learners through data-driven insights.',
       focusArea: 'Educational Technology',
-      team: ['Rohit Sharma (Ph.D. Scholar)'],
+      team: ['Dr. Sudarshan Iyengar (Principal Investigator)', 'Rohit Sharma (Ph.D. Scholar)'],
       partners: ['-'],
       timeline: '2023-2025',
       outcomes: [
@@ -117,6 +117,7 @@ const Research = () => {
       description: 'The Poll Automation project is a real-time classroom intelligence system designed to enhance interactivity in live teaching sessions. By leveraging live audio transcripts, the web application listens to ongoing lectures, generates summaries, and automatically crafts contextual polls every five minutes (adjustable by the instructor). This fosters continuous engagement, checks comprehension, and provides instructors with live feedback loops.',
       focusArea: 'Educational Technology',
       team: [
+      'Dr. Sudarshan Iyengar (Principal Investigator)',
       'Sakshi Sharma (Ph.D. Scholar)',
       'Rohit Sharma (Ph.D. Scholar)',
       'Meenakshi (Ph.D. Scholar)'
@@ -134,7 +135,7 @@ const Research = () => {
 
     {
       id: 4,
-      title: 'ViBe',
+      title: 'ViBe/CAL',
       status: 'completed',
       description: 'ViBe is an innovative open-source online learning platform transforming education with Continuous Active Learning (CAL) principles. It significantly boosts student engagement and comprehension, aiming for deeper understanding and retention. The platform employs AI-enhanced question generation, smart checks, and quick quizzes for active participation. It fosters knowledge mastery through adaptive challenges, ensuring learners fully grasp concepts before progressing.',
       focusArea: 'Educational Technology',
@@ -154,6 +155,18 @@ const Research = () => {
     ? researchProjects 
     : researchProjects.filter(project => project.status === activeFilter);
 
+  function HomeButton() {
+    return (
+      <Link to="/">
+      <img
+      src="../../public/images/home.png"
+      alt="Home"
+      style={{ width: 32, height: 32, cursor: "pointer" }}
+      />
+      </Link>
+    );
+  }
+
   return (
     <div className="research-page">
       {/* Hero Section*/}
@@ -163,7 +176,10 @@ const Research = () => {
         <div className="container py-5">
           <div className="row align-items-center">
             <div className="col-lg-8">
-              <h1 className="display-4 text-black fw-bold mb-4 mt-4" style={{ marginLeft: '-4px' }}>Research at DLED</h1>
+              <HomeButton />
+              <h1 className="display-4 text-black fw-bold mb-4 mt-4" style={{ marginLeft: '-4px' }}>
+                Research at DLED
+              </h1>
               <p className="lead mb-4 fs-4 text-secondary">
                 Pioneering the future of education through technology and innovation
               </p>

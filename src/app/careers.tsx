@@ -43,6 +43,18 @@ const Careers = () => {
     },
   ];
 
+function HomeButton() {
+    return (
+      <Link to="/">
+      <img
+      src="../../public/images/home.png"
+      alt="Home"
+      style={{ width: 32, height: 32, cursor: "pointer" }}
+      />
+      </Link>
+    );
+}
+
   return (
     <div className="careers-page">
       {/* Hero Section */}
@@ -50,15 +62,18 @@ const Careers = () => {
         <div className="container py-4">
           <div className="row align-items-center">
             <div className="col-lg-8">
+              <HomeButton/>
               <h1 className="display-4 text-black fw-bold mb-4 mt-4">Shape the Future of Education</h1>
               <p className="lead mb-4 fs-4 text-secondary">
                 Join DLED and contribute to innovative educational technologies through development and research.
               </p>
+
               {/*
               <a href="#openings" className="btn btn-light btn-lg me-2">
                 View Openings
               </a>
               */}
+
               <Link to="/#contact">
               <button className="btn btn-lg px-4 text-light dark-button" style= {{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)' }}>
               Contact Us

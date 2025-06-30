@@ -172,7 +172,7 @@ p.description {
 
   .image-grid {
     display: grid;
-    width: 35%;
+    width: 55%;
     grid-template-columns: repeat(3, 1fr);
     margin: 20px auto 0 auto;
   }
