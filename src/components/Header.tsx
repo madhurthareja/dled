@@ -122,7 +122,8 @@ export const Header: React.FC = () => {
           />
           <img
             className="highschool-img" 
-            src="https://c.animaapp.com/SP71lV0J/img/highschool-student-2021-09-24-03-36-25-utc-min-ccexpress-1.png"
+            src = "https://images.unsplash.com/photo-1667835949495-78a1ea9ecd77?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            // src="https://c.animaapp.com/SP71lV0J/img/highschool-student-2021-09-24-03-36-25-utc-min-ccexpress-1.png"
             alt="Microscrope"
           />
         </div>

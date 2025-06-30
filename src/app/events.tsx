@@ -66,7 +66,17 @@ function downloadICS(event: any) {
   URL.revokeObjectURL(url);
 }
 
-
+function HomeButton() {
+    return (
+      <Link to="/">
+      <img
+      src="../../public/images/home.png"
+      alt="Home"
+      style={{ width: 32, height: 32, cursor: "pointer" }}
+      />
+      </Link>
+    );
+  }
 
 const Events = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
@@ -137,6 +147,7 @@ const Events = () => {
       {/* Hero Section  */}
       <section className="hero-section text-white py-6" style={{ background: 'linear-gradient(130deg,rgb(253, 232, 224) 0%,rgb(253, 249, 247) 85%)' }}>
         <div className="container position-relative py-5">
+          <HomeButton/>
           <h1 className="display-4 text-black fw-bold mb-4 mt-4">Events at DLED</h1>
           <p className="lead mb-4 fs-4 text-secondary">
             Join our knowledge-sharing community

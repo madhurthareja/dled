@@ -16,17 +16,45 @@ export const MeetTheMinds: React.FC = () => {
 
   return (
     <section className="meet-the-minds">
-      {/* Image Grid */}
-      <div className="image-grid">
-        {[...Array(9)].map((_, index) => (
-          <div 
-            key={index} 
-            className={`grid-item ${index === 2 || index === 6 ? "yellow-bg" : ""}`}
-          >
-            {/* In a real implementation, you would use actual images */}
-            {/* <img src={teamMemberImages[index]} alt={`Team member ${index + 1}`} /> */}
-          </div>
-        ))}
+      <div className="image-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "12px" }}>
+        {[...Array(9)].map((_, index) => {
+          const imageMap: { [key: string]: string } = {
+            "0": "/images/meenakshi3.png",
+            "2": "/images/sakshi-sharma2.jpg",
+            "4": "/images/dr-sudarshan2.png",
+            "6": "/images/shivani-aggarwal4.png",
+            "8": "/images/rohit-sharma2.jpg"
+          };
+          return (
+            <div
+              key={index}
+              className={`grid-item ${index === 2 || index === 6 ? "yellow-bg" : ""}`}
+              style={{
+                width: "100%",
+                aspectRatio: "1 / 1",
+                background: "none", // "#f5f5f5",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
+                {imageMap[index.toString()] ? (
+                <img
+                  src={imageMap[index.toString()]}
+                  alt={`Grid ${index + 1}`}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    transform: "scale(0.97)",
+                    overflow: "hidden",
+                    borderRadius: "10px"
+                  }}
+                />
+              ) : null}
+            </div>
+          );
+        })}
       </div>
 
       {/* Content Section */}

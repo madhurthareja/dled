@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 import "../styles/team.css";
 
 const Team = () => {
@@ -20,7 +21,7 @@ const Team = () => {
       name: 'Dr. Sudarshan Iyengar',
       role: 'Principal Investigator',
       department: 'Computer Science',
-      bio: 'Education technology specialist with 15+ years experience in learning design and cognitive science.',
+      bio: 'A faculty member in the CSE Department at IIT Ropar, who currently serves as Director of Annam.AI- a major Center of Excellence in Artificial Intelligence at IIT Ropar. As a PhD graduate from IISc, he is known for his engaging approach to technical education, delivering over 400 science talks, conducting 120+ Faculty Development Programs, and creating online courses that have reached more than 900,000 students. His SWAYAM course, The Joy of Computing, consistently ranks first in enrollments. He leads the Minor in AI initiative, aiming to train one million students, and heads the Education Design Lab at IIT Ropar. Dr. Sudarshan also coordinates the Prime Minister Research Fellowship and PM SHRI programs, and is a founding faculty member of the IIT Madras BS Programme. He has graduated 10 PhD students, currently supervises five more, and focuses his research on AI for Social Good and Education Design. Beyond academia, he is a homeschooling father of two and an avid reader, committed to making education inspiring and accessible.',
       research: 'Adaptive learning systems, Educational data mining',
       img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80',
       category: 'faculty'
@@ -81,14 +82,27 @@ const Team = () => {
     ? teamMembers 
     : teamMembers.filter(member => member.category === activeFilter);
 
+  function HomeButton() {
+    return (
+      <Link to="/">
+      <img
+      src="../../public/images/home.png"
+      alt="Home"
+      style={{ width: 32, height: 32, cursor: "pointer" }}
+      />
+      </Link>
+    );
+  }
+
   return (
     <div className="people-page">
       {/* Hero Section */}
       <section className="hero-section text-white py-6" style ={{ background: 'linear-gradient(130deg,rgb(253, 232, 224) 0%,rgb(253, 249, 247) 75%)' }}>
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-6">
-              <h1 className="display-4 fw-bold text-dark mb-4 mt-5">Our People</h1>
+            <div className="col-lg-6" style = {{marginTop:'20px'}} >
+              <HomeButton/>
+              <h1 className="display-4 fw-bold text-dark mb-4 mt-3"> Our People</h1>
               <p className="lead mb-4 fs-4 text-secondary">
                 Meet the brilliant minds behind Dhananjaya Lab's innovative research and educational designs
               </p>
@@ -224,6 +238,7 @@ const Team = () => {
                       ))}
                     </div>
                     
+                    {/*
                     <h6 className="fw-bold">Recent Publications</h6>
                     <ul className="list-unstyled">
                       <li className="mb-2">
@@ -239,6 +254,8 @@ const Team = () => {
                         </a>
                       </li>
                     </ul>
+                    */}
+
                   </div>
                 </div>
               </div>
@@ -250,9 +267,13 @@ const Team = () => {
                 >
                   Close
                 </button>
+
+                {/*
                 <a href={`mailto:${selectedMember.name.split(' ')[0].toLowerCase()}@iitrpr.ac.in`} className="btn btn-primary">
                   Contact {selectedMember.name.split(' ')[0]}
                 </a>
+                */}
+
               </div>
             </div>
           </div>

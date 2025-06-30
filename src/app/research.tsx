@@ -155,6 +155,18 @@ const Research = () => {
     ? researchProjects 
     : researchProjects.filter(project => project.status === activeFilter);
 
+  function HomeButton() {
+    return (
+      <Link to="/">
+      <img
+      src="../../public/images/home.png"
+      alt="Home"
+      style={{ width: 32, height: 32, cursor: "pointer" }}
+      />
+      </Link>
+    );
+  }
+
   return (
     <div className="research-page">
       {/* Hero Section*/}
@@ -164,7 +176,10 @@ const Research = () => {
         <div className="container py-5">
           <div className="row align-items-center">
             <div className="col-lg-8">
-              <h1 className="display-4 text-black fw-bold mb-4 mt-4" style={{ marginLeft: '-4px' }}>Research at DLED</h1>
+              <HomeButton />
+              <h1 className="display-4 text-black fw-bold mb-4 mt-4" style={{ marginLeft: '-4px' }}>
+                Research at DLED
+              </h1>
               <p className="lead mb-4 fs-4 text-secondary">
                 Pioneering the future of education through technology and innovation
               </p>
