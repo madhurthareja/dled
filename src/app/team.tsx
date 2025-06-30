@@ -1,6 +1,13 @@
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/team.css";
+import drSudarshan from '/images/dr-sudarshan2.png';
+import sakshi from '/images/sakshi-sharma2.jpg';
+import meenakshi from '/images/meenakshi2.png';
+import rohit from '/images/rohit-sharma.jpg';
+import aditya from '/images/aditya2.jpeg';
+import shivani from '/images/shivani-aggarwal2.png';
+import rajan from '/images/rajan.png';
 
 const Team = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -23,7 +30,7 @@ const Team = () => {
       department: 'Computer Science',
       bio: 'A faculty member in the CSE Department at IIT Ropar, who currently serves as Director of Annam.AI- a major Center of Excellence in Artificial Intelligence at IIT Ropar. As a PhD graduate from IISc, he is known for his engaging approach to technical education, delivering over 400 science talks, conducting 120+ Faculty Development Programs, and creating online courses that have reached more than 900,000 students. His SWAYAM course, The Joy of Computing, consistently ranks first in enrollments. He leads the Minor in AI initiative, aiming to train one million students, and heads the Education Design Lab at IIT Ropar. Dr. Sudarshan also coordinates the Prime Minister Research Fellowship and PM SHRI programs, and is a founding faculty member of the IIT Madras BS Programme. He has graduated 10 PhD students, currently supervises five more, and focuses his research on AI for Social Good and Education Design. Beyond academia, he is a homeschooling father of two and an avid reader, committed to making education inspiring and accessible.',
       research: 'Adaptive learning systems, Educational data mining',
-      img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80',
+      img: drSudarshan,
       category: 'faculty'
     },
     {
@@ -33,7 +40,7 @@ const Team = () => {
       department: 'Computer Science',
       bio: 'An educator and research scholar at DLED Lab, IIT Ropar. My work centers around education design, integrating technology and innovation to create impactful learning experiences.',
       research: 'DDD, ViBe, PES, Poll Automation, ',
-      img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=761&q=80',
+      img: sakshi,
       category: 'students'
     },
     {
@@ -43,7 +50,7 @@ const Team = () => {
       department: 'Computer Science',
       bio: 'Full-stack developer specializing in educational technology platforms and scalable architectures.',
       research: 'ViBe/CAL, Poll Automation',
-      img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=761&q=80',
+      img: meenakshi,
       category: 'students'
     },
     {
@@ -53,28 +60,38 @@ const Team = () => {
       department: 'Computer Science',
       bio: 'A research scholar focused on integrating artificial intelligence into education to enhance teaching and learning experiences. Through my research and development efforts, I strive to create impactful tools that promote meaningful and effective learning.',
       research: 'PES, Poll Automation',
-      img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80',
+      img: rohit,
       category: 'students'
     },
     {
       id: 5,
-      name: 'Aditya BMV',
-      role: 'Software Developer',
-      department: 'Computer Science',
-      bio: 'Software engineer with a passion for creating user-friendly educational applications and tools.',
-      research: 'ViBe/CAL',
-      img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80',
-      category: 'staff'
-    },
-    {
-      id: 6,
       name: 'Shivani Aggarwal',
       role: 'PhD Researcher',
       department: 'Computer Science',
       bio: 'Investigating the impact of AI tutors on student engagement and learning outcomes.',
       research: 'AI in education, Student engagement',
-      img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=761&q=80',
+      img: shivani,
       category: 'students'
+    },
+    {
+      id: 6,
+      name: 'Aditya BMV',
+      role: 'Software Developer',
+      department: 'Computer Science',
+      bio: 'Software engineer with a passion for creating user-friendly educational applications and tools.',
+      research: 'ViBe/CAL',
+      img: aditya,
+      category: 'staff'
+    },
+    {
+      id: 7,
+      name: 'Rajan Gupta',
+      role: 'Software Developer',
+      department: 'Computer Science',
+      bio: 'Weaving technology, education, and collaboration into transformative initiatives. Passionate about storytelling and upskilling, driving scalable impact for communities.',
+      research: 'ViBe/CAL',
+      img: rajan,
+      category: 'staff'
     }
   ];
 
@@ -169,7 +186,7 @@ const Team = () => {
                   onClick={() => setSelectedMember(member)}
                 >
                   <div className="team-member-img position-relative">
-                    <img src={member.img} alt={member.name} className="img-fluid w-100" />
+                    <img src={member.img} alt={member.name} className="img-fluid w-50" />
                     <div className="member-badge bg-primary-subtle text-dark fw-semibold px-3 py-1 rounded-pill position-absolute">
                       {member.department}
                     </div>
