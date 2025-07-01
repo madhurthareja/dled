@@ -47,7 +47,7 @@ export const FooterWrapper = () => {
             <ul>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/comingsoon">Blog</Link></li>
               <li><Link to="/careers">Career</Link></li>
             </ul>
           </div>
@@ -57,7 +57,6 @@ export const FooterWrapper = () => {
             <ul>
               <li><a href = "">LinkedIn</a></li>
               <li><a href = "">Instagram</a></li>
-              <li><a href = "">Twitter</a></li>
               <li><a href = "">Youtube</a></li>
             </ul>
           </div>

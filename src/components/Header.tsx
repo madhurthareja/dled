@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'; // useNavigate
 import React, { useState} from 'react';
 import "../styles/header.css";
 import logo from '../assets/dled-clear.png';
+import logo2 from '../assets/iit-clear.jpg';
 import { TypedText } from './TypedText';
 
 export const Header: React.FC = () => {
@@ -37,6 +38,8 @@ export const Header: React.FC = () => {
           <img src={logo} alt="DLED Logo" className="header-logo" />
         </Link>
 
+      <img src={logo2} alt="IIT Ropar Logo" className="header-logo2" />
+
         {/* Desktop Navigation */}
         <nav className="nav-bar">
           <div className="nav-links">
@@ -49,7 +52,7 @@ export const Header: React.FC = () => {
 
           <Link to="/comingsoon">
           <button className="nav-button">
-            <span className="nav-button-text">View Publications</span>
+            <span className="nav-button-text">Collaborations</span> {/*} Was 'View Publications' button */}
           </button>
           </Link>
         </nav>
@@ -74,14 +77,13 @@ export const Header: React.FC = () => {
 
           <Link to="/comingsoon">
           <button className="nav-button">
-            <span className="nav-button-text">View Publications</span>
+            <span className="nav-button-text">Collaborations</span> {/*} Was 'View Publications' button */}
           </button>
           </Link>
         </nav>
       )}
 
       {/* Content section */}
-      <div className="hero-flex-container">
       <div className="content">
       <span className="subtitle">An IIT Ropar Initiative</span>
       <h1 className="title">
@@ -129,8 +131,6 @@ export const Header: React.FC = () => {
           />
         </div>
       </div>
-      </div>
-      
     </header>
   );
 };

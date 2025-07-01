@@ -13,6 +13,13 @@
   object-fit: contain;
 }
 
+.header-logo2 {
+  margin-bottom: 30px;
+  margin-right: 50%;
+  height: 106px;
+  width: 106px;
+}
+
 .header-top {
   display: flex;
   align-items: center;

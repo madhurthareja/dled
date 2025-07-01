@@ -126,11 +126,13 @@ const Team = () => {
               </a>
             </div>
             <div className="col-lg-6">
+              {/*}
               <div className="people-illustration position-relative mt-4">
                 <div className="floating-head floating-head-1 rounded-circle overflow-hidden shadow-lg"></div>
                 <div className="floating-head floating-head-2 rounded-circle overflow-hidden shadow-lg"></div>
                 <div className="floating-head floating-head-3 rounded-circle overflow-hidden shadow-lg"></div>
               </div>
+              */}
             </div>
           </div>
         </div>

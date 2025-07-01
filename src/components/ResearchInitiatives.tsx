@@ -49,9 +49,9 @@ const ResearchCard: React.FC<ResearchCardProps> = ({
   focus,
   // researchTeam,
   keyOutcomes,
-  collaborators,
-  imageUrl,
-  collaboratorLogos,
+  // collaborators,
+  imageUrl
+  // collaboratorLogos,
 }) => {
   return (
     <div className="research-card">
@@ -97,6 +97,7 @@ const ResearchCard: React.FC<ResearchCardProps> = ({
           ))}
         </div>
 
+        {/*}
         <div className="collaborators">
           <p className="detail-title bold">Collaborators</p>
           <div className="collaborator-list">
@@ -106,6 +107,8 @@ const ResearchCard: React.FC<ResearchCardProps> = ({
               </p>
             ))}
           </div>
+          
+
           <div className="collaborator-logos">
             {collaboratorLogos.map((logo, index) => (
               <div key={index} className="logo-container">
@@ -113,7 +116,10 @@ const ResearchCard: React.FC<ResearchCardProps> = ({
               </div>
             ))}
           </div>
+        
         </div>
+        */} 
+
       </div>
     </div>
   );
