@@ -15,7 +15,7 @@ const Team = () => {
     id: number;
     name: string;
     role: string;
-    department: string;
+    department?: string; // makes department optional
     bio: string;
     research: string;
     img: string;
@@ -48,7 +48,7 @@ const Team = () => {
       name: 'Meenakshi V',
       role: 'PhD Researcher',
       department: 'Computer Science',
-      bio: 'Full-stack developer specializing in educational technology platforms and scalable architectures.',
+      bio: 'A passionate educator and researcher in Education Design at the DLED Lab  with a research journey focused on crafting engaging learning experiences that dissolve the boundary between learning and assessment—envisioning guided learning that makes final exams obsolete. Part of Annam.AI’s AI Skill Development initiative, working to bridge academia and career aspirations.',
       research: 'ViBe/CAL, Poll Automation',
       img: meenakshi,
       category: 'students'
@@ -77,7 +77,6 @@ const Team = () => {
       id: 6,
       name: 'Aditya BMV',
       role: 'Software Developer',
-      department: 'Computer Science',
       bio: 'Software engineer with a passion for creating user-friendly educational applications and tools.',
       research: 'ViBe/CAL',
       img: aditya,
@@ -87,7 +86,6 @@ const Team = () => {
       id: 7,
       name: 'Rajan Gupta',
       role: 'Software Developer',
-      department: 'Computer Science',
       bio: 'Weaving technology, education, and collaboration into transformative initiatives. Passionate about storytelling and upskilling, driving scalable impact for communities.',
       research: 'ViBe/CAL',
       img: rajan,
@@ -103,7 +101,7 @@ const Team = () => {
     return (
       <Link to="/">
       <img
-      src="../../public/images/home.png"
+      src="/images/home.png"
       alt="Home"
       style={{ width: 32, height: 32, cursor: "pointer" }}
       />
@@ -187,26 +185,36 @@ const Team = () => {
                 >
                   <div className="team-member-img position-relative">
                     <img src={member.img} alt={member.name} className="img-fluid w-50" />
-                    <div className="member-badge bg-primary-subtle text-dark fw-semibold px-3 py-1 rounded-pill position-absolute">
-                      {member.department}
-                    </div>
+                    
+                    {/* Conditionally render department badge */}
+                    {member.department && (
+                      <div className="member-badge bg-primary-subtle text-dark fw-semibold px-3 py-1 rounded-pill position-absolute">
+                        {member.department}
+                      </div>
+                    )}
                   </div>
+                  
                   <div className="p-4">
                     <h4 className="fw-bold mb-1">{member.name}</h4>
                     <p className="text-primary mb-2">{member.role}</p>
                     <p className="text-muted mb-0">{member.bio.substring(0, 100)}...</p>
-                    <div className="mt-3">
-                      {member.research.split(', ').map((topic, i) => (
-                        <span key={i} className="badge bg-light text-dark me-1 mb-1">{topic}</span>
-                      ))}
-                    </div>
+                    
+                    {/* Conditionally render research topics */}
+                    {member.research && (
+                      <div className="mt-3">
+                        {member.research.split(', ').map((topic, i) => (
+                          <span key={i} className="badge bg-primary-subtle text-dark me-2 mb-1">{topic}</span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
+        </section>
+
 
       {/* Member Modal */}
       {selectedMember && (
@@ -249,7 +257,7 @@ const Team = () => {
                     <h6 className="fw-bold mt-4">Research Interests</h6>
                     <div className="mb-4">
                       {selectedMember.research.split(', ').map((topic, i) => (
-                        <span key={i} className="badge bg-primary bg-opacity-10 text-primary me-1 mb-1">
+                        <span key={i} className="badge bg-primary-subtle text-dark bg-opacity-10 me-1 mb-1">
                           {topic}
                         </span>
                       ))}

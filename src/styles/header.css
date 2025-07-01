@@ -304,6 +304,9 @@
   position: absolute;
   object-fit: cover;
   object-position: 60% 20%;
+  transform: scale(0.85);
+  margin-top: 60px;
+  border-radius: 5%;
 }
 
 /* Mobile menu icon */

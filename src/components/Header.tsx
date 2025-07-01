@@ -81,6 +81,7 @@ export const Header: React.FC = () => {
       )}
 
       {/* Content section */}
+      <div className="hero-flex-container">
       <div className="content">
       <span className="subtitle">An IIT Ropar Initiative</span>
       <h1 className="title">
@@ -128,6 +129,8 @@ export const Header: React.FC = () => {
           />
         </div>
       </div>
+      </div>
+      
     </header>
   );
 };

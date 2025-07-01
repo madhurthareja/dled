@@ -159,7 +159,7 @@ const Research = () => {
     return (
       <Link to="/">
       <img
-      src="../../public/images/home.png"
+      src="/images/home.png"
       alt="Home"
       style={{ width: 32, height: 32, cursor: "pointer" }}
       />
