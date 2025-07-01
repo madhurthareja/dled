@@ -13,6 +13,13 @@
   object-fit: contain;
 }
 
+.header-logo2 {
+  margin-bottom: 30px;
+  margin-right: 50%;
+  height: 106px;
+  width: 106px;
+}
+
 .header-top {
   display: flex;
   align-items: center;
@@ -304,6 +311,9 @@
   position: absolute;
   object-fit: cover;
   object-position: 60% 20%;
+  transform: scale(0.85);
+  margin-top: 60px;
+  border-radius: 5%;
 }
 
 /* Mobile menu icon */
