@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/dled-iit-clear.png"
 
 const Careers = () => {
   const openings = [
@@ -47,13 +48,13 @@ function HomeButton() {
     return (
       <Link to="/">
       <img
-      src="/images/home.png"
+      src= { logo }
       alt="Home"
-      style={{ width: 32, height: 32, cursor: "pointer" }}
+      style={{ width: 280, height: 86, cursor: "pointer", marginLeft: "-15px" }}
       />
       </Link>
     );
-}
+  }
 
   return (
     <div className="careers-page">

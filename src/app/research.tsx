@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { FaFlask, FaChartLine, FaRobot, FaUsers,  FaChartBar } from 'react-icons/fa'; // FaEye, FaRobot, FaCertificate, FaChartBar
 import "../styles/researchPage.css";
+import logo from "../assets/dled-iit-clear.png"
 
 // Export the array so it can be imported in ResearchInitiatives.tsx
 export const researchProjects = [
@@ -159,9 +160,9 @@ const Research = () => {
     return (
       <Link to="/">
       <img
-      src="/images/home.png"
+      src= { logo }
       alt="Home"
-      style={{ width: 32, height: 32, cursor: "pointer" }}
+      style={{ width: 280, height: 86, cursor: "pointer", marginLeft: "-15px" }}
       />
       </Link>
     );

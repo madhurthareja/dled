@@ -12,6 +12,7 @@ import ScrollToTop from './components/ScrollToTop';
 import HashScroller from './components/HashScroller';
 import './index.css';
 import ComingSoon from './app/comingsoon';
+import Collaborations from './app/collaborations';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/partners" element={<Partners />} />
         <Route path="/events" element={<Events />} />
         <Route path="/comingsoon" element={<ComingSoon />} />
+        <Route path="/collaborations" element={<Collaborations />} />
       </Routes>
     </Router>
   );
