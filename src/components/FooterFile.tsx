@@ -1,11 +1,12 @@
 import "../styles/footerFile.css";
 import { Link } from 'react-router-dom';
 import logo from '../assets/dled-clear.png'; // Adjust the path as necessary
+// import footerBg from '../assets/simple-shiny.svg';
 
 export const FooterWrapper = () => {
   return (
     <footer className="footer">
-      <img className="footer-bg-img" src="https://c.animaapp.com/SP71lV0J/img/rectangle-5927.svg" alt="" />
+      {/* <img className="footer-bg-img" src= {footerBg} alt="" /> */}
       <div className="footer-content">
 
         <div className="footer-images">
