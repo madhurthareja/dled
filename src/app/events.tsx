@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaCalendarAlt, FaMapMarkerAlt, FaRegClock } from 'react-icons/fa'; // FaTicketAlt, FaUsers
 import { Link } from 'react-router-dom';
+import logo from "../assets/dled-iit-clear.png"
 
 // Google Calendar Functionality
 // Helper to format date and time for Google Calendar and ICS
@@ -70,9 +71,9 @@ function HomeButton() {
     return (
       <Link to="/">
       <img
-      src="/images/home.png"
+      src= { logo }
       alt="Home"
-      style={{ width: 32, height: 32, cursor: "pointer" }}
+      style={{ width: 280, height: 86, cursor: "pointer", marginLeft: "-15px" }}
       />
       </Link>
     );

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'; // useNavigate
 import React, { useState} from 'react';
 import "../styles/header.css";
-import logo from '../assets/dled-clear.png';
-import logo2 from '../assets/iit-clear.jpg';
+import logo from '../assets/dled-iit-clear.png';
+// import logo2 from '../assets/iit-clear.jpg';
 import { TypedText } from './TypedText';
 
 export const Header: React.FC = () => {
@@ -35,10 +35,10 @@ export const Header: React.FC = () => {
 
       <div className="header-top">
         <Link to="/">
-          <img src={logo} alt="DLED Logo" className="header-logo" />
+          <img src={logo} alt="DLED and IIT Logos" className="header-logo" />
         </Link>
 
-      <img src={logo2} alt="IIT Ropar Logo" className="header-logo2" />
+      {/* <img src={logo2} alt="IIT Ropar Logo" className="header-logo2" /> */}
 
         {/* Desktop Navigation */}
         <nav className="nav-bar">
@@ -113,6 +113,8 @@ export const Header: React.FC = () => {
       {/* Image section */}
       <div className="image-group">
         <div className="overlap-image">
+
+          {/*}
           <img
             className="subtract"
             src="https://c.animaapp.com/SP71lV0J/img/subtract.svg"
@@ -123,6 +125,8 @@ export const Header: React.FC = () => {
             src="https://c.animaapp.com/SP71lV0J/img/subtract-1.svg"
             alt="Decorative element"
           />
+          */}
+          
           <img
             className="highschool-img mx-auto d-block" 
             src = "https://images.unsplash.com/photo-1667835949495-78a1ea9ecd77?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
