@@ -97,7 +97,7 @@ const Events = () => {
       time: '11:00 AM - 12:00 PM',
       location: 'Virtual Event',
       description: 'Launch of ViBe, a wave of revolutionary educational tools for teachers and students.',
-      image: 'public/images/events/vibe.png',
+      image: '/images/events/vibe.png',
       category: 'Product Launch',
       status: 'upcoming',
       speakers: ['Dr. Sudarshan Iyengar', 'DLED Research Team']
