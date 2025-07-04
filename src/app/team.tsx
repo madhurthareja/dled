@@ -21,6 +21,8 @@ const Team = () => {
     research: string;
     img: string;
     category: string;
+    email?: string;
+    linkedin?: string;
   }>(null);
 
   const teamMembers = [
@@ -32,7 +34,9 @@ const Team = () => {
       bio: 'A faculty member in the CSE Department at IIT Ropar, who currently serves as Director of Annam.AI- a major Center of Excellence in Artificial Intelligence at IIT Ropar. As a PhD graduate from IISc, he is known for his engaging approach to technical education, delivering over 400 science talks, conducting 120+ Faculty Development Programs, and creating online courses that have reached more than 900,000 students. His SWAYAM course, The Joy of Computing, consistently ranks first in enrollments. He leads the Minor in AI initiative, aiming to train one million students, and heads the Education Design Lab at IIT Ropar. Dr. Sudarshan also coordinates the Prime Minister Research Fellowship and PM SHRI programs, and is a founding faculty member of the IIT Madras BS Programme. He has graduated 10 PhD students, currently supervises five more, and focuses his research on AI for Social Good and Education Design. Beyond academia, he is a homeschooling father of two and an avid reader, committed to making education inspiring and accessible.',
       research: 'Adaptive learning systems, Educational data mining',
       img: drSudarshan,
-      category: 'faculty'
+      category: 'faculty',
+      linkedin:'https://www.linkedin.com/in/sudarshan-iyengar-3560b8145/',
+      email: 'sudarshan@iitrpr.ac.in'
     },
     {
       id: 2,
@@ -42,7 +46,9 @@ const Team = () => {
       bio: 'An educator and research scholar at DLED Lab, IIT Ropar. My work centers around education design, integrating technology and innovation to create impactful learning experiences.',
       research: 'DDD, ViBe, PES, Poll Automation, ',
       img: sakshi,
-      category: 'students'
+      category: 'students',
+      linkedin:'https://www.linkedin.com/in/sakshivk/',
+      email: 'sakshi.sharma@vicharanashala.ai'
     },
     {
       id: 3,
@@ -52,7 +58,9 @@ const Team = () => {
       bio: 'A passionate educator and researcher in Education Design at the DLED Lab  with a research journey focused on crafting engaging learning experiences that dissolve the boundary between learning and assessment—envisioning guided learning that makes final exams obsolete. Part of Annam.AI’s AI Skill Development initiative, working to bridge academia and career aspirations.',
       research: 'ViBe/CAL, Poll Automation',
       img: meenakshi,
-      category: 'students'
+      category: 'students',
+      linkedin:'https://www.linkedin.com/in/meenakshi-v-25aa7691/',
+      email: 'meenakshi.v@vicharanashala.ai'
     },
     {
       id: 4,
@@ -62,7 +70,9 @@ const Team = () => {
       bio: 'A research scholar focused on integrating artificial intelligence into education to enhance teaching and learning experiences. Through my research and development efforts, I strive to create impactful tools that promote meaningful and effective learning.',
       research: 'PES, Poll Automation',
       img: rohit,
-      category: 'students'
+      category: 'students',
+      linkedin:'https://www.linkedin.com/in/imrohitvk/',
+      email: 'sudarshan@iitrpr.ac.in'
     },
     {
       id: 5,
@@ -72,7 +82,9 @@ const Team = () => {
       bio: 'Investigating the impact of AI tutors on student engagement and learning outcomes.',
       research: 'AI in education, Student engagement',
       img: shivani,
-      category: 'students'
+      category: 'students',
+      linkedin:'https://www.linkedin.com/in/shivani-aggarwal-5865b639/',
+      email: 'shivani.aggarwal@vicharanashala.ai'
     },
     {
       id: 6,
@@ -81,7 +93,9 @@ const Team = () => {
       bio: 'Software engineer with a passion for creating user-friendly educational applications and tools.',
       research: 'ViBe/CAL',
       img: aditya,
-      category: 'staff'
+      category: 'staff',
+      linkedin:'https://www.linkedin.com/in/bvmukunda/',
+      email: 'aditya.bmv@vicharanashala.ai'
     },
     {
       id: 7,
@@ -90,7 +104,9 @@ const Team = () => {
       bio: 'Weaving technology, education, and collaboration into transformative initiatives. Passionate about storytelling and upskilling, driving scalable impact for communities.',
       research: 'ViBe/CAL',
       img: rajan,
-      category: 'staff'
+      category: 'staff',
+      linkedin:'https://www.linkedin.com/in/rajankrsna/',
+      email: 'rajan.gupta@vicharanashala.ai'
     }
   ];
 
@@ -242,15 +258,16 @@ const Team = () => {
                       className="img-fluid rounded-3 mb-3"
                     />
                     <div className="d-flex gap-2 justify-content-center mb-3">
-                      <a href="#" className="btn btn-sm btn-outline-primary rounded-circle">
-                        <i className="fab fa-linkedin-in"></i>
-                      </a>
-                      <a href="#" className="btn btn-sm btn-outline-primary rounded-circle">
-                        <i className="fas fa-envelope"></i>
-                      </a>
-                      <a href="#" className="btn btn-sm btn-outline-primary rounded-circle">
-                        <i className="fas fa-file-alt"></i>
-                      </a>
+                      {selectedMember.linkedin && (
+                        <a href={selectedMember.linkedin} className="btn btn-sm btn-outline-primary rounded-circle" target="_blank" rel="noopener noreferrer">
+                          <i className="fab fa-linkedin-in"></i>
+                        </a>
+                      )}
+                      {selectedMember.email && (
+                        <a href={`mailto:${selectedMember.email}`} className="btn btn-sm btn-outline-primary rounded-circle">
+                          <i className="fas fa-envelope"></i>
+                        </a>
+                      )}
                     </div>
                   </div>
                   <div className="col-md-8">
