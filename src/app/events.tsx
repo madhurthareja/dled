@@ -181,7 +181,7 @@ const Events = () => {
                         <div className="col-md-5">
                           <img 
                             src={event.image} 
-                            className="img-fluid h-100 " 
+                            className="img-fluid h-100 width-100 object-cover" 
                             alt={event.title}
                             style={{minHeight: '200px'}}
                           />
