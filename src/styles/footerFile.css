@@ -1,9 +1,17 @@
 /* Base Footer Styles */
+/* #ffb649 */
+
+html, body {
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 
 .footer {
-  
-  background-color: #fff6f3;
-  background-image: url(https://c.animaapp.com/SP71lV0J/img/rectangle-5927.svg);
+  background-color: #ffce72;
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -14,20 +22,11 @@
   font-family: "Manrope", Helvetica, sans-serif;
 }
 
-.footer-bg-img {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: auto;
-  z-index: 0;
-  pointer-events: none;
-}
-
 .footer-content {
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
+  color:rgb(17, 17, 104);
 }
 
 /* Logo and Address Section */
@@ -40,7 +39,6 @@
   margin-bottom: 40px;
   max-width: 300px;
   overflow: hidden;
-  /* border: solid 1px #000; */
 }
 
 .footer-logo {
@@ -54,6 +52,7 @@
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 12px;
+  color:rgb(17, 17, 104);
 }
 
 .footer-address p {
@@ -105,6 +104,7 @@
   width: 100%;
 }
 
+/* Map*/
 .footer-main-image {
   position: absolute;
   top: 50%;
@@ -116,6 +116,7 @@
   transform: scale(3.0);
   transform: translate(-70%, -40%);
   transform-origin: center center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .footer-secondary-image {
@@ -126,6 +127,54 @@
   height: 191px;
   object-fit: contain;
 }
+
+
+  /* CSS rules here will apply to screens narrower than 1375px */
+@media (max-width: 1374px) {
+
+  .footer {
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 500px;
+  }
+
+  .footer-logo-section {
+    flex-direction: column;
+    align-items: flex-start;
+    position: static;
+    left: 0;
+    bottom: 0;
+    max-width: none;
+    margin-bottom: 100px;
+    overflow: visible;
+  }
+
+  /* Map image */
+  .footer-main-image {
+    left: 580px;
+    transform: translate(-120%, 0%);
+  }
+}
+
+@media (max-width: 1106px) {
+  .footer-secondary-image {
+    transform: scale(0.9);
+    margin-right: -30px;
+  }
+
+  .footer-links {
+    transform: scale(0.9);
+    margin-right: -30px;
+  }
+
+  .footer-main-image {
+    left: 0;
+    transform: scale(0.8);
+  }
+}
+
 
 /* Desktop Styles (min-width: 992px) */
 @media (min-width: 992px) {
@@ -150,20 +199,24 @@
   }
 }
 
-/* Mobile Styles (max-width: 991px) */
-@media (max-width: 991px) {
+/* Mobile Styles (max-width: 992px) */
+@media (max-width: 992px) {
 
   .footer {
-    padding: 30px 20px;
+    background-color: #ffce72;
     height: auto;
-    background-image: url(https://c.animaapp.com/SP71lV0J/img/rectangle-5927.svg);
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    max-width: 100vw;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .footer-content {
     display: flex;
     flex-direction: column;
+    max-width: 100vw;
+    margin: 0;
   }
 
   /* Logo at top left */
@@ -177,7 +230,10 @@
   /* Address section under logo */
   .footer-address {
     flex: 1;
-    margin: 20px 0 30px 0;
+    /* margin: 20px 0 30px 0; */
+    margin: 0 auto;
+    margin-bottom: 30px;
+    transform: scale(1.2);
   }
 
   .footer-address h2 {
@@ -196,10 +252,12 @@
   /* Links grid layout */
   .footer-links {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 25px;
     order: 3;
     margin-bottom: 30px;
+    margin: 0 auto;
+    transform: scale(1.2);
   }
 
   .footer-column h3 {
@@ -214,16 +272,17 @@
     line-height: 24px;
   }
 
-  /* Map under address */
-
+  /* Map */
   .footer-main-image {
-  display: block;
-  position: static;
-  width: 260px;
-  height: 230px;
-  object-fit: cover;
-  object-position: center;
-  flex-shrink: 0;
+    display: block;
+    position: static;
+    width: 260px;
+    height: 230px;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+    transform: scale(1.4);
+    margin: 0 auto;
 }
 
   /* Logo image at bottom */
@@ -234,44 +293,52 @@
     order: 5;
     margin-top: 20px;
     margin-bottom: 30px;
+    margin-left: 15%;
+    margin-right: auto;
   }
 }
 
-  /* CSS rules here will apply to screens narrower than 1375px */
-@media (max-width: 1374px) {
-
-  .footer {
-    background-image: url('https://c.animaapp.com/SP71lV0J/img/rectangle-5927.svg');
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    position: relative;
-    min-height: 500px;
+@media (max-width: 413px) {
+  .footer-address {
+    transform: scale(1.1) !important;
   }
 
-  .footer-logo-section {
-    flex-direction: column;
-    align-items: flex-start;
-    position: static;
-    left: 0;
-    bottom: 0;
-    max-width: none;
-    margin-bottom: 100px;
-    overflow: visible;
+  .footer-links {
+    transform: scale(1.05) !important;
   }
 
-  /* Map image */
   .footer-main-image {
-    left: 580px;
-    transform: translate(-120%, 0%);
+    transform: scale(1.05) !important;
+    margin-right: 30px !important;
   }
-
-  /* Rectangle svg
-  .footer-bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-    */
 }
 
+@media (max-width: 391px) {
+  .footer-address {
+    transform: scale(1.1) !important;
+  }
+
+  .footer-links {
+    transform: scale(1.05) !important;
+  }
+
+  .footer-main-image {
+    transform: scale(0.95) !important;
+    margin-right: 30px !important;
+  }
+}
+
+@media (max-width: 361px) {
+  .footer-address {
+    transform: scale(1.1) !important;
+  }
+
+  .footer-links {
+    transform: scale(1.05) !important;
+  }
+
+  .footer-main-image {
+    transform: scale(1.1) !important;
+    margin-right: 30px !important;
+  }
+}
