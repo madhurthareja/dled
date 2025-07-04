@@ -73,7 +73,13 @@ function HomeButton() {
       <img
       src= { logo }
       alt="Home"
-      style={{ width: 280, height: 86, cursor: "pointer", marginLeft: "-15px" }}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        position: 'relative',
+        zIndex: 10
+  }}
       />
       </Link>
     );
@@ -86,52 +92,16 @@ const Events = () => {
   const allEvents = [
     {
       id: 1,
-      title: 'AI in Education Workshop',
-      date: 'May 15, 2025',
-      time: '10:00 AM - 4:00 PM',
-      location: 'IIT Ropar Campus, Innovation Center',
-      description: 'A hands-on workshop exploring the applications of AI in personalized learning systems.',
+      title: 'Guru Purnima [ViBe Launch]',
+      date: 'July 10, 2025',
+      time: '11:00 AM - 12:00 PM',
+      location: 'Virtual Event',
+      description: 'Launch of ViBe, a wave of revolutionary educational tools for teachers and students.',
       image: 'https://images.unsplash.com/photo-1680783954745-3249be59e527?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      category: 'Workshop',
+      category: 'Product Launch',
       status: 'upcoming',
-      speakers: ['Dr. Rajesh Sharma', 'Prof. Ananya Gupta']
+      speakers: ['Dr. Sudarshan Iyengar', 'DLED Research Team']
     },
-    {
-      id: 2,
-      title: 'Virtual Hackathon 2025',
-      date: 'June 10-12, 2025',
-      time: '48-hour event starting at 9:00 AM',
-      location: 'Online',
-      description: 'Join us for a 48-hour hackathon to develop innovative solutions for education challenges. Prizes include incubation support and research grants.',
-      image: 'https://images.unsplash.com/photo-1633102313141-8f2ab45c0202?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      category: 'Hackathon',
-      status: 'upcoming',
-      partners: ['Google EDU', 'Microsoft Research']
-    },
-    {
-      id: 3,
-      title: 'Research Symposium on EdTech',
-      date: 'July 20, 2025',
-      time: '9:30 AM - 6:00 PM',
-      location: 'IIT Ropar Campus, Auditorium',
-      description: 'A symposium to present and discuss the latest research in educational technology with keynote speakers from academia and industry.',
-      image: 'https://images.unsplash.com/photo-1652081140966-6bed5c5815ad?q=80&w=914&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      category: 'Conference',
-      status: 'upcoming',
-      keynote: 'Dr. Priya Nair, MIT'
-    },
-    {
-      id: 4,
-      title: 'Digital Pedagogy Masterclass',
-      date: 'April 5, 2025',
-      time: '2:00 PM - 5:00 PM',
-      location: 'Online',
-      description: 'Learn innovative digital teaching methods from award-winning educators.',
-      image: 'https://images.unsplash.com/photo-1619633376278-d8652961ce02?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      category: 'Workshop',
-      status: 'past',
-      recording: 'Available for registered participants'
-    }
   ];
 
   const filteredEvents = allEvents.filter(event => 
@@ -221,7 +191,7 @@ const Events = () => {
                             <div className="d-flex justify-content-between align-items-start mb-2">
                               <span className="badge" style={{ backgroundColor: 'rgb(223, 94, 8)', color: 'rgb(252, 251, 196)' }}  >{event.category}</span>
                               {event.status === 'upcoming' && (
-                                <span className="badge" style={{ backgroundColor: 'rgb(248, 229, 201)', color: 'rgb(59, 58, 58)' }} >Registration Open</span>
+                                <span className="badge" style={{ backgroundColor: 'rgb(248, 229, 201)', color: 'rgb(59, 58, 58)' }} ></span>
                               )}
                             </div>
                             <h3 className="h4 card-title fw-bold">{event.title}</h3>
@@ -244,29 +214,26 @@ const Events = () => {
                             <p className="card-text flex-grow-1">{event.description}</p>
 
                             <div className="mt-4 d-flex gap-2">
-                            <button className="btn btn-warning text-dark fw-bold flex-grow-1">
-                              {event.status === 'upcoming' ? 'Register Now' : 'View Details'}
-                            </button>
-                            <a
-                              href={getGoogleCalendarUrl(event)}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="btn btn-outline-secondary"
-                              title="Add this event to your Google Calendar"
-                            >
-                              <i className="far fa-calendar-plus" aria-hidden="true"></i>
-                              <span className="visually-hidden">Add to Google Calendar</span>
-                            </a>
-                            <button
-                              className="btn btn-outline-secondary"
-                              title="Download .ics file to add this event to any calendar app"
-                              onClick={() => downloadICS(event)}
-                              type="button"
-                            >
-                              <i className="far fa-calendar-alt" aria-hidden="true"></i>
-                              <span className="visually-hidden">Download ICS</span>
-                            </button>
-                          </div>
+                              <a
+                                href={getGoogleCalendarUrl(event)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-warning text-dark fw-bold flex-grow-1"
+                                title="Add this event to your Google Calendar"
+                              >
+                                <i className="" aria-hidden="true"></i>
+                                Add to Calendar
+                              </a>
+                              <button
+                                className="btn btn-outline-secondary"
+                                title="Download .ics file to add this event to any calendar app"
+                                onClick={() => downloadICS(event)}
+                                type="button"
+                              >
+                                <i className="far fa-calendar-alt" aria-hidden="true"></i>
+                                <span className="visually-hidden">Download ICS</span>
+                              </button>
+                            </div>
 
                           </div>
                         </div>
