@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { FaFlask, FaChartLine, FaRobot, FaUsers,  FaChartBar } from 'react-icons/fa'; // FaEye, FaRobot, FaCertificate, FaChartBar
 import "../styles/researchPage.css";
-import logo from "../assets/dled-iit-clear.png"
+import { Navbar } from "../components/Navbar"; // Import Navbar
 
 // Export the array so it can be imported in ResearchInitiatives.tsx
 export const researchProjects = [
@@ -142,7 +142,7 @@ const Research = () => {
       focusArea: 'Educational Technology',
       team: ['Dr. Sudarshan Iyengar (Principal Investigator)', 'Meenakshi V. (Research Scholar)', 'Aditya BMV. (Technical Lead)'],
       partners: ['-'],
-      timeline: '2024 - 2024',
+      timeline: '2024 - 2025',
       outcomes: [
         'ViBe is an AI-powered learning guide that fosters active, distraction-free engagement',
         'Utilizes smart checks, quick quizzes, and adaptive challenges',
@@ -156,20 +156,10 @@ const Research = () => {
     ? researchProjects 
     : researchProjects.filter(project => project.status === activeFilter);
 
-  function HomeButton() {
-    return (
-      <Link to="/">
-      <img
-      src= { logo }
-      alt="Home"
-      style={{ width: 280, height: 86, cursor: "pointer", marginLeft: "-15px" }}
-      />
-      </Link>
-    );
-  }
 
   return (
     <div className="research-page">
+      <Navbar /> 
       {/* Hero Section*/}
       <section className="hero-section text-white py-6" style={{
         background: 'linear-gradient(130deg,rgb(253, 232, 224) 0%,rgb(253, 249, 247) 85%)'
@@ -177,7 +167,7 @@ const Research = () => {
         <div className="container py-5">
           <div className="row align-items-center">
             <div className="col-lg-8">
-              <HomeButton />
+
               <h1 className="display-4 text-black fw-bold mb-4 mt-4" style={{ marginLeft: '-4px' }}>
                 Research at DLED
               </h1>
@@ -213,7 +203,7 @@ const Research = () => {
 
       {/* Research Projects Section */}
       <section className="py-5 bg-light">
-        <div className="container">
+        <div className="container-fluid ml-10 mr-10">
           <div className="text-center mb-5">
             <h2 className="display-5 fw-bold mb-3">Our Research Initiatives</h2>
             <p className="lead text-muted max-w-800 mx-auto">

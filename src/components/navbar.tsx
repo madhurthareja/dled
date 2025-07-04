@@ -1,71 +1,56 @@
-import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
-import dled from '../assets/dled.jpg'
+import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import "../styles/header.css";
+import logo from '../assets/dled-iit-clear.png';
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+export const Navbar: React.FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleNavLinkClick = () => setMenuOpen(false);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom">
-      <div className="container">
-         <Link className="navbar-brand d-flex align-items-center" to="/">
-          <img src={dled} alt="DLED Logo" height="40" className="me-2" />
+    <header className="navbar">
+      <div className="bg-top"></div>
+      <div className="bg-bottom"></div>
+      <div className="header-top">
+        <Link to="/">
+          <img src={logo} alt="DLED and IIT Logos" className="header-logo" />
         </Link>
-
-        {/* Mobile Toggle Button */}
-        <button 
-          className="navbar-toggler" 
-          type="button" 
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        {/* Navbar Links */}
-        <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}>
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <NavItem path="/research" text="Research" currentPath={location.pathname} />
-            <NavItem path="/team" text="Team" currentPath={location.pathname} />
-            <NavItem path="/events" text="Events" currentPath={location.pathname} />
-            <NavItem path="/careers" text="Careers" currentPath={location.pathname} />
-            <NavItem path="/comingsoon" text="Blog" currentPath={location.pathname} />
-            <li className="nav-item ms-lg-3">
-              <Link
-                to="/publications"
-                className="btn btn-dark rounded-pill px-4 py-2 ms-lg-2"
-              >
-                View Publications
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <nav className="nav-bar">
+          <div className="nav-links">
+            <Link to="/research" className="nav-text">Research</Link>
+            <Link to="/team" className="nav-text">Team</Link>
+            <Link to="/events" className="nav-text">Events</Link>
+            <Link to="/careers" className="nav-text">Careers</Link>
+            <Link to="/comingsoon" className="nav-text">Blog</Link>
+          </div>
+          <Link to="/comingsoon">
+            <button className="nav-button">
+              <span className="nav-button-text">Collaborations</span>
+            </button>
+          </Link>
+        </nav>
       </div>
-    </nav>
+      <button
+        className="menu-icon"
+        aria-label="Menu"
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen(!menuOpen)}
+      ></button>
+      {menuOpen && (
+        <nav className="mobile-nav-dropdown">
+          <Link to="/research" className="nav-text" onClick={handleNavLinkClick}>Research</Link>
+          <Link to="/team" className="nav-text" onClick={handleNavLinkClick}>Team</Link>
+          <Link to="/events" className="nav-text" onClick={handleNavLinkClick}>Events</Link>
+          <Link to="/careers" className="nav-text" onClick={handleNavLinkClick}>Careers</Link>
+          <Link to="/comingsoon" className="nav-text" onClick={handleNavLinkClick}>Blog</Link>
+          <Link to="/comingsoon">
+            <button className="nav-button">
+              <span className="nav-button-text">Collaborations</span>
+            </button>
+          </Link>
+        </nav>
+      )}
+    </header>
   );
 };
-
-interface NavItemProps {
-  path: string;
-  text: string;
-  currentPath: string;
-}
-
-const NavItem = ({ path, text, currentPath }: NavItemProps) => {
-  const isActive = currentPath === path;
-  
-  return (
-    <li className="nav-item mx-lg-2">
-      <Link 
-        className={`nav-link px-lg-3 py-2 py-lg-1 ${isActive ? 'active' : ''}`}
-        to={path}
-      >
-        {text}
-        {isActive && <div className="nav-active-indicator"></div>}
-      </Link>
-    </li>
-  );
-};
-
-export default Navbar;

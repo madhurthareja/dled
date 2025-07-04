@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/dled-iit-clear.png"
+import { Navbar } from "../components/Navbar"; // Import Navbar
 
 const Careers = () => {
   const openings = [
@@ -44,41 +44,23 @@ const Careers = () => {
     },
   ];
 
-function HomeButton() {
-    return (
-      <Link to="/">
-      <img
-      src= { logo }
-      alt="Home"
-      style={{ width: 280, height: 86, cursor: "pointer", marginLeft: "-15px" }}
-      />
-      </Link>
-    );
-  }
-
   return (
     <div className="careers-page">
+      <Navbar /> {/* Add Navbar at the top */}
       {/* Hero Section */}
       <section className="hero-section text-white py-5" style={{ background: 'linear-gradient(130deg,rgb(253, 232, 224) 0%,rgb(253, 249, 247) 85%)', marginTop: '-20px' }}>
         <div className="container py-4">
           <div className="row align-items-center">
             <div className="col-lg-8">
-              <HomeButton/>
+              {/* <HomeButton/> <-- Remove this line */}
               <h1 className="display-4 text-black fw-bold mb-4 mt-4">Shape the Future of Education</h1>
               <p className="lead mb-4 fs-4 text-secondary">
                 Join DLED and contribute to innovative educational technologies through development and research.
               </p>
-
-              {/*
-              <a href="#openings" className="btn btn-light btn-lg me-2">
-                View Openings
-              </a>
-              */}
-
               <Link to="/#contact">
-              <button className="btn btn-lg px-4 text-light dark-button" style= {{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)' }}>
-              Contact Us
-              </button>
+                <button className="btn btn-lg px-4 text-light dark-button" style= {{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)' }}>
+                  Contact Us
+                </button>
               </Link>
             </div>
           </div>

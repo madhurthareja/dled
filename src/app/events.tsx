@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaCalendarAlt, FaMapMarkerAlt, FaRegClock } from 'react-icons/fa'; // FaTicketAlt, FaUsers
 import { Link } from 'react-router-dom';
-import logo from "../assets/dled-iit-clear.png"
+import { Navbar } from '../components/Navbar';
 
 // Google Calendar Functionality
 // Helper to format date and time for Google Calendar and ICS
@@ -30,10 +30,11 @@ function parseDateTime(dateStr: string, timeStr: string) {
 function getGoogleCalendarUrl(event: any) {
   const { gcStart, gcEnd } = parseDateTime(event.date, event.time);
   const base = "https://calendar.google.com/calendar/render?action=TEMPLATE";
+  const details = `${event.description || ""}\n\nJoin Zoom Meeting: ${event.link || ""}`;
   const params = [
     `text=${encodeURIComponent(event.title)}`,
     `dates=${gcStart}/${gcEnd}`,
-    `details=${encodeURIComponent(event.description || "")}`,
+    `details=${encodeURIComponent(details)}`,
     `location=${encodeURIComponent(event.location || "")}`,
   ];
   return `${base}&${params.join("&")}`;
@@ -42,6 +43,11 @@ function getGoogleCalendarUrl(event: any) {
 // Helper to generate and download ICS file
 function downloadICS(event: any) {
   const { icsStart, icsEnd } = parseDateTime(event.date, event.time);
+  const description = `${(event.description || "").replace(/\n/g, "\\n")}\\n\\nJoin Zoom Meeting: ${event.link || ""}`;
+
+  const foldLine = (line: string): string =>
+    line.match(/.{1,73}/g)?.join("\r\n ") ?? line;
+
   const icsContent = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
@@ -49,7 +55,7 @@ function downloadICS(event: any) {
     `SUMMARY:${event.title}`,
     `DTSTART:${icsStart}`,
     `DTEND:${icsEnd}`,
-    `DESCRIPTION:${event.description || ""}`,
+    `DESCRIPTION:${foldLine(description)}`,
     `LOCATION:${event.location || ""}`,
     "END:VEVENT",
     "END:VCALENDAR",
@@ -67,23 +73,8 @@ function downloadICS(event: any) {
   URL.revokeObjectURL(url);
 }
 
-function HomeButton() {
-    return (
-      <Link to="/">
-      <img
-      src= { logo }
-      alt="Home"
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        position: 'relative',
-        zIndex: 10
-  }}
-      />
-      </Link>
-    );
-  }
+
+
 
 const Events = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
@@ -100,7 +91,8 @@ const Events = () => {
       image: '/images/events/vibe.png',
       category: 'Product Launch',
       status: 'upcoming',
-      speakers: ['Dr. Sudarshan Iyengar', 'DLED Research Team']
+      speakers: ['Dr. Sudarshan Iyengar', 'DLED Research Team'],
+      link:'https://zoom.us/j/94299775769?pwd=c6VakDdjWeE8t97eGrORYWAgns9aPy.1'
     },
   ];
 
@@ -115,10 +107,10 @@ const Events = () => {
 
   return (
     <div className="events-page">
+      <Navbar />
       {/* Hero Section  */}
       <section className="hero-section text-white py-6" style={{ background: 'linear-gradient(130deg,rgb(253, 232, 224) 0%,rgb(253, 249, 247) 85%)' }}>
         <div className="container position-relative py-5">
-          <HomeButton/>
           <h1 className="display-4 text-black fw-bold mb-4 mt-4">Events at DLED</h1>
           <p className="lead mb-4 fs-4 text-secondary">
             Join our knowledge-sharing community

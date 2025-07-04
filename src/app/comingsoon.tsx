@@ -1,25 +1,14 @@
 import { Link } from "react-router-dom";
 // import { FaFlask, FaChartLine, FaUsers} from 'react-icons/fa'; // FaEye, FaRobot, FaCertificate, FaChartBar
 import "../styles/researchPage.css";
-import logo from "../assets/dled-iit-clear.png"
+import { Navbar } from "../components/Navbar";
 
-
-function HomeButton() {
-    return (
-      <Link to="/">
-      <img
-      src= { logo }
-      alt="Home"
-      style={{ width: 280, height: 86, cursor: "pointer", marginLeft: "-15px" }}
-      />
-      </Link>
-    );
-  }
 
 const ComingSoon = () => {
 
   return (
     <div className="research-page">
+      <Navbar /> {/* Add Navbar at the top */}
       {/* Hero Section*/}
       <section className="hero-section text-white py-6" style={{
         background: 'linear-gradient(130deg,rgb(253, 232, 224) 0%,rgb(253, 249, 247) 85%)'
@@ -27,7 +16,6 @@ const ComingSoon = () => {
         <div className="container py-5">
           <div className="row align-items-center">
             <div className="col-lg-8">
-              <HomeButton/>
               <h1 className="display-4 text-black fw-bold mb-4 mt-4" style={{ marginLeft: '-4px' }}>Coming Soon!</h1>
               <p className="lead mb-4 fs-4 text-secondary">
                 This page is still under construction

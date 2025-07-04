@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import { Link } from "react-router-dom";
 import "../styles/team.css";
-import logo from "../assets/dled-iit-clear.png"
 import drSudarshan from '/images/dr-sudarshan2.png';
 import sakshi from '/images/sakshi-sharma2.jpg';
 import meenakshi from '/images/meenakshi2.png';
@@ -9,6 +7,7 @@ import rohit from '/images/rohit-sharma.jpg';
 import aditya from '/images/aditya2.jpeg';
 import shivani from '/images/shivani-aggarwal2.png';
 import rajan from '/images/rajan.png';
+import { Navbar } from "../components/Navbar";
 
 const Team = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -114,26 +113,16 @@ const Team = () => {
     ? teamMembers 
     : teamMembers.filter(member => member.category === activeFilter);
 
-  function HomeButton() {
-    return (
-      <Link to="/">
-      <img
-      src= { logo }
-      alt="Home"
-      style={{ width: 280, height: 86, cursor: "pointer", marginLeft: "-15px", marginTop: "27px" }}
-      />
-      </Link>
-    );
-  }
 
   return (
     <div className="people-page">
+      <Navbar />
+      {/* Hero Section*/}
       {/* Hero Section */}
       <section className="hero-section text-white py-6" style ={{ background: 'linear-gradient(130deg,rgb(253, 232, 224) 0%,rgb(253, 249, 247) 75%)' }}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6" style = {{marginTop:'20px'}} >
-              <HomeButton/>
               <h1 className="display-4 fw-bold text-dark mb-4 mt-3"> Our People</h1>
               <p className="lead mb-4 fs-4 text-secondary">
                 Meet the brilliant minds behind Dhananjaya Lab's innovative research and educational designs

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import "../styles/researchPage.css";
 import logo from "../assets/dled-iit-clear.png"
+import { Navbar } from '../components/Navbar';
 
 // https://script.google.com/macros/s/AKfycbzTeD58qfv5Q1lPbmV4U1757lpjSoNMCfp1Jh6tsFeOsAhKTcJ8P_OkaQPxbcZyQhi9ag/exec
 
@@ -104,20 +105,10 @@ const Contact = () => {
 }, [submitSuccess]);
 
 
-function HomeButton() {
-    return (
-      <Link to="/">
-      <img
-      src= { logo }
-      alt="Home"
-      style={{ width: 280, height: 86, cursor: "pointer", marginLeft: "-15px" }}
-      />
-      </Link>
-    );
-  }
 
   return (
     <div className="contact-page">
+      <Navbar /> {/* Add Navbar at the top */}
       {/* Hero Section */}
       <section className="hero-section text-dark py-5" style={{
         background: 'linear-gradient(130deg,rgb(253, 232, 224) 0%,rgb(253, 249, 247) 85%)'
@@ -125,7 +116,6 @@ function HomeButton() {
         <div className="container py-4">
           <div className="row align-items-center">
             <div className="col-lg-8">
-              <HomeButton/>
               <h1 className="display-4 fw-bold mb-4 mt-3">Get In Touch</h1>
               <p className="lead text-secondary mb-4 fs-4">
                 Interested in joining our team or collaborating on a project? <br></br> We'd love to hear from you.
@@ -137,7 +127,7 @@ function HomeButton() {
 
       {/* Tabs Section */}
       <section className="py-5">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <ul className="nav nav-tabs nav-fill mb-4">

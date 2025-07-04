@@ -1,106 +1,71 @@
-/* Base styles */
+/* ===== Base Styles ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  z-index: 1000;
+  background: linear-gradient(130deg, rgb(253, 232, 224) 0%, rgb(253, 249, 247) 85%);
+  padding: 24px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
 .header {
-  background-color: transparent;
   position: relative;
-  width: 100%;
   overflow: hidden;
   display: block;
-  padding: 24px 40px;
-  background: #fff6f3;
+  padding-top: 140px;
+  background-color: #fff6f3; /* Use the same as .navbar */
+  min-height: 100vh;
+  width: 100%;
 }
 
 .header-logo {
   object-fit: contain;
+  height: 80px;
+  margin: 0 auto;
+  width: auto;
+  display: block;
+  margin-right: 32px; /* Add space between logo and links */
 }
 
-/* Old: for stand-alone IIT logo */
-.header-logo2 {
-  margin-bottom: 30px;
-  margin-right: 100%;
-  height: 106px;
-  width: 106px;
-  transform: scale(0.85);
+/* Background elements */
+.header .bg-top {
+  background-color: #fcefea;
+  width: 100%;
+  height: 746px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
+.header .bg-bottom {
+  background-color: #3f3838;
+  width: 100%;
+  height: 156px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* ===== Navigation Styles ===== */
 .header-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
   z-index: 10;
-}
-
-.header .bg-top {
-  background-color: #fcefea;
+  padding: 0 40px; /* Add horizontal padding for spacing */
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
-.header .bg-bottom {
-  background-color: #3f3838;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-/* Dropdown menu */
-.mobile-nav-dropdown {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(255, 246, 243, 0.98);
-  z-index: 15;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 20px 40px;
-  box-sizing: border-box;
-  animation: fadeIn 0.3s ease-out;
-}
-
-.mobile-nav-content {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  width: 100%;
-  max-width: 300px;
-}
-
-.mobile-nav-dropdown .nav-text {
-  font-size: 24px;
-  padding: 10px 0;
-  text-align: center;
-  color: #000;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.menu-icon {
-  display: none;
-  z-index: 20;
-}
-
-/* Animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Navigation styles */
 .nav-bar {
-  position: absolute;
-  top: 10px;
-  width: calc(100% - 240px);
-  height: 52px;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
   gap: 40px;
-  z-index: 10;
+  margin-left: auto; /* Push nav links to the right */
 }
 
 .nav-links {
@@ -132,25 +97,19 @@
   display: block;
   position: absolute;
   left: 0;
-  bottom: -3px; /* Space below text */
+  bottom: -3px;
   width: 100%;
   height: 2px;
-  background: #6b1313; /* Underline color */
+  background: #6b1313;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-text:hover,
-.nav-text:focus {
-  color: #6b1313;
 }
 
 .nav-text:hover::after,
 .nav-text:focus::after {
   transform: scaleX(1);
 }
-
 
 .nav-button {
   display: inline-flex;
@@ -160,6 +119,12 @@
   border-radius: 8px;
   background: transparent;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: #eee5cd;
+  transform: scale(1.02);
 }
 
 .nav-button-text {
@@ -171,10 +136,68 @@
   white-space: nowrap;
 }
 
-/* Content styles */
+/* ===== Mobile Navigation ===== */
+.menu-icon {
+  display: none;
+  background-image: url(https://c.animaapp.com/TbTDc2kR/img/list-1.svg);
+  background-size: 100% 100%;
+  height: 32px;
+  width: 32px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.mobile-nav-dropdown {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 246, 243, 0.98);
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px 40px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.mobile-nav-dropdown .nav-text {
+  font-size: 24px;
+  padding: 10px 0;
+  text-align: center;
+  color: #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Hero Content ===== */
 .content {
-  position: absolute;
+  position: relative;
   z-index: 5;
+  /* Remove max-width and margin */
+ max-width: 90%;
+ margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  min-height: 70vh;
+  width: 100%;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
 }
 
 .subtitle {
@@ -213,8 +236,7 @@
 
 .letter:hover {
   transform: translateY(-3px);
-  color:rgb(194, 17, 17);
-
+  color: rgb(194, 17, 17);
 }
 
 .description {
@@ -241,16 +263,9 @@
   padding: 10px 28px;
   border-radius: 8px;
   cursor: pointer;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s,
-    box-shadow 0.2s,
-    transform 0.1s;
-  outline: none;
+  transition: all 0.2s ease;
 }
 
-/* .btn-black styles */
 .btn-black {
   background-color: #000;
   color: #f9f08d;
@@ -258,240 +273,120 @@
   border: none;
 }
 
-.btn-black:hover,
-.btn-black:focus {
+.btn-black:hover {
   background-color: #222;
   color: #ffe066;
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
- transform: translateY(-1px) scale(1.01);
+  transform: translateY(-1px);
 }
 
-.btn-black:active {
-  background-color: #333;
-  color: #fffbe0;
-  transform: translateY(-1px) scale(1.01);
-}
-
-/* .btn-outline styles */
 .btn-outline {
   background-color: transparent;
   color: #383434;
   border: 1px solid #383434;
 }
 
-.btn-outline:hover,
-.btn-outline:active,
-.nav-button:hover {
+.btn-outline:hover {
   background-color: #eee5cd;
-  transform:
-    scale(1.02);
-  transition: background-color 0.1s ease, transform 0.1s ease;
+  transform: scale(1.02);
 }
 
-/* Image section */
+/* ===== Image Section ===== */
 .image-group {
-  position: absolute;
-  z-index: 2;
-}
-
-.overlap-image {
-  height: 100%;
+  flex: 1;
   position: relative;
-}
-
-.subtract {
-  width: 100%;
-  position: absolute;
-  left: 0;
-}
-
-.subtract-2 {
-  top: 166px;
+  min-width: 300px;
+  max-width: 600px;
 }
 
 .highschool-img {
-  position: absolute;
-  object-fit: cover;
-  object-position: 60% 20%;
-  transform: scale(0.85);
-  margin-top: 10px;
-  margin-right: 20px;
-  border-radius: 5%;
   width: 100%;
+  height: auto;
+  border-radius: 5%;
+  object-fit: cover;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
 }
 
-/* Mobile menu icon */
-.menu-icon {
-  display: none;
-  background-image: url(https://c.animaapp.com/TbTDc2kR/img/list-1.svg);
-  background-size: 100% 100%;
-  height: 32px;
-  width: 32px;
-  position: absolute;
-  top: 32px;
-  right: 24px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  z-index: 20;
-}
-
-/* Responsive styles */
-@media (min-width: 1441px) {
-  .header {
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 992px) {
-  .header {
-    height: 902px;
-  }
-
-  .header-logo{
-    height: 120px;
-    margin-right: 75px;
-    margin-left: -10px;
-    padding-left: 50px;
-    padding-top: 20px;
-    transform: scale(0.75);
-  }
-
-  .bg-top {
-    height: 746px;
-  }
-
-  .bg-bottom {
-    height: 156px;
-  }
-
-  .nav-bar {
-    left: 120px;
-  }
-
-  .content {
-    top: 152px;
-    left: 120px;
-    width: 633px;
-  }
-
+/* ===== Responsive Styles ===== */
+@media (max-width: 1200px) {
   .title {
-    max-width: 627px;
+    font-size: 60px;
+    line-height: 70px;
   }
-
-  .description {
-    max-width: 547px;
-  }
-
-  .image-group {
-    height: 794px;
-    top: 108px;
-    right: 0;
-    max-width: 628px;
-    width: 44%;
-  }
-
-  .subtract {
-    top: 495px;
-    height: 314px;
-  }
-
-  .subtract-2 {
-    top: 300px;
-    height: 314px;
-  }
-
-  .highschool-img {
-    top: 0;
-    left: 7%;
-    width: 80%;
-    height: 794px;
+  
+  .nav-links {
+    gap: 20px;
   }
 }
 
 @media (max-width: 991px) {
-  .header {
-    height: 1127px;
+  .navbar {
+    padding: 15px 20px;
   }
   
-  .header-logo {
-    height: 80px;
-    margin-right: 0;
-    
+  .header {
+    padding-top: 100px;
+    height: auto;
   }
-
+  
   .bg-top {
-    height: 1009px;
+    height: 60%;
   }
-
-  .bg-bottom {
-    height: 118px;
-    top: 1009px;
-  }
-
+  
   .nav-bar {
     display: none;
   }
-
+  
   .menu-icon {
     display: block;
   }
-
+  
+  .header-top {
+    padding: 0 20px;
+  }
   .content {
-    top: 104px;
-    left: 24px;
-    width: 343px;
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 40px;
+    min-height: 60vh;
   }
-
-  .subtitle {
-    font-size: 14px;
-    letter-spacing: 0.28px;
-  }
-
+  
   .title {
-    font-size: 35px;
-    line-height: 45.5px;
-    letter-spacing: 0.7px;
-    margin-top: 40px;
-    width: 337px;
+    font-size: 48px;
+    line-height: 56px;
+    margin-top: 30px;
   }
+  
+  .hero-text, .image-group {
+    max-width: 100%;
+  }
+  
+  .image-group {
+    margin-top: 40px;
+  }
+}
 
+@media (max-width: 576px) {
+  .title {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 0.7px;
+  }
+  
   .description {
     font-size: 16px;
     line-height: 28px;
-    letter-spacing: 0.32px;
-    width: 327px;
   }
-
+  
   .cta-buttons {
     flex-direction: column;
-    margin-top: 24px;
   }
-
-  .image-group {
-    top: 596px;
-    left: 24px;
-    width: 327px;
-    height: 413px;
+  
+  .nav-button {
+    padding: 8px 16px;
   }
-
-  .subtract {
-    top: 250px;
-    height: 163px;
-    width: 327px;
-  }
-
-  .subtract-2 {
-    top: 86px;
-    height: 163px;
-    width: 327px;
-  }
-
-  .highschool-img {
-    width: 262px;
-    height: 413px;
-    top: 0;
-    left: 23px;
+  
+  .mobile-nav-dropdown .nav-text {
+    font-size: 20px;
   }
 }
