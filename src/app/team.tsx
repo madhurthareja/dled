@@ -7,7 +7,7 @@ import rohit from '/images/rohit-sharma.jpg';
 import aditya from '/images/aditya2.jpeg';
 import shivani from '/images/shivani-aggarwal2.png';
 import rajan from '/images/rajan.png';
-import { Navbar } from "../components/Navbar";
+import { Navbar } from "../components/navbar";
 
 const Team = () => {
   const [activeFilter, setActiveFilter] = useState('all');

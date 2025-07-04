@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaCalendarAlt, FaMapMarkerAlt, FaRegClock } from 'react-icons/fa'; // FaTicketAlt, FaUsers
 import { Link } from 'react-router-dom';
-import { Navbar } from '../components/Navbar';
+import { Navbar } from '../components/navbar';
 
 // Google Calendar Functionality
 // Helper to format date and time for Google Calendar and ICS

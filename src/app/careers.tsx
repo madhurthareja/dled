@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Navbar } from "../components/Navbar"; // Import Navbar
+import { Navbar } from "../components/navbar"; // Import Navbar
 
 const Careers = () => {
   const openings = [

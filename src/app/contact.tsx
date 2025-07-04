@@ -2,8 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import "../styles/researchPage.css";
-import logo from "../assets/dled-iit-clear.png"
-import { Navbar } from '../components/Navbar';
+import { Navbar } from '../components/navbar';
 
 // https://script.google.com/macros/s/AKfycbzTeD58qfv5Q1lPbmV4U1757lpjSoNMCfp1Jh6tsFeOsAhKTcJ8P_OkaQPxbcZyQhi9ag/exec
 

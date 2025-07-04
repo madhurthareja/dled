@@ -1,7 +1,7 @@
 // import { useState } from 'react';
 import { Link } from "react-router-dom";
 import "../styles/team.css";
-import { Navbar } from "../components/Navbar"; // Import Navbar
+import { Navbar } from "../components/navbar"; // Import Navbar
 
 
 const Collaborations = () => {

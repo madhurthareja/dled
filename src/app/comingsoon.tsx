@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 // import { FaFlask, FaChartLine, FaUsers} from 'react-icons/fa'; // FaEye, FaRobot, FaCertificate, FaChartBar
 import "../styles/researchPage.css";
-import { Navbar } from "../components/Navbar";
+import { Navbar } from "../components/navbar";
 
 
 const ComingSoon = () => {

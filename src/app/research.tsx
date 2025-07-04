@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { FaFlask, FaChartLine, FaRobot, FaUsers,  FaChartBar } from 'react-icons/fa'; // FaEye, FaRobot, FaCertificate, FaChartBar
 import "../styles/researchPage.css";
-import { Navbar } from "../components/Navbar"; // Import Navbar
+import { Navbar } from "../components/navbar"; // Import Navbar
 
 // Export the array so it can be imported in ResearchInitiatives.tsx
 export const researchProjects = [
