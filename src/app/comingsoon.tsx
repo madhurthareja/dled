@@ -32,26 +32,7 @@ const ComingSoon = () => {
         </div>
       </section>
       
-      <section className="py-5 text-white" style ={{ backgroundColor: 'rgb(248, 207, 189)' }}>
-      </section>
-      <section className="py-5 text-white" style ={{ backgroundColor: 'rgb(248, 243, 241)' }}>
-      </section>
-      <section className="py-5 text-white" style ={{ backgroundColor: 'rgb(248, 207, 189)' }}>
-      </section>
-      <section className="py-5 text-white" style ={{ backgroundColor: 'rgb(248, 243, 241)' }}>
-      </section>
-      <section className="py-5 text-white" style ={{ backgroundColor: 'rgb(248, 207, 189)' }}>
-      </section>
-      <section className="py-5 text-white" style ={{ backgroundColor: 'rgb(248, 243, 241)' }}>
-      </section>
-      <section className="py-5 text-white" style ={{ backgroundColor: 'rgb(248, 207, 189)' }}>
-      </section>
-      <section className="py-5 text-white" style ={{ backgroundColor: 'rgb(248, 243, 241)' }}>
-      </section>
-      <section className="py-5 text-white" style ={{ backgroundColor: 'rgb(248, 207, 189)' }}>
-      </section>
-      <section className="py-5 text-white" style ={{ backgroundColor: 'rgb(248, 243, 241)' }}>
-      </section>
+
     </div>
   );
 };
