@@ -46,7 +46,7 @@ export const FooterWrapper = () => {
           <div className="footer-column">
             <h3>About</h3>
             <ul>
-              <li><Link to="/comingsoon">About Us</Link></li>
+              <li><Link to="/about">About Us</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
               <li><Link to="/comingsoon">Blog</Link></li>
               <li><Link to="/careers">Career</Link></li>

@@ -6,16 +6,17 @@ import { MeetTheMinds } from "../components/MeetTheMinds";
 import { AboutDLED } from "../components/AboutDled";
 import { ContactSection } from "../components/ContactSection";
 import { FooterWrapper } from "../components/FooterFile";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Navbar />
       <div style={{ width: "100%" }}>
         <Header
           onLearnMore={() => {
-            const element = document.getElementById('research-approach');
-            if (element) element.scrollIntoView({ behavior: 'smooth' });
+            navigate('/about');
           }}
           onContact={() => {
             const contactSection = document.getElementById('contact');
@@ -44,4 +45,5 @@ const Home = () => {
     </div>
   );
 };
+
 export default Home;

@@ -1,36 +1,40 @@
 import { useState } from 'react';
 
+import drSudarshan from '/images/dr-sudarshan2.png';
+import meenakshi from '/images/meenakshi4.png';
+import aditya from '/images/aditya.jpeg';
+import shivani from '/images/shivani-aggarwal4.png';
+import { Navbar } from "../components/navbar";
+
 const About = () => {
   const [activeTab, setActiveTab] = useState('vision');
 
   return (
     <div className="about-page">
+      <Navbar /> 
       {/* Hero Section */}
       <section className="hero-section position-relative overflow-hidden">
-        <div className="container py-6">
+        <div className="container py-6 mt-5">
           <div className="row align-items-center min-vh-60">
             <div className="col-lg-7">
-              <h1 className="display-3 fw-bold mb-4">
-                Redefining Education Through <span className="text-primary">Innovation</span>
+              <h1 className="display-3 fw-bold text-dark mb-4">
+                Redefining Education Through Innovation
               </h1>
-              <p className="lead text-white-80 mb-4">
+              <p className="lead text-secondary mb-4">
                 The Dhananjaya Lab for Education Design (DLED) at IIT Ropar is pioneering 
                 transformative approaches to learning in the digital age.
               </p>
               <div className="d-flex gap-3">
-                <a href="#our-story" className="btn btn-primary btn-lg px-4">
-                  Our Story
-                </a>
-                <a href="#team" className="btn btn-outline-light btn-lg px-4">
+                <a href="#team" className="btn btn-lg px-4 text-light dark-button" style= {{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)' }}>
                   Meet the Team
                 </a>
               </div>
             </div>
             <div className="col-lg-5">
               <div className="hero-graphic position-relative p-5">
-                <div className="floating-shape shape-1 bg-primary rounded-circle"></div>
+                <div className="floating-shape shape-1 bg-warning rounded-circle"></div>
                 <div className="floating-shape shape-2 bg-info rounded-circle"></div>
-                <div className="floating-shape shape-3 bg-warning rounded-circle"></div>
+                <div className="floating-shape shape-3 bg-danger rounded-circle"></div>
                 <img 
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
                   alt="DLED Team" 
@@ -43,7 +47,7 @@ const About = () => {
       </section>
 
       {/* Our Story Section */}
-      <section id="our-story" className="py-6 bg-light">
+      <section id="our-story" className="py-6 bg-light p-5">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-10 text-center mb-5">
@@ -95,7 +99,7 @@ const About = () => {
           <div className="row justify-content-center">
             <div className="col-lg-10">
               <div className="mission-tabs">
-                <div className="tabs-header d-flex justify-content-center mb-5">
+                <div className="tabs-header d-flex justify-content-center mt-3 mb-2">
                   <button 
                     className={`tab-btn ${activeTab === 'vision' ? 'active' : ''}`}
                     onClick={() => setActiveTab('vision')}
@@ -128,7 +132,7 @@ const About = () => {
                       <div className="row mt-4">
                         <div className="col-md-6">
                           <div className="d-flex mb-3">
-                            <div className="flex-shrink-0 text-primary me-3">
+                            <div className="flex-shrink-0 text-warning me-3">
                               <i className="fas fa-rocket fs-2"></i>
                             </div>
                             <div>
@@ -141,7 +145,7 @@ const About = () => {
                         </div>
                         <div className="col-md-6">
                           <div className="d-flex mb-3">
-                            <div className="flex-shrink-0 text-primary me-3">
+                            <div className="flex-shrink-0 text-warning me-3">
                               <i className="fas fa-globe fs-2"></i>
                             </div>
                             <div>
@@ -166,19 +170,19 @@ const About = () => {
                       </p>
                       <ul className="list-unstyled row mt-4">
                         <li className="col-md-6 mb-3 d-flex">
-                          <i className="fas fa-check-circle text-primary mt-1 me-3"></i>
+                          <i className="fas fa-check-circle text-success mt-1 me-3"></i>
                           <span>Develop evidence-based learning frameworks</span>
                         </li>
                         <li className="col-md-6 mb-3 d-flex">
-                          <i className="fas fa-check-circle text-primary mt-1 me-3"></i>
+                          <i className="fas fa-check-circle text-success mt-1 me-3"></i>
                           <span>Create scalable educational technologies</span>
                         </li>
                         <li className="col-md-6 mb-3 d-flex">
-                          <i className="fas fa-check-circle text-primary mt-1 me-3"></i>
+                          <i className="fas fa-check-circle text-success mt-1 me-3"></i>
                           <span>Train the next generation of education designers</span>
                         </li>
                         <li className="col-md-6 mb-3 d-flex">
-                          <i className="fas fa-check-circle text-primary mt-1 me-3"></i>
+                          <i className="fas fa-check-circle text-success mt-1 me-3"></i>
                           <span>Bridge research and practice in education</span>
                         </li>
                       </ul>
@@ -199,7 +203,7 @@ const About = () => {
                         ].map((value, index) => (
                           <div key={index} className="col-md-4">
                             <div className="value-card p-3 h-100 rounded-3">
-                              <i className={`fas fa-${value.icon} text-primary fs-3 mb-3`}></i>
+                              <i className={`fas fa-${value.icon} text-warning fs-3 mb-3`}></i>
                               <h5 className="fw-bold">{value.title}</h5>
                               <p className="text-muted mb-0">{value.desc}</p>
                             </div>
@@ -220,9 +224,9 @@ const About = () => {
         <div className="container">
           <div className="row justify-content-center mb-5">
             <div className="col-lg-8 text-center">
-              <h2 className="display-5 fw-bold mb-3">Meet Our Team</h2>
+              <h2 className="display-5 fw-bold mb-3 p-3">Meet Our Team</h2>
               <p className="lead text-muted">
-                A diverse group of educators, researchers, and technologists united by a passion for learning innovation
+                A diverse group of educators, researchers, and technologists <br></br> united by a passion for learning innovation
               </p>
             </div>
           </div>
@@ -233,25 +237,25 @@ const About = () => {
                 name: 'Dr. Sudarshan Iyengar', 
                 role: 'Principal Investigator', 
                 bio: 'Education technology specialist with 15+ years experience',
-                img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80'
+                img: drSudarshan
               },
               { 
                 name: 'Meenakshi V', 
                 role: 'PhD Researcher', 
                 bio: 'Cognitive science and learning design expert',
-                img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80'
+                img: meenakshi
               },
               { 
                 name: 'Shivani Aggarwal ', 
                 role: 'Junior Researcher',
                 bio: 'Expert in data analytics and educational assessment', 
-                img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80'
+                img: shivani
               },
               {
                 name:'Aditya BMV',
                 role: 'Software Developer',
                 bio: 'Full-stack developer with a focus on educational applications',
-                img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80'
+                img: aditya
 
               }
             ].map((member, index) => (
@@ -275,8 +279,8 @@ const About = () => {
             ))}
           </div>
           
-          <div className="text-center mt-5">
-            <a href="/team" className="btn btn-outline-primary btn-lg px-4">
+          <div className="text-center mt-5 p-3">
+            <a href="/team" className="btn btn-outline-warning fw-bold btn-lg px-4">
               View Full Team <i className="fas fa-arrow-right ms-2"></i>
             </a>
           </div>
