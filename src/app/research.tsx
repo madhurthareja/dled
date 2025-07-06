@@ -12,7 +12,7 @@ export const researchProjects = [
       status: 'ongoing',
       description: 'The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at DLED Lab, enabling intuitive decision-making.',
       focusArea: 'Educational Technology',
-      team: ['Sakshi (Ph.D. Scholar)'],
+      team: ['Sakshi Sharma'],
       partners: ['DLED Lab'],
       timeline: '2023-2025',
       outcomes: [
@@ -30,7 +30,7 @@ export const researchProjects = [
       status: 'ongoing',
       description: 'The Peer Evaluation System (PES) is a scalable web tool that streamlines peer assessment in education. Designed for transparency, fairness, and quality feedback, PES supports structured evaluations for both individual and group activities, providing data-driven insights to instructors and learners.',
       focusArea: 'Educational Technology',
-      team: ['Rohit Sharma (Ph.D. Scholar)'],
+      team: ['Rohit Sharma'],
       partners: ['-'],
       timeline: '2023-2025',
       outcomes: [
@@ -51,11 +51,11 @@ export const researchProjects = [
     description: 'The Poll Automation project is a real-time classroom tool that uses live audio transcripts to generate lecture summaries and create contextual polls every five minutes (or as set by the instructor). This system boosts interactivity, checks comprehension, and gives instructors instant feedback during teaching sessions.',
     focusArea: 'Educational Technology',
     team: [
-    'Sakshi Sharma (Ph.D. Scholar)',
-    'Rohit Sharma (Ph.D. Scholar)',
-    'Meenakshi (Ph.D. Scholar)'
+    'Sakshi Sharma',
+    'Rohit Sharma',
+    'Meenakshi V'
     ],
-    partners: ['Dopamine Driving through Dashboard (DDD)', 'Peer Evaluation System (PES)'],
+    // partners: ['Dopamine Driving through Dashboard (DDD)', 'Peer Evaluation System (PES)'],
     timeline: '2025-2025',
     outcomes: [
     'Real-time speech-to-text transcription system for live classes',
@@ -72,8 +72,7 @@ export const researchProjects = [
       status: 'ongoing',
       description: 'ViBe is a comprehensive educational platform designed to enhance the learning experience for both students and teachers. It integrates various tools and resources to create a vibrant learning ecosystem, focusing on personalized learning, interactive content, and community engagement.',
       focusArea: 'Educational Technology',
-      team: ['DLED Research Team'],
-      partners: ['-'],
+      team: ['Meenakshi V', 'Sakshi Sharma', 'Aditya BMV (Technical Lead)'],
       timeline: '2024-2025',
       outcomes: [
         'A unified platform for educational resources and tools',
@@ -229,10 +228,10 @@ const Research = () => {
                         </div>
                         
                         <div className="d-flex justify-content-between align-items-center border-top pt-3">
-                          <div>
+                          {/* <div>
                             <h6 className="text-muted small mb-2">Collaborators</h6>
                             <p className="small fw-bold">{project.partners.join(', ')}</p>
-                          </div>
+                          </div> */}
                           {/*
                           <button className="btn btn-sm btn-outline-secondary" style={{ marginLeft: '8px' }}>
                             Learn More <i className="fas fa-arrow-right ms-1"></i>
