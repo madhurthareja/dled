@@ -24,7 +24,7 @@ export const Navbar: React.FC = () => {
             <Link to="/careers" className="nav-text">Careers</Link>
             <Link to="/comingsoon" className="nav-text">Blog</Link>
           </div>
-          <Link to="/comingsoon">
+          <Link to="/collaborations">
             <button className="nav-button">
               <span className="nav-button-text">Collaborations</span>
             </button>
@@ -44,7 +44,7 @@ export const Navbar: React.FC = () => {
           <Link to="/events" className="nav-text" onClick={handleNavLinkClick}>Events</Link>
           <Link to="/careers" className="nav-text" onClick={handleNavLinkClick}>Careers</Link>
           <Link to="/comingsoon" className="nav-text" onClick={handleNavLinkClick}>Blog</Link>
-          <Link to="/comingsoon">
+          <Link to="/collaborations">
             <button className="nav-button">
               <span className="nav-button-text">Collaborations</span>
             </button>
