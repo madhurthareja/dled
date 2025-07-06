@@ -65,6 +65,23 @@ export const researchProjects = [
     ],
     imageUrl: "https://images.unsplash.com/photo-1576400883215-7083980b6193?q=80&w=1626&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: <FaRobot className="text-primary" size={32} />
+    },
+    {
+      id:4,
+      title: 'ViBe',
+      status: 'ongoing',
+      description: 'ViBe is a comprehensive educational platform designed to enhance the learning experience for both students and teachers. It integrates various tools and resources to create a vibrant learning ecosystem, focusing on personalized learning, interactive content, and community engagement.',
+      focusArea: 'Educational Technology',
+      team: ['DLED Research Team'],
+      partners: ['-'],
+      timeline: '2024-2025',
+      outcomes: [
+        'A unified platform for educational resources and tools',
+        'Personalized learning paths for students',
+        'Interactive content and community features for enhanced engagement'
+      ],
+      imageUrl: "https://images.unsplash.com/photo-1604014237740-2c8f0b1d3c4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      icon: <FaFlask className="text-warning" size={32} />
     }
 ];
 
@@ -73,85 +90,6 @@ export const researchProjects = [
 const Research = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   
-  const researchProjects = [
-
-    {
-      id: 1,
-      title: 'Dopamine Driving through Dashboard (DDD)',
-      status: 'ongoing',
-      description: 'The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at DLED Lab, enabling data-informed decision-making.',
-      focusArea: 'Educational Technology',
-      team: ['Dr. Sudarshan Iyengar (Principal Investigator)', 'Sakshi (Ph.D. Scholar)'],
-      partners: ['DLED Lab'],
-      timeline: '2023-2025',
-      outcomes: [
-        'Modular dashboard system for live tracking of research and product initiatives',
-        'Improved visibility into student/faculty engagement and contributions',
-        'Scalable design supporting multiple datasets and real-time visualisation'
-      ],
-      icon: <FaChartBar className="text-info" size={32} />
-    }, 
-
-    {
-      id: 2,
-      title: 'Peer Evaluation System (PES)',
-      status: 'ongoing',
-      description: 'The Peer Evaluation System (PES) is a scalable, web-based tool designed to streamline and enhance peer assessment workflows in educational settings. Developed with a focus on transparency, fairness, and feedback quality, PES supports structured evaluation in both individual and group activities, empowering instructors and learners through data-driven insights.',
-      focusArea: 'Educational Technology',
-      team: ['Dr. Sudarshan Iyengar (Principal Investigator)', 'Rohit Sharma (Ph.D. Scholar)'],
-      partners: ['-'],
-      timeline: '2023-2025',
-      outcomes: [
-      'Customizable peer evaluation forms integrated with participation data',
-      'Analytics dashboard for instructors to identify patterns, biases, and anomalies',
-      'Integration-ready system for LMS platforms and classroom tools',
-      'Support for both formative and summative peer assessments',
-      'Poll automation'
-      ],
-      icon: <FaUsers className="text-dark" size={32} />
-    },
-
-    {
-      id: 3,
-      title: 'Poll Automation',
-      status: 'ongoing',
-      description: 'The Poll Automation project is a real-time classroom intelligence system designed to enhance interactivity in live teaching sessions. By leveraging live audio transcripts, the web application listens to ongoing lectures, generates summaries, and automatically crafts contextual polls every five minutes (adjustable by the instructor). This fosters continuous engagement, checks comprehension, and provides instructors with live feedback loops.',
-      focusArea: 'Educational Technology',
-      team: [
-      'Dr. Sudarshan Iyengar (Principal Investigator)',
-      'Sakshi Sharma (Ph.D. Scholar)',
-      'Rohit Sharma (Ph.D. Scholar)',
-      'Meenakshi (Ph.D. Scholar)'
-      ],
-      partners: ['Dopamine Driving through Dashboard (DDD)', 'Peer Evaluation System (PES)'],
-      timeline: '2025 - 2025',
-      outcomes: [
-      'Real-time speech-to-text transcription system for live classes',
-      'Automated, context-aware poll generation with instructor override features',
-      'Seamless integration with dashboards (DDD) and feedback mechanisms (PES)',
-      'Enhanced classroom interactivity and adaptive teaching support'
-      ],
-      icon: <FaRobot className="text-primary" size={32} />
-    },
-
-    {
-      id: 4,
-      title: 'ViBe/CAL',
-      status: 'completed',
-      description: 'ViBe is an innovative open-source online learning platform transforming education with Continuous Active Learning (CAL) principles. It significantly boosts student engagement and comprehension, aiming for deeper understanding and retention. The platform employs AI-enhanced question generation, smart checks, and quick quizzes for active participation. It fosters knowledge mastery through adaptive challenges, ensuring learners fully grasp concepts before progressing.',
-      focusArea: 'Educational Technology',
-      team: ['Dr. Sudarshan Iyengar (Principal Investigator)', 'Meenakshi V. (Research Scholar)', 'Aditya BMV. (Technical Lead)'],
-      partners: ['-'],
-      timeline: '2024 - 2025',
-      outcomes: [
-        'ViBe is an AI-powered learning guide that fosters active, distraction-free engagement',
-        'Utilizes smart checks, quick quizzes, and adaptive challenges',
-        'Ensures mastery-based learning, deep comprehension, and knowledge retention'
-      ],
-      icon: <FaFlask className="text-success" size={32} />
-    }
-  ];
-
   const filteredProjects = activeFilter === 'all' 
     ? researchProjects 
     : researchProjects.filter(project => project.status === activeFilter);

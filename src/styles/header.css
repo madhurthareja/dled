@@ -14,9 +14,9 @@
   position: relative;
   overflow: hidden;
   display: block;
-  padding-top: 140px;
+  padding-top: 60px; /* Reduced from 140px to bring header closer to ViBe strip */
   background-color: #fff6f3; /* Use the same as .navbar */
-  min-height: 100vh;
+  min-height: 90vh; /* Reduced from 100vh to make content more visible */
   width: 100%;
 }
 
@@ -127,6 +127,94 @@
   transform: scale(1.02);
 }
 
+.vibe-button {
+  background: linear-gradient(45deg, #e96734, #f4a261) !important;
+  border: 2px solid transparent !important;
+  box-shadow: 0 4px 15px rgba(233, 103, 52, 0.3);
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+  position: relative;
+  overflow: hidden;
+}
+
+.vibe-button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #e96734, #f4a261, #e96734);
+  border-radius: 25px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vibe-button:hover::before {
+  opacity: 1;
+}
+
+.vibe-button:hover {
+  background: linear-gradient(45deg, #d45a2f, #e8954f) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(233, 103, 52, 0.4);
+}
+
+.vibe-button .nav-button-text {
+  color: white !important;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 4px 15px rgba(233, 103, 52, 0.3);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(233, 103, 52, 0.5);
+  }
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px; /* Increased from 30px to make it more visible */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.8; /* Increased from 0.7 to make it more prominent */
+  animation: bounce 2s infinite;
+  z-index: 10;
+}
+
+.scroll-text {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.scroll-arrow {
+  color: #e96734;
+  font-size: 16px;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
 .nav-button-text {
   font-family: "Manrope", Helvetica, sans-serif;
   font-size: 18px;
@@ -182,15 +270,14 @@
 .content {
   position: relative;
   z-index: 5;
-  /* Remove max-width and margin */
- max-width: 90%;
- margin: 0 auto;
+  max-width: 90%;
+  margin: 0 auto;
   padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 60px;
-  min-height: 70vh;
+  min-height: 60vh; /* Reduced from 70vh to make scroll indicator more visible */
   width: 100%;
 }
 
@@ -325,8 +412,9 @@
   }
   
   .header {
-    padding-top: 100px;
+    padding-top: 40px; /* Reduced for mobile to bring content up */
     height: auto;
+    min-height: 80vh; /* Adjusted for mobile */
   }
   
   .bg-top {
@@ -348,7 +436,7 @@
     flex-direction: column;
     padding: 0 20px;
     gap: 40px;
-    min-height: 60vh;
+    min-height: 50vh; /* Reduced to make scroll indicator more visible on mobile */
   }
   
   .title {
