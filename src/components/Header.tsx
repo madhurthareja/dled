@@ -37,9 +37,9 @@ export const Header: React.FC<{ onLearnMore?: () => void; onContact?: () => void
         </div>
       </div>
     </div>
-    <div className="scroll-indicator">
+    {/* <div className="scroll-indicator">
       <div className="scroll-text">Discover More</div>
       <FaChevronDown className="scroll-arrow" />
-    </div>
+    </div> */}
   </div>
 );
