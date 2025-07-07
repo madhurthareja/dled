@@ -39,7 +39,7 @@ const Footer = () => {
                   <div className="d-flex mb-2">
                     <i className="fas fa-map-marker-alt mt-1 me-2 text-primary"></i>
                     <div>
-                      <p className="mb-1 fw-semibold">DLED, Viswesarya Block</p>
+                      <p className="mb-1 fw-semibold">DLED, Super Academic Block</p>
                       <p className="mb-0 small">Indian Institute of Technology Ropar</p>
                       <p className="mb-0 small">Rupnagar, Punjab 140001</p>
                     </div>
