@@ -21,7 +21,7 @@ export const FooterWrapper = () => {
         <div className="footer-logo-section">
         <div className="footer-address">
           <h2>Our Location</h2>
-          <p>DLED, Viswesarya Block</p>
+          <p>DLED, Super Academic Block</p>
           <p>Indian Institute of Technology, Ropar</p>
           <p>Rupnagar, Punjab 140001</p>
         </div>
