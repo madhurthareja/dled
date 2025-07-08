@@ -20,8 +20,32 @@
   padding: 0;
 }
 
-.dled-video {
-  margin-right: 40px;
+.video-responsive {
+  position: relative;
+  width: 100%;
+  max-width: 560px;    /* You can adjust this max width */
+  margin: 65px auto 0 auto; /* Top margin, centered horizontally */
+  padding-bottom: 56.25%;   /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.image-section,
+.image-container {
+  width: 100%;
+  height: auto;
+  min-height: unset;
+  padding: 0;
+  margin: 0;
 }
 
 .description {
@@ -49,7 +73,7 @@
   white-space: nowrap;
 }
 
-.image-section {
+/* .image-section {
   position: relative;
   width: 100%;
   min-height: 300px;
@@ -59,7 +83,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-}
+} */
 
 .image-background {
   background-color: #c4c4c4;
@@ -121,8 +145,9 @@
   }
 
   .dled-video {
-    width: 80%;
-    margin-left: 50px !important;
+    width: 100%;
+    padding-right: 30px !important;
+    margin-left: 30px !important;
   }
 
   .description {
@@ -171,10 +196,46 @@
   }
 }
 
+@media (max-width: 1392px) {
+
+  .dled-video {
+    width: 100%;
+    padding-right: 30px !important;
+    margin-left: 30px !important;
+    margin-right: 20px !important;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .video-responsive {
+    max-width: 100%;
+    margin-left: 20px;
+  }
+}
+
+
 /* Mobile styles */
 @media (max-width: 991px) {
   .about-dled-section {
     padding: 40px 24px;
+  }
+
+  .image-container {
+    margin: 0 auto;
+    padding-left: 0 !important;
+  }
+
+  .video-responsive {
+    position: relative;
+    width: 100%;
+    max-width: 100%;        /* Full width on mobile */
+    margin-top: 32px;
+    margin-right: 10px;
+    margin-left: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
   }
 
   .title {
@@ -193,9 +254,14 @@
   }
 
   .image-section {
-    height: 300px;
+    width: 100%;
     margin-top: 40px;
+    margin: 0 auto;
+    padding-left: 0 !important;
+    height: auto; 
+    min-height: unset; 
   }
+
 
   .image-background {
     width: 100%;
@@ -214,5 +280,16 @@
 
   .decoration-rectangle-2 {
     display: none;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .video-responsive {
+    max-width: 100%;
+    max-height: fit-content;
+    margin-top: 32px;
+    margin-right: 10px;
+    margin-left: 0;
   }
 }
