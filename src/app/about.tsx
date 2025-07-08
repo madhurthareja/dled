@@ -219,65 +219,92 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section id="team" className="py-6 bg-light">
-        <div className="container">
-          <div className="row justify-content-center mb-5">
-            <div className="col-lg-8 text-center">
-              <h2 className="display-5 fw-bold mb-3 p-3">Meet Our Team</h2>
-              <p className="lead text-muted">
-                A diverse group of educators, researchers, and technologists <br></br> united by a passion for learning innovation
-              </p>
-            </div>
-          </div>
-          
-          <div className="row g-4">
-            {[
-              { 
-                name: 'Dr. Sudarshan Iyengar', 
-                role: 'Principal Investigator', 
-                bio: 'Education technology specialist with 15+ years experience',
-                img: drSudarshan
-              },
-              { 
-                name: 'Meenakshi V', 
-                role: 'PhD Researcher', 
-                bio: 'Cognitive science and learning design expert',
-                img: meenakshi
-              },
-              { 
-                name: 'Shivani Aggarwal ', 
-                role: 'Junior Researcher',
-                bio: 'Expert in data analytics and educational assessment', 
-                img: shivani
-              },
-              {
-                name:'Aditya BMV',
-                role: 'Software Developer',
-                bio: 'Full-stack developer with a focus on educational applications',
-                img: aditya
-
-              }
-            ].map((member, index) => (
-              <div key={index} className="col-lg-3 col-md-6">
-                <div className="team-card shadow-sm rounded-4 overflow-hidden h-100">
-                  <div className="team-img position-relative">
-                    <img src={member.img} alt={member.name} className="img-fluid w-100" />
-                    <div className="team-social">
-                      <a href="#" className="text-white"><i className="fab fa-linkedin-in"></i></a>
-                      <a href="#" className="text-white"><i className="fas fa-envelope"></i></a>
-                      <a href="#" className="text-white"><i className="fas fa-user-graduate"></i></a>
-                    </div>
-                  </div>
-                  <div className="p-5">
-                    <h4 className="fw-bold mb-1">{member.name}</h4>
-                    <p className="text-primary mb-2">{member.role}</p>
-                    <p className="text-muted mb-0">{member.bio}</p>
-                  </div>
+          {/* Team Section */}
+          <section id="team" className="py-6 bg-light">
+            <div className="container">
+              <div className="row justify-content-center mb-5">
+                <div className="col-lg-8 text-center">
+                  <h2 className="display-5 fw-bold mb-3 p-3">Meet Our Team</h2>
+                  <p className="lead text-muted">
+                    A diverse group of educators, researchers, and technologists <br></br> united by a passion for learning innovation
+                  </p>
                 </div>
               </div>
-            ))}
+              
+              <div className="row g-4">
+      {[
+        { 
+          name: 'Dr. Sudarshan Iyengar', 
+          role: 'Principal Investigator', 
+          bio: 'Education technology specialist with 15+ years experience',
+          img: drSudarshan,
+          linkedin:'https://www.linkedin.com/in/sudarshan-iyengar-3560b8145/',
+          email: 'sudarshan@iitrpr.ac.in'
+        },
+        { 
+          name: 'Meenakshi V', 
+          role: 'PhD Researcher', 
+          bio: 'Cognitive science and learning design expert',
+          img: meenakshi,
+          linkedin:'https://www.linkedin.com/in/meenakshi-v-25aa7691/',
+          email: 'meenakshi.v@vicharanashala.ai'
+        },
+        { 
+          name: 'Shivani Aggarwal ', 
+          role: 'PhD Researcher',
+          bio: 'Expert in data analytics and educational assessment', 
+          img: shivani,
+          linkedin:'https://www.linkedin.com/in/shivani-aggarwal-5865b639/',
+          email: 'shivani.aggarwal@vicharanashala.ai'
+        },
+        {
+          name:'Aditya BMV',
+          role: 'Software Developer',
+          bio: 'Full-stack developer with a focus on educational applications',
+          img: aditya,
+          linkedin:'https://www.linkedin.com/in/bvmukunda/',
+          email: 'aditya.bmv@vicharanashala.ai'
+        }
+      ].map((member, index) => (
+        <div key={index} className="col-lg-3 col-md-6">
+          <div className="team-card shadow-sm rounded-4 overflow-hidden h-100">
+            <div className="team-img position-relative">
+              <img src={member.img} alt={member.name} className="img-fluid w-100" />
+              <div className="team-social">
+                {/* LinkedIn */}
+                {member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    className="text-white"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`LinkedIn profile of ${member.name}`}
+                  >
+                    <i className="fab fa-linkedin-in"></i>
+                  </a>
+                )}
+                {/* Email */}
+                {member.email && (
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="text-white"
+                    aria-label={`Email to ${member.name}`}
+                  >
+                    <i className="fas fa-envelope"></i>
+                  </a>
+                )}
+              </div>
+            </div>
+            <div className="p-5">
+              <h4 className="fw-bold mb-1">{member.name}</h4>
+              <p className="text-primary mb-2">{member.role}</p>
+              <p className="text-muted mb-0">{member.bio}</p>
+            </div>
           </div>
+        </div>
+      ))}
+    </div>
+
           
           <div className="text-center mt-5 p-3">
             <a href="/team" className="btn btn-outline-warning fw-bold btn-lg px-4">

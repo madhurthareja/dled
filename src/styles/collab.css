@@ -1,0 +1,105 @@
+.info-button {
+  background-color: rgb(243, 116, 66);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.info-button:hover {
+  transform: scale(1.02);
+  transition: 0.1s ease, transform 0.1s ease;
+  background-color: rgb(212, 107, 66);
+}
+
+.collab-block {
+  width: 100%;
+  /* background: linear-gradient(90deg, #cbf1fd 0%, #d0f0ff 100%); */
+  background: none;
+  padding: 20px 20px;
+  box-sizing: border-box;
+}
+
+.collab-main-layout {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #333;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.collab-section {
+  padding-top: 5px;
+  max-width: 650px;
+  text-align: left;
+}
+
+.collab-details {
+  margin-bottom: 10px;
+}
+
+.collab-title {
+  color: #4b6b7a !important;
+}
+
+.collab-details .display-4 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #222;
+}
+
+.collab-subtitle {
+  font-size: 1.2rem;
+  color: #4a99be;
+  font-weight: 500;
+  display: block;
+  margin-top: 8px;
+}
+
+.collab-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  color: #646060;
+}
+
+/* Responsive styles */
+@media (min-width: 992px) {
+  .collab-section {
+    margin-left: -43%;
+  }
+}
+@media (max-width: 1397px) {
+  .collab-section {
+    margin-left: -35%;
+  }
+}
+@media (max-width: 1200px) {
+  .collab-section {
+    margin-left: -20%;
+  }
+}
+@media (max-width: 992px) {
+
+  .collab-section {
+    margin-left: 10px;
+    max-width: 500px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 588px) {
+
+  .col-lg-8 {
+    margin-left: 20px;
+  }
+
+  .collab-section {
+    margin-left: 10px;
+    max-width: 500px;
+    text-align: left;
+  }
+}

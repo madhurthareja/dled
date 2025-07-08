@@ -28,18 +28,17 @@ export const AboutDLED: React.FC = () => {
       </div>
 
       <div className="image-section">
-        <div className="image-container">
-            <video
-              className="dled-video"
-              controls
-              width="100%"
-              style={{ maxHeight: '100%', objectFit: 'cover', margin: '0 auto', marginTop: '65px', marginLeft: '10px', marginRight: '10px' }}
-            >
-              <source src="/videos/dled-intro.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-        </div>
+      <div className="video-responsive">
+        <iframe
+          className="dled-video"
+          src="https://www.youtube.com/embed/ChgEGN3EsyM"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </div>
+    </div>
     </section>
   );
 };
