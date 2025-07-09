@@ -86,7 +86,7 @@ const ResearchCardFlip: React.FC<ResearchCardProps> = ({
 };
 
 const ResearchInitiatives: React.FC = () => (
-  <div className="research-initiatives-container">
+  <div id="research-initiatives" className="research-initiatives-container">
     <h2 className="section-title">
       {title.split(" ").map((word, wordIdx, arr) => (
         <React.Fragment key={wordIdx}>
