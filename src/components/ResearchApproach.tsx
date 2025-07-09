@@ -35,9 +35,9 @@ export const ResearchApproach: React.FC = () => {
           At DLED Lab, we blend rigorous academic research with real-world implementation to create impactful, practical solutions.
         </p>
         
-        <button className="about-button" onClick={ButtonClickContactPage} >
+        {/* <button className="about-button" onClick={ButtonClickContactPage} >
           <span className="button-text">Collaborate with Us</span>
-        </button>
+        </button> */}
       </div>
       
       <div className="cards-section">

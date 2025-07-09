@@ -11,7 +11,7 @@ export const MeetTheMinds: React.FC = () => {
   };
 
   const ButtonClickMentor = () => {
-    navigate('/contact'); 
+    navigate('/contact?tab=collaborate');
   };
 
   return (

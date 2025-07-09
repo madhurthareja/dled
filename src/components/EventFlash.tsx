@@ -23,7 +23,7 @@ interface EventFlashProps {
 
 export const EventFlash: React.FC<EventFlashProps> = ({ event }) => {
   return (
-    <section className="event-flash-section">
+    <section id="event-flash" className="event-flash-section">
       <div className="event-flash-container">
         <div className="event-flash-content">
           <div className="event-flash-text">
