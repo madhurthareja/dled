@@ -1,5 +1,3 @@
-// ResearchInitiatives.tsx
-
 import "../styles/researchInitiatives.css";
 import { researchProjects } from '../app/research';
 import React, { useState } from 'react';

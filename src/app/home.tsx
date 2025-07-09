@@ -2,7 +2,7 @@ import { Header } from "../components/Header";
 import { Navbar } from "../components/navbar";
 import { VibeStrip } from "../components/VibeStrip";
 import { EventFlash } from "../components/EventFlash";
-import { ResearchInitiatives } from "../components/ResearchInitiatives";
+import ResearchInitiatives from "../components/ResearchInitiatives";
 import { ResearchApproach } from "../components/ResearchApproach";
 import { MeetTheMinds } from "../components/MeetTheMinds";
 import { AboutDLED } from "../components/AboutDled";
