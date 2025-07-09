@@ -7,7 +7,7 @@ import { Navbar } from "../components/navbar"; // Import Navbar
 const collaborationData = [
   {
     id: 1,
-    title: 'MMTTS Faculty Development Program',
+    title: 'MMTTP Faculty Development Program',
     subtitle: 'A dynamic, hands-on journey into the world of Artificial Intelligence',
     description: 'This free program is for teachers of degree colleges who wish to enhance their AI literacy and explore the role of AI in education and research.',
     type: 'Educational Program',
@@ -17,7 +17,7 @@ const collaborationData = [
     link: 'https://dled.iitrpr.ac.in/fdp/',
     supportedBy: [
       { name: 'IIT Ropar', logo: '/images/collaborations/iitrpr.png' },
-      { name: 'MMTTS', logo: '/images/collaborations/mmtts.jpeg' }
+      { name: 'MMTTP', logo: '/images/collaborations/mmtts.jpeg' }
     ],
     outcomes: [
       'AI literacy enhancement for educators',
