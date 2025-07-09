@@ -28,7 +28,7 @@ export const researchProjects = [
       id: 2,
       title: 'Peer Evaluation System (PES)',
       status: 'ongoing',
-      description: 'The Peer Evaluation System (PES) is a scalable web tool that streamlines peer assessment in education. Designed for transparency, fairness, and quality feedback, PES supports structured evaluations for both individual and group activities, providing data-driven insights to instructors and learners.',
+      description: 'A scalable web tool that streamlines peer assessment in education. Designed for transparency, fairness, and quality feedback, PES supports structured evaluations for both individual and group activities, providing data-driven insights to instructors and learners.',
       focusArea: 'Educational Technology',
       team: ['Rohit Sharma'],
       partners: ['-'],
@@ -48,7 +48,7 @@ export const researchProjects = [
     id: 3,
     title: 'Poll Automation',
     status: 'ongoing',
-    description: 'The Poll Automation project is a real-time classroom tool that uses live audio transcripts to generate lecture summaries and create contextual polls every five minutes (or as set by the instructor). This system boosts interactivity, checks comprehension, and gives instructors instant feedback during teaching sessions.',
+    description: 'The Poll Automation project is a real-time classroom tool that uses live audio transcripts to generate lecture summaries and create contextual polls every five minutes- or as set by the instructor. This system boosts interactivity, checks comprehension, and gives instructors instant feedback during teaching sessions.',
     focusArea: 'Educational Technology',
     team: [
     'Sakshi Sharma',

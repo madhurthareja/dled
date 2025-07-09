@@ -1,6 +1,8 @@
+// ResearchInitiatives.tsx
+
 import "../styles/researchInitiatives.css";
 import { researchProjects } from '../app/research';
-import React from 'react';
+import React, { useState } from 'react';
 
 interface ResearchCardProps {
   title: string;
@@ -18,16 +20,14 @@ const title = "Check Out Our Research Initiatives";
 
 // Utility function to extract end year from timeline string
 const getEndYear = (timeline: string) => {
-  // Handles formats like "2024-2026" or "2025"
   const parts = timeline.split('-');
   return parseInt(parts[1] || parts[0], 10);
 };
 
 const latestThreeProjects = researchProjects
-  .slice() // Copy to avoid mutating the original
+  .slice()
   .sort((a, b) => getEndYear(b.timeline) - getEndYear(a.timeline))
   .slice(0, 3);
-
 
 const mapToResearchCardProps = (project: any): ResearchCardProps => ({
   title: project.title,
@@ -41,95 +41,57 @@ const mapToResearchCardProps = (project: any): ResearchCardProps => ({
   collaboratorLogos: project.collaboratorLogos || [],
 });
 
-
-const ResearchCard: React.FC<ResearchCardProps> = ({
+const ResearchCardFlip: React.FC<ResearchCardProps> = ({
   title,
   description,
   timeline,
   focus,
-  // researchTeam,
   keyOutcomes,
-  // collaborators,
   imageUrl
-  // collaboratorLogos,
 }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  // Flip on hover (desktop) and tap (mobile)
+  const handleTouch = () => setIsFlipped(v => !v);
+
   return (
-    <div className="research-card">
-      <div className="card-content">
-        <div className="card-image-container">
-          <img className="main-image" style = {{ opacity: 0.9 }} src={imageUrl} alt={title} />
-          <div className="timeline-focus">
-            <div className="timeline-focus-bg"></div>
-            <p className="timeline" style = {{ fontFamily: 'monospace, sans serif' }}>
-              <span className="bold">TIMELINE:&nbsp;&nbsp;</span>
-              {timeline}
-            </p>
-            <p className="focus" style = {{ fontFamily: 'monospace, sans serif' }}>
-              <span className="bold">FOCUS: </span>
-              {focus}
-            </p>
+    <div
+      className={`flip-card${isFlipped ? " flipped" : ""}`}
+      onMouseEnter={() => setIsFlipped(true)}
+      onMouseLeave={() => setIsFlipped(false)}
+      onTouchStart={handleTouch}
+      tabIndex={0}
+      aria-label="Research project card"
+    >
+      <div className="flip-card-inner">
+        <div
+          className="flip-card-front"
+          style={{
+            backgroundImage: `linear-gradient(0deg,rgba(0,0,0,0.45),rgba(0,0,0,0.1)), url(${imageUrl})`
+          }}
+        >
+          <div className="flip-front-content">
+            <h3 className="flip-card-title">{title}</h3>
+            <p className="flip-card-meta">{timeline} | {focus}</p>
           </div>
         </div>
-        <h3 className="card-title" style = {{ color: "#0c5ca7" }}>{title}</h3>
-        <p className="card-description detail-text" style={{ marginTop: '20px', marginBottom : '25px', fontWeight: "normal" , fontFamily : "Segoe UI, Tahoma, Geneva, Verdana, sans-serif" , fontSize: "20px", opacity: "0.7" }}>{description}</p>
-      </div>
-
-      
-      <div className="card-details">
-
-        {/*
-        <div className="research-team">
-          <p className="detail-title bold">Research Team</p>
-          {researchTeam.map((member, index) => (
-            <p key={index} className="detail-text">
-              {member}
-            </p>
-          ))}
-        </div>
-        */}
-
-        <div className="key-outcomes">
-          <p className="detail-title bold">Key Outcomes</p>
-          {keyOutcomes.map((outcome, index) => (
-            <p key={index} className="detail-text">
-              {outcome}
-            </p>
-          ))}
-        </div>
-
-        {/*}
-        <div className="collaborators">
-          <p className="detail-title bold">Collaborators</p>
-          <div className="collaborator-list">
-            {collaborators.map((collab, index) => (
-              <p key={index} className="detail-text">
-                {collab}
-              </p>
+        <div className="flip-card-back">
+          <div className="flip-card-back-scroll">
+            <p className="flip-card-back-desc">{description}</p>
+            <p className="flip-card-back-title">Key Outcomes</p>
+            {keyOutcomes.map((outcome, idx) => (
+              <p key={idx} className="flip-card-back-outcome">{outcome}</p>
             ))}
           </div>
-          
-
-          <div className="collaborator-logos">
-            {collaboratorLogos.map((logo, index) => (
-              <div key={index} className="logo-container">
-                <img src={logo} alt={`Collaborator ${index + 1}`} />
-              </div>
-            ))}
-          </div>
-        
         </div>
-        */} 
-
       </div>
     </div>
   );
 };
 
-export const ResearchInitiatives: React.FC = () => {
-
-  return (
-    <div className="research-initiatives-container">
-      <h2 className="section-title">
+export const ResearchInitiatives: React.FC = () => (
+  <div className="research-initiatives-container">
+    <h2 className="section-title">
       {title.split(" ").map((word, wordIdx, arr) => (
         <React.Fragment key={wordIdx}>
           <span className="word" style={{ whiteSpace: "pre" }}>
@@ -137,26 +99,25 @@ export const ResearchInitiatives: React.FC = () => {
               <span key={i} className="letter">{char}</span>
             ))}
           </span>
-          {/* Add space after each word except the last */}
           {wordIdx !== arr.length - 1 && " "}
-          {/* Insert a line break after "Our" */}
           {word === "Our" && <br />}
         </React.Fragment>
       ))}
     </h2>
-      
 
-      <div className="section-description" style= {{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <button className="visit-research-btn" style= {{ marginTop: '-25px', marginBottom: '25px' }} onClick={() => window.location.href = "/research"}>
+    <div className="section-description" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <button className="visit-research-btn" style={{ marginTop: '-25px', marginBottom: '25px' }} onClick={() => window.location.href = "/research"}>
         <span className="btn-text">Explore Our Research</span>
       </button>
-      </div>
+    </div>
 
-      <div className="research-cards-container">
-      {latestThreeProjects.map((project, index) => (
-        <ResearchCard key={index} {...mapToResearchCardProps(project)} />
-      ))}
+    {/* New Flip Card Carousel Section */}
+    <div className="flip-cards-section">
+      <div className="carousel-container">
+        {latestThreeProjects.map((project, index) => (
+          <ResearchCardFlip key={index} {...mapToResearchCardProps(project)} />
+        ))}
       </div>
     </div>
-  );
-};
+  </div>
+);
