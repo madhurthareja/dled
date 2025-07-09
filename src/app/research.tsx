@@ -118,11 +118,11 @@ const Research = () => {
                 </button>
                 </Link>
 
-                <Link to="/comingsoon">
+                {/* <Link to="/comingsoon">
                 <button className="btn btn-lg px-4 light-button" style ={{ borderWidth: '1.3px', borderColor: 'rgb(233, 103, 52)', color: 'rgb(233, 103, 52)' }}>
                   View Publications
                 </button>
-                </Link>
+                </Link> */}
 
               </div>
             </div>
