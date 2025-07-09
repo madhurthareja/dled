@@ -49,13 +49,15 @@ const ResearchCardFlip: React.FC<ResearchCardProps> = ({
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  // Flip only on click/tap, so scrolling works
-  const handleFlip = () => setIsFlipped(v => !v);
+  // Flip on hover (desktop)
+  const handleMouseEnter = () => setIsFlipped(true);
+  const handleMouseLeave = () => setIsFlipped(false);
 
   return (
     <div
       className={`flip-card${isFlipped ? " flipped" : ""}`}
-      onClick={handleFlip}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       tabIndex={0}
       aria-label={`Research project card: ${title}`}
     >
@@ -84,6 +86,7 @@ const ResearchCardFlip: React.FC<ResearchCardProps> = ({
     </div>
   );
 };
+
 
 const ResearchInitiatives: React.FC = () => (
   <div id="research-initiatives" className="research-initiatives-container">
