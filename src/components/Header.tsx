@@ -57,7 +57,7 @@ export const Header: React.FC<{ onLearnMore?: () => void; onContact?: () => void
     <div
       className="scroll-indicator pointer-cursor"
       onClick={() => {
-      const el = document.getElementById('event-flash');
+      const el = document.getElementById('research-initiatives');
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
       }
