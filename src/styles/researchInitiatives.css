@@ -177,17 +177,6 @@ body, html {
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
-/* .flip-card-back {
-  background: #fff;
-  color: #222;
-  transform: rotateY(180deg);
-  padding: 28px 24px 24px 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-} */
-
 .flip-card-back {
   position: absolute;
   width: 100%;
@@ -211,4 +200,60 @@ body, html {
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 4px; /* Optional: space for scrollbar */
+  -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
+  touch-action: auto;
+}
+
+@media (max-width: 767px) {
+  
+
+  .research-initiatives-container {
+    height: auto;
+  }
+
+  .carousel-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow-x: visible;
+    padding: 0;
+    align-items: center;
+    height: max-content;
+  }
+  .flip-card {
+    width: 95vw;
+    max-width: 400px;
+    min-width: 250px;
+    height: 380px;
+    min-height: 320px;         /* Optional: ensures a minimum readable height */
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .flip-card-front,
+  .flip-card-back {
+    padding: 20px 10px 18px 10px;
+    height: 100%;              /* Let inner content grow */
+    min-height: 320px;         /* Optional: matches card min-height */
+  }
+  .main-image, .flip-card-front img {
+    width: 100%;
+    height: auto;
+    max-height: 180px;         /* Responsive image height */
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .flip-card-title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+  .flip-card-meta,
+  .flip-card-back-outcome,
+  .flip-card-back-desc {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .flip-card-front,
+  .flip-card-back {
+    padding: 18px 8px 16px 8px;
+  }
 }

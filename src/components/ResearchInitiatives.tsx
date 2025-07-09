@@ -51,17 +51,15 @@ const ResearchCardFlip: React.FC<ResearchCardProps> = ({
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  // Flip on hover (desktop) and tap (mobile)
-  const handleTouch = () => setIsFlipped(v => !v);
+  // Flip only on click/tap, so scrolling works
+  const handleFlip = () => setIsFlipped(v => !v);
 
   return (
     <div
       className={`flip-card${isFlipped ? " flipped" : ""}`}
-      onMouseEnter={() => setIsFlipped(true)}
-      onMouseLeave={() => setIsFlipped(false)}
-      onTouchStart={handleTouch}
+      onClick={handleFlip}
       tabIndex={0}
-      aria-label="Research project card"
+      aria-label={`Research project card: ${title}`}
     >
       <div className="flip-card-inner">
         <div
@@ -79,7 +77,7 @@ const ResearchCardFlip: React.FC<ResearchCardProps> = ({
           <div className="flip-card-back-scroll">
             <p className="flip-card-back-desc">{description}</p>
             <p className="flip-card-back-title">Key Outcomes</p>
-            {keyOutcomes.map((outcome, idx) => (
+            {keyOutcomes && keyOutcomes.map((outcome, idx) => (
               <p key={idx} className="flip-card-back-outcome">{outcome}</p>
             ))}
           </div>
@@ -89,7 +87,7 @@ const ResearchCardFlip: React.FC<ResearchCardProps> = ({
   );
 };
 
-export const ResearchInitiatives: React.FC = () => (
+const ResearchInitiatives: React.FC = () => (
   <div className="research-initiatives-container">
     <h2 className="section-title">
       {title.split(" ").map((word, wordIdx, arr) => (
@@ -99,25 +97,28 @@ export const ResearchInitiatives: React.FC = () => (
               <span key={i} className="letter">{char}</span>
             ))}
           </span>
+          {/* Add space after each word except the last */}
           {wordIdx !== arr.length - 1 && " "}
+          {/* Insert a line break after "Our" */}
           {word === "Our" && <br />}
         </React.Fragment>
       ))}
     </h2>
 
-    <div className="section-description" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <button className="visit-research-btn" style={{ marginTop: '-25px', marginBottom: '25px' }} onClick={() => window.location.href = "/research"}>
+    <div className="section-description" style= {{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <button className="visit-research-btn" style= {{ marginTop: '-25px', marginBottom: '25px' }} onClick={() => window.location.href = "/research"}>
         <span className="btn-text">Explore Our Research</span>
       </button>
-    </div>
-
-    {/* New Flip Card Carousel Section */}
-    <div className="flip-cards-section">
+      </div>
+    
+    <section className="flip-cards-section">
       <div className="carousel-container">
-        {latestThreeProjects.map((project, index) => (
-          <ResearchCardFlip key={index} {...mapToResearchCardProps(project)} />
+        {latestThreeProjects.map((project, idx) => (
+          <ResearchCardFlip key={idx} {...mapToResearchCardProps(project)} />
         ))}
       </div>
-    </div>
+    </section>
   </div>
 );
+
+export default ResearchInitiatives;

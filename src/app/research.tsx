@@ -28,7 +28,7 @@ export const researchProjects = [
       id: 2,
       title: 'Peer Evaluation System (PES)',
       status: 'ongoing',
-      description: 'A scalable web tool that streamlines peer assessment in education. Designed for transparency, fairness, and quality feedback, PES supports structured evaluations for both individual and group activities, providing data-driven insights to instructors and learners.',
+      description: 'PES is a scalable web tool that streamlines peer assessment in education. Designed for transparency, fairness, and quality feedback, PES supports structured evaluations for both individual and group activities, providing data-driven insights to instructors and learners.',
       focusArea: 'Educational Technology',
       team: ['Rohit Sharma'],
       partners: ['-'],
