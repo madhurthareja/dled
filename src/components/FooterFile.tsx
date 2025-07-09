@@ -1,66 +1,104 @@
 import "../styles/footerFile.css";
 import { Link } from 'react-router-dom';
-import logo from '../assets/dled-clear.png'; // Adjust the path as necessary
-// import footerBg from '../assets/simple-shiny.svg';
+import { FaLinkedin, FaYoutube, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
+import logo from '../assets/dled-clear.png';
 
 export const FooterWrapper = () => {
   return (
     <footer className="footer">
-      {/* <img className="footer-bg-img" src= {footerBg} alt="" /> */}
       <div className="footer-content">
-
-        <div className="footer-images">
-          <img 
-            className="footer-secondary-image" 
-            src= {logo}
-            alt="DLED Logo"
-          />
-        </div>
-
         
-        <div className="footer-logo-section">
-        <div className="footer-address">
-          <h2>Our Location</h2>
-          <p>DLED, Super Academic Block</p>
-          <p>Indian Institute of Technology, Ropar</p>
-          <p>Rupnagar, Punjab 140001</p>
-        </div>
-
-          <img 
-            className="footer-main-image"
-            src="https://c.animaapp.com/SP71lV0J/img/image-9@2x.png"
-            alt="Map of DLED Location"
-          />
-        </div>
-
-
-        <div className="footer-links">
-          <div className="footer-column">
-            <h3>Features</h3>
-            <ul>
-              <li><Link to="/team">Research Team</Link></li>
-              <li><Link to="/events">Events</Link></li>
-            </ul>
+        {/* Main Footer Grid */}
+        <div className="footer-grid">
+          
+          {/* About Section */}
+          <div className="footer-section footer-about">
+            <img 
+              className="footer-logo" 
+              src={logo}
+              alt="DLED Logo"
+            />
+            <p className="footer-description">
+              The Dhananjaya Lab for Education Design (DLED) at IIT Ropar is pioneering 
+              transformative approaches to learning in the digital age.
+            </p>
+            <div className="footer-social">
+              <a
+              href="https://www.linkedin.com/company/educationdesignlab/posts/?feedView=all"
+              className="social-link"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              <FaLinkedin />
+              </a>
+              <a
+              href="https://youtube.com/@dledlabs?si=zFC1fmeqjkFCRY8Y"
+              className="social-link"
+              aria-label="YouTube"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              <FaYoutube />
+              </a>
+            </div>
           </div>
 
-          <div className="footer-column">
-            <h3>About</h3>
-            <ul>
+          {/* Quick Links */}
+          <div className="footer-section">
+            <h3>Quick Links</h3>
+            <ul className="footer-links">
               <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/contact">Contact Us</Link></li>
-              <li><Link to="/comingsoon">Blog</Link></li>
-              <li><Link to="/careers">Career</Link></li>
+              <li><Link to="/research">Research</Link></li>
+              <li><Link to="/team">Our Team</Link></li>
+              <li><Link to="/events">Events</Link></li>
+              <li><Link to="/collaborations">Collaborations</Link></li>
             </ul>
           </div>
 
-          <div className="footer-column">
-            <h3>Follow Us</h3>
-            <ul>
-              <li><a href = "https://www.linkedin.com/company/educationdesignlab/posts/?feedView=all">LinkedIn</a></li>
-              <li><a href = "">Youtube</a></li>
+          {/* Resources */}
+          <div className="footer-section">
+            <h3>Resources</h3>
+            <ul className="footer-links">
+              <li><Link to="/comingsoon">Blogs</Link></li>
+              <li><Link to="/careers">Careers</Link></li>
             </ul>
           </div>
+
+          {/* Contact Info */}
+          <div className="footer-section footer-contact">
+            <h3>Contact Us</h3>
+            <div className="contact-info">
+              <div className="contact-item">
+                <FaMapMarkerAlt className="contact-icon" />
+                <div>
+                  <p>DLED, Super Academic Block</p>
+                  <p>Indian Institute of Technology, Ropar</p>
+                  <p>Rupnagar, Punjab 140001</p>
+                </div>
+              </div>
+              <div className="contact-item">
+                <FaEnvelope className="contact-icon" />
+                <div>
+                  <p>dled@iitrpr.ac.in</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
+
+        {/* Footer Bottom */}
+        <div className="footer-bottom">
+          <div className="footer-bottom-content">
+            <p>&copy; 2024 DLED, IIT Ropar. All rights reserved.</p>
+            <div className="footer-bottom-links">
+              <Link to="/privacy">Privacy Policy</Link>
+              <Link to="/terms">Terms of Service</Link>
+            </div>
+          </div>
+        </div>
+
       </div>
     </footer>
   );

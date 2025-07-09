@@ -5,6 +5,7 @@ import meenakshi from '/images/meenakshi4.png';
 import aditya from '/images/aditya.jpeg';
 import shivani from '/images/shivani-aggarwal4.png';
 import { Navbar } from "../components/navbar";
+import '../styles/aboutDled.css';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('vision');
@@ -61,34 +62,22 @@ const About = () => {
           <div className="timeline">
             <div className="timeline-item left">
               <div className="timeline-content shadow-sm">
-                <h3>2018</h3>
-                <p>Founded as a small research initiative at IIT Ropar</p>
+                <h3>2023</h3>
+                <p>A small research initiative started to revolutionise Education Design</p>
               </div>
             </div>
             <div className="timeline-item right">
               <div className="timeline-content shadow-sm">
-                <h3>2019</h3>
-                <p>First major grant received for learning technologies research</p>
+                <h3>2024</h3>
+                <p>First major funding to spearhead with the project and setup of the lab</p>
               </div>
             </div>
             <div className="timeline-item left">
               <div className="timeline-content shadow-sm">
-                <h3>2020</h3>
+                <h3>2025</h3>
                 <p>Launched our first online learning platform prototype</p>
               </div>
-            </div>
-            <div className="timeline-item right">
-              <div className="timeline-content shadow-sm">
-                <h3>2022</h3>
-                <p>Recognized as Center of Excellence in Education Design</p>
               </div>
-            </div>
-            <div className="timeline-item left">
-              <div className="timeline-content shadow-sm">
-                <h3>2023</h3>
-                <p>Expanded to full lab status with 15+ researchers</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

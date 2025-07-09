@@ -2,6 +2,23 @@ import React from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import '../styles/header.css';
 import { TypedText } from './TypedText';
+import { ImageCarousel } from './ImageCarousel';
+
+// Sample images for the carousel
+const carouselImages = [
+  {
+    src: "/images/lab/lab1.jpeg",
+    alt: "Lab Images",
+    title: "Vicharanashala",
+    description: "A place where the ideas are born and nurtured"
+  },
+  {
+    src: "/images/lab/lab2.jpeg",
+    alt: "Lab Images",
+    title: "Innovation Garage",
+    description: "A place where ideas are transformed into reality"
+  },
+];
 
 export const Header: React.FC<{ onLearnMore?: () => void; onContact?: () => void }> = ({
   onLearnMore,
@@ -28,18 +45,18 @@ export const Header: React.FC<{ onLearnMore?: () => void; onContact?: () => void
         </div>
       </div>
       <div className="image-group">
-        <div className="overlap-image">
-          <img
-            className="highschool-img"
-            src="https://images.unsplash.com/photo-1667835949495-78a1ea9ecd77?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Pink shiny patterned AI sphere"
-          />
-        </div>
+        <ImageCarousel 
+          images={carouselImages}
+          autoSlide={true}
+          slideInterval={6000}
+          showArrows={true}
+          height="400px"
+        />
       </div>
     </div>
-    {/* <div className="scroll-indicator">
+    <div className="scroll-indicator">
       <div className="scroll-text">Discover More</div>
       <FaChevronDown className="scroll-arrow" />
-    </div> */}
+    </div>
   </div>
 );
