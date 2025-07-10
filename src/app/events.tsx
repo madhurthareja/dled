@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { FaCalendarAlt, FaMapMarkerAlt, FaRegClock } from 'react-icons/fa'; // FaTicketAlt, FaUsers
 import { Link } from 'react-router-dom';
 import { Navbar } from '../components/navbar';
+import { getEventsByStatus } from '../utils/eventUtils';
 
 // Google Calendar Functionality
 // Helper to format date and time for Google Calendar and ICS
@@ -80,25 +81,7 @@ const Events = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
   const [isLoading, setIsLoading] = useState(true);
   
-  const allEvents = [
-    {
-      id: 1,
-      title: 'ViBe Launch',
-      date: 'July 29, 2025',
-      time: '11:00 AM - 12:00 PM',
-      location: 'Virtual Event',
-      description: 'Launch of ViBe, a wave of revolutionary educational tools for teachers and students.',
-      image: '/images/events/vibe.png',
-      category: 'Product Launch',
-      status: 'upcoming',
-      speakers: ['Dr. Sudarshan Iyengar', 'DLED Research Team'],
-      link:'https://zoom.us/j/94299775769?pwd=c6VakDdjWeE8t97eGrORYWAgns9aPy.1'
-    },
-  ];
-
-  const filteredEvents = allEvents.filter(event => 
-    activeTab === 'upcoming' ? event.status === 'upcoming' : event.status === 'past'
-  );
+  const filteredEvents = getEventsByStatus(activeTab as 'upcoming' | 'past');
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1000);

@@ -2,20 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowRight, FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import '../styles/eventFlash.css';
-
-interface Event {
-  id: number;
-  title: string;
-  date: string;
-  time: string;
-  location: string;
-  description: string;
-  image: string;
-  category: string;
-  status: string;
-  speakers: string[];
-  link: string;
-}
+import { Event } from '../utils/eventUtils';
 
 interface EventFlashProps {
   event: Event;
@@ -28,7 +15,7 @@ export const EventFlash: React.FC<EventFlashProps> = ({ event }) => {
         <div className="event-flash-content">
           <div className="event-flash-text">
             <div className="event-flash-badge">
-              <span className="badge-text">Latest Launch</span>
+              <span className="badge-text">Upcoming Event</span>
             </div>
             <h2 className="event-flash-title">{event.title}</h2>
             <p className="event-flash-description">{event.description}</p>
@@ -45,28 +32,20 @@ export const EventFlash: React.FC<EventFlashProps> = ({ event }) => {
             </div>
 
             <div className="event-flash-actions">
-              <a 
-                href="https://vibe.vicharanashala.ai" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="event-primary-btn"
-              >
-                Visit ViBe
-                <FaArrowRight className="btn-icon" />
-              </a>
-              <Link to="/events" className="event-secondary-btn">
-                Event Details
-              </Link>
-              {event.location.toLowerCase().includes('virtual') && (
+              {event.id !== 0 && event.link && event.link !== '#' && (
                 <a 
                   href={event.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="event-tertiary-btn"
+                  className="event-primary-btn"
                 >
-                  Join Launch Event
+                  Join Event
+                  <FaArrowRight className="btn-icon" />
                 </a>
               )}
+              <Link to="/events" className="event-secondary-btn">
+                {event.id === 0 ? 'View All Events' : 'Event Details'}
+              </Link>
             </div>
           </div>
           
