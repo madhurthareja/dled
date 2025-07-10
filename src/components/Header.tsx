@@ -18,6 +18,17 @@ const carouselImages = [
     title: "Innovation Garage",
     description: "A place where ideas are transformed into reality"
   },
+  {src: "/images/lab/lab3.heic",
+    alt: "Lab Images",
+    title: "Collaborative Learning",
+    description: "A space designed for collaborative learning and innovation"
+  },
+  {
+    src: "/images/lab/lab4.heic",
+    alt: "Lab Images",
+    title: "Work is Meditation",
+    description: "A serene environment where work becomes a form of meditation"
+  }
 ];
 
 export const Header: React.FC<{ onLearnMore?: () => void; onContact?: () => void }> = ({
