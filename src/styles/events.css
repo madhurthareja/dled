@@ -1,0 +1,50 @@
+/* Events Page Specific Styles */
+
+.events-page .event-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  min-height: 200px;
+}
+
+.events-page .event-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.events-page .event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.events-page .hover-shadow-lg {
+  transition: all 0.3s ease;
+}
+
+/* Fix for stretched images in event cards */
+.events-page .col-md-5 {
+  overflow: hidden;
+}
+
+.events-page .event-card-image {
+  transition: transform 0.3s ease;
+}
+
+.events-page .event-card:hover .event-card-image {
+  transform: scale(1.05);
+}
+
+/* Ensure proper aspect ratio for event card images */
+@media (max-width: 768px) {
+  .events-page .event-card-image {
+    min-height: 150px;
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .events-page .event-card-image {
+    min-height: 120px;
+    max-height: 180px;
+  }
+}

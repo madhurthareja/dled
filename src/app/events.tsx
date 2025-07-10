@@ -3,6 +3,7 @@ import { FaCalendarAlt, FaMapMarkerAlt, FaRegClock } from 'react-icons/fa'; // F
 import { Link } from 'react-router-dom';
 import { Navbar } from '../components/navbar';
 import { getEventsByStatus } from '../utils/eventUtils';
+import '../styles/events.css';
 
 // Google Calendar Functionality
 // Helper to format date and time for Google Calendar and ICS
@@ -156,9 +157,8 @@ const Events = () => {
                         <div className="col-md-5">
                           <img 
                             src={event.image} 
-                            className="img-fluid h-100 width-100 object-cover" 
+                            className="img-fluid h-100 event-card-image" 
                             alt={event.title}
-                            style={{minHeight: '200px'}}
                           />
                         </div>
                         <div className="col-md-7">
