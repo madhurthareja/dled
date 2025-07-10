@@ -83,8 +83,8 @@ const Events = () => {
   const allEvents = [
     {
       id: 1,
-      title: 'Guru Purnima [ViBe Launch]',
-      date: 'July 10, 2025',
+      title: 'ViBe Launch',
+      date: 'July 29, 2025',
       time: '11:00 AM - 12:00 PM',
       location: 'Virtual Event',
       description: 'Launch of ViBe, a wave of revolutionary educational tools for teachers and students.',
