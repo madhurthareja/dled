@@ -36,7 +36,7 @@ export const allEvents: Event[] = [
     location: 'Virtual Event',
     description: 'A special online gathering to celebrate Guru Purnima.',
     image: '/images/events/gurupurnima.png',
-    category: 'Community Meetup',
+    category: '',
     speakers: [''],
     status: 'upcoming',
     link: 'https://zoom.us/j/98466227317?pwd=CaF207puvMhgbtnAvmNRhNYUvPLgqZ.1'
