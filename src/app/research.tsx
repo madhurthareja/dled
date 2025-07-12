@@ -77,7 +77,7 @@ export const researchProjects = [
         'Personalized learning paths for students',
         'Interactive content and community features for enhanced engagement'
       ],
-      imageUrl: "https://images.unsplash.com/photo-1604014237740-2c8f0b1d3c4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      imageUrl: "https://images.unsplash.com/photo-1576400883215-7083980b6193?q=80&w=1626&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       icon: <FaFlask className="text-warning" size={32} />
     }
 ];
