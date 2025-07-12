@@ -50,9 +50,7 @@ export const researchProjects = [
     status: 'ongoing',
     description: 'The Poll Automation project is a real-time classroom tool that uses live audio transcripts to generate lecture summaries and create contextual polls every five minutes- or as set by the instructor. This system boosts interactivity, checks comprehension, and gives instructors instant feedback during teaching sessions.',
     focusArea: 'Educational Technology',
-    team: [
-    ''
-    ],
+    team: [ '' ],
     // partners: ['Dopamine Driving through Dashboard (DDD)', 'Peer Evaluation System (PES)'],
     timeline: '2025-2025',
     outcomes: [
@@ -207,14 +205,16 @@ const Research = () => {
                             <h6 className="text-muted small mb-2">Timeline</h6>
                             <p className="fw-bold">{project.timeline}</p>
                           </div>
-                          <div className="col-md-6">
+
+                          {/* <div className="col-md-6">
                             <h6 className="text-muted small mb-2">Research Team</h6>
                             <ul className="list-unstyled small">
                               {project.team.map((member, i) => (
                                 <li key={i}>{member}</li>
                               ))}
                             </ul>
-                          </div>
+                          </div> */}
+                          
                           <div className="col-md-6">
                             <h6 className="text-muted small mb-2">Key Outcomes</h6>
                             <ul className="small">
