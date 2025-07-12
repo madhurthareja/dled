@@ -18,7 +18,7 @@ const title = "Check Out Our Research Initiatives";
 
 const latestThreeProjects = researchProjects
   .slice()
-  .sort((a, b) => b.id - a.id)
+  .sort((a, b) => a.id - b.id)
   .slice(0, 3);
 
 const mapToResearchCardProps = (project: typeof researchProjects[0]): ResearchCardProps => ({
