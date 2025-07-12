@@ -16,27 +16,21 @@ interface ResearchCardProps {
 
 const title = "Check Out Our Research Initiatives";
 
-// Utility function to extract end year from timeline string
-const getEndYear = (timeline: string) => {
-  const parts = timeline.split('-');
-  return parseInt(parts[1] || parts[0], 10);
-};
-
 const latestThreeProjects = researchProjects
   .slice()
-  .sort((a, b) => getEndYear(b.timeline) - getEndYear(a.timeline))
+  .sort((a, b) => b.id - a.id)
   .slice(0, 3);
 
-const mapToResearchCardProps = (project: any): ResearchCardProps => ({
+const mapToResearchCardProps = (project: typeof researchProjects[0]): ResearchCardProps => ({
   title: project.title,
   description: project.description,
   timeline: project.timeline,
   focus: project.focusArea,
   researchTeam: project.team,
   keyOutcomes: project.outcomes,
-  collaborators: project.partners,
+  collaborators: project.partners || [],
   imageUrl: project.imageUrl || "https://via.placeholder.com/400x200?text=No+Image",
-  collaboratorLogos: project.collaboratorLogos || [],
+  collaboratorLogos: [],
 });
 
 const ResearchCardFlip: React.FC<ResearchCardProps> = ({
