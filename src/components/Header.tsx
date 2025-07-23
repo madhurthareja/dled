@@ -1,40 +1,41 @@
-import React from 'react';
-import { FaChevronDown } from 'react-icons/fa';
-import '../styles/header.css';
-import { TypedText } from './TypedText';
-import { ImageCarousel } from './ImageCarousel';
+import React from "react";
+import { FaChevronDown } from "react-icons/fa";
+import "../styles/header.css";
+import { TypedText } from "./TypedText";
+import { ImageCarousel } from "./ImageCarousel";
 
 // Sample images for the carousel
 const carouselImages = [
-  {src: "/images/lab/lab3.jpg",
+  {
+    src: "/images/lab/lab3.jpg",
     alt: "Lab Images",
     title: "Collaborative Learning",
-    description: "A space designed for collaborative learning and innovation"
+    description: "A space designed for collaborative learning and innovation",
   },
   {
     src: "/images/lab/lab1.jpeg",
     alt: "Lab Images",
     title: "Vicharanashala",
-    description: "A place where ideas are born and nurtured"
+    description: "A place where ideas are born and nurtured",
   },
   {
     src: "/images/lab/lab4.jpg",
     alt: "Lab Images",
     title: "Work is Meditation",
-    description: "A serene environment where work becomes a form of meditation"
+    description: "A serene environment where work becomes a form of meditation",
   },
-  {
-    src: "/images/lab/lab2.jpeg",
-    alt: "Lab Images",
-    title: "Innovation Garage",
-    description: "A place where ideas are transformed into reality"
-  }
+  // {
+  //   src: "/images/lab/lab2.jpeg",
+  //   alt: "Lab Images",
+  //   title: "Innovation Garage",
+  //   description: "A place where ideas are transformed into reality"
+  // }
 ];
 
-export const Header: React.FC<{ onLearnMore?: () => void; onContact?: () => void }> = ({
-  onLearnMore,
-  onContact,
-}) => (
+export const Header: React.FC<{
+  onLearnMore?: () => void;
+  onContact?: () => void;
+}> = ({ onLearnMore, onContact }) => (
   <div className="header">
     <div className="content hero-flex">
       <div className="hero-text">
@@ -43,8 +44,8 @@ export const Header: React.FC<{ onLearnMore?: () => void; onContact?: () => void
           <TypedText text="Redefining Education Through Innovation" />
         </h1>
         <p className="description">
-          The Dhananjaya Lab for Education Design (DLED) at IIT Ropar is pioneering
-          transformative approaches to learning in the digital age.
+          The Dhananjaya Lab for Education Design (DLED) at IIT Ropar is
+          pioneering transformative approaches to learning in the digital age.
         </p>
         <div className="cta-buttons">
           <button className="btn-black" onClick={onLearnMore}>
@@ -56,7 +57,7 @@ export const Header: React.FC<{ onLearnMore?: () => void; onContact?: () => void
         </div>
       </div>
       <div className="image-group">
-        <ImageCarousel 
+        <ImageCarousel
           images={carouselImages}
           autoSlide={true}
           slideInterval={6000}
@@ -68,10 +69,10 @@ export const Header: React.FC<{ onLearnMore?: () => void; onContact?: () => void
     <div
       className="scroll-indicator pointer-cursor"
       onClick={() => {
-      const el = document.getElementById('research-initiatives');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
+        const el = document.getElementById("research-initiatives");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
       }}
     >
       <div className="scroll-text">Discover More</div>
