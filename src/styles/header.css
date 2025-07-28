@@ -1,18 +1,24 @@
-body, html {
+body,
+html {
   overflow-x: hidden;
 }
 
 /* ===== Base Styles ===== */
 .navbar {
-  position: fixed;
+  position: fixed !important;
   top: 0;
   left: 0;
-  max-width: 100%;
+  width: 100vw;
+  max-width: 100vw;
   z-index: 1000;
-  background: linear-gradient(130deg, rgb(253, 232, 224) 0%, rgb(253, 249, 247) 85%);
-  /* background-color: rgb(219, 244, 250); */
+  background: linear-gradient(
+    130deg,
+    rgb(253, 232, 224) 0%,
+    rgb(253, 249, 247) 85%
+  );
   padding: 24px 40px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
 }
 
 .header {
@@ -142,7 +148,7 @@ body, html {
 }
 
 .vibe-button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -2px;
   left: -2px;
@@ -168,7 +174,7 @@ body, html {
 .vibe-button .nav-button-text {
   color: white !important;
   font-weight: 600;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes pulse-glow {
@@ -209,7 +215,11 @@ body, html {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateX(-50%) translateY(0);
   }
   40% {
@@ -267,8 +277,14 @@ body, html {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===== Hero Content ===== */
@@ -322,7 +338,7 @@ body, html {
 
 .letter {
   display: inline-block;
-  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+  transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1);
   cursor: pointer;
 }
 
@@ -348,7 +364,8 @@ body, html {
   margin: 32px 0 0 0;
 }
 
-.btn-black, .btn-outline {
+.btn-black,
+.btn-outline {
   font-family: "Manrope", Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 600;
@@ -361,14 +378,14 @@ body, html {
 .btn-black {
   background-color: #000;
   color: #f9f08d;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
   border: none;
 }
 
 .btn-black:hover {
   background-color: #222;
   color: #ffe066;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   transform: translateY(-1px);
 }
 
@@ -412,7 +429,7 @@ body, html {
   height: auto;
   border-radius: 5%;
   object-fit: cover;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
 /* ===== Responsive Styles ===== */
@@ -421,7 +438,7 @@ body, html {
     font-size: 60px;
     line-height: 70px;
   }
-  
+
   .nav-links {
     gap: 20px;
   }
@@ -443,26 +460,26 @@ body, html {
   .navbar {
     padding: 15px 20px;
   }
-  
+
   .header {
     padding-top: 40px; /* Reduced for mobile to bring content up */
     height: auto;
     min-height: 80vh; /* Adjusted for mobile */
   }
-  
+
   .bg-top {
     height: 60%;
   }
-  
+
   .nav-bar {
     display: none;
   }
-  
+
   .menu-icon {
     display: block;
     margin-left: 30px;
   }
-  
+
   .header-top {
     padding: 0 20px;
   }
@@ -472,17 +489,18 @@ body, html {
     gap: 40px;
     min-height: 50vh; /* Reduced to make scroll indicator more visible on mobile */
   }
-  
+
   .title {
     font-size: 48px;
     line-height: 56px;
     margin-top: 30px;
   }
-  
-  .hero-text, .image-group {
+
+  .hero-text,
+  .image-group {
     max-width: 100%;
   }
-  
+
   .image-group {
     margin-top: 40px;
   }
@@ -498,20 +516,20 @@ body, html {
     line-height: 44px;
     letter-spacing: 0.7px;
   }
-  
+
   .description {
     font-size: 16px;
     line-height: 28px;
   }
-  
+
   .cta-buttons {
     flex-direction: column;
   }
-  
+
   .nav-button {
     padding: 8px 16px;
   }
-  
+
   .mobile-nav-dropdown .nav-text {
     font-size: 20px;
   }

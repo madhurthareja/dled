@@ -1,45 +1,45 @@
 import "../styles/footerFile.css";
-import { Link } from 'react-router-dom';
-import { FaLinkedin, FaYoutube, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
-import logo from '../assets/dled-clear.png';
+import { Link } from "react-router-dom";
+import {
+  FaLinkedin,
+  FaYoutube,
+  FaMapMarkerAlt,
+  FaEnvelope,
+} from "react-icons/fa";
+import logo from "../assets/dled-clear.png";
 
 export const FooterWrapper = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        
         {/* Main Footer Grid */}
         <div className="footer-grid">
-          
           {/* About Section */}
           <div className="footer-section footer-about">
-            <img 
-              className="footer-logo" 
-              src={logo}
-              alt="DLED Logo"
-            />
+            <img className="footer-logo" src={logo} alt="DLED Logo" />
             <p className="footer-description">
-              The Dhananjaya Lab for Education Design (DLED) at IIT Ropar is pioneering 
-              transformative approaches to learning in the digital age.
+              The Dhananjaya Lab for Education Design (DLED) at IIT Ropar is
+              pioneering transformative approaches to learning in the digital
+              age.
             </p>
             <div className="footer-social">
               <a
-              href="https://www.linkedin.com/company/educationdesignlab/posts/?feedView=all"
-              className="social-link"
-              aria-label="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
+                href="https://www.linkedin.com/company/educationdesignlab/posts/?feedView=all"
+                className="social-link"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-              <FaLinkedin />
+                <FaLinkedin />
               </a>
               <a
-              href="https://youtube.com/@dledlabs?si=zFC1fmeqjkFCRY8Y"
-              className="social-link"
-              aria-label="YouTube"
-              target="_blank"
-              rel="noopener noreferrer"
+                href="https://youtube.com/@dledlabs?si=zFC1fmeqjkFCRY8Y"
+                className="social-link"
+                aria-label="YouTube"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-              <FaYoutube />
+                <FaYoutube />
               </a>
             </div>
           </div>
@@ -48,11 +48,21 @@ export const FooterWrapper = () => {
           <div className="footer-section">
             <h3>Quick Links</h3>
             <ul className="footer-links">
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/research">Research</Link></li>
-              <li><Link to="/team">Our Team</Link></li>
-              <li><Link to="/events">Events</Link></li>
-              <li><Link to="/collaborations">Collaborations</Link></li>
+              <li>
+                <Link to="/about">About Us</Link>
+              </li>
+              <li>
+                <Link to="/research">Research</Link>
+              </li>
+              <li>
+                <Link to="/team">Our Team</Link>
+              </li>
+              <li>
+                <Link to="/events">Events</Link>
+              </li>
+              <li>
+                <Link to="/collaborations">Collaborations</Link>
+              </li>
             </ul>
           </div>
 
@@ -60,8 +70,12 @@ export const FooterWrapper = () => {
           <div className="footer-section">
             <h3>Resources</h3>
             <ul className="footer-links">
-              <li><Link to="/comingsoon">Blogs</Link></li>
-              <li><Link to="/careers">Careers</Link></li>
+              <li>
+                <Link to="/comingsoon">Blogs</Link>
+              </li>
+              <li>
+                <Link to="/careers">Careers</Link>
+              </li>
             </ul>
           </div>
 
@@ -85,7 +99,6 @@ export const FooterWrapper = () => {
               </div>
             </div>
           </div>
-
         </div>
 
         {/* Footer Bottom */}
@@ -98,7 +111,6 @@ export const FooterWrapper = () => {
             </div>
           </div>
         </div>
-
       </div>
     </footer>
   );
