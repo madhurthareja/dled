@@ -15,7 +15,7 @@ export const EventFlash: React.FC<EventFlashProps> = ({ event }) => {
         <div className="event-flash-content">
           <div className="event-flash-text">
             <div className="event-flash-badge">
-              <span className="badge-text">Upcoming Event</span>
+              <span className="badge-text">{event.id === 0 ? 'Stay Updated' : 'Upcoming Event'}</span>
             </div>
             <h2 className="event-flash-title">{event.title}</h2>
             <p className="event-flash-description">{event.description}</p>

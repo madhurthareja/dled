@@ -36,8 +36,8 @@ export const allEvents: Event[] = [
     location: 'Virtual Event',
     description: 'A special online gathering to celebrate Guru Purnima.',
     image: '/images/events/gurupurnima.png',
-    category: '',
-    speakers: [''],
+    category: 'Community Meetup',
+    speakers: ['DLED Team'],
     status: 'upcoming',
     link: 'https://zoom.us/j/98466227317?pwd=CaF207puvMhgbtnAvmNRhNYUvPLgqZ.1'
   }
@@ -51,7 +51,7 @@ export const defaultEvent: Event = {
   time: 'TBD',
   location: 'To be announced',
   description: 'We are working on exciting new events. Follow our updates to stay informed about upcoming workshops, launches, and educational initiatives.',
-  image: '/images/events/vibe.png',
+  image: '/images/lab/lab1.jpeg',
   category: 'Announcement',
   status: 'upcoming',
   speakers: ['DLED Team'],
@@ -80,12 +80,21 @@ export function getNextUpcomingEvent(): Event {
   
   // Filter upcoming events and sort by date/time
   const upcomingEvents = allEvents
-    .filter(event => event.status === 'upcoming')
-    .map(event => ({
-      ...event,
-      parsedDateTime: parseEventDateTime(event.date, event.time)
-    }))
-    .filter(event => event.parsedDateTime > now) // Only future events
+    .map(event => {
+      // Extract end time from time range to determine if event is over
+      const timeRange = event.time.split(' - ');
+      const endTime = timeRange.length > 1 ? timeRange[1] : timeRange[0];
+      const eventEndDateTime = new Date(`${event.date} ${endTime}`);
+      const startDateTime = parseEventDateTime(event.date, event.time);
+      
+      return {
+        ...event,
+        parsedDateTime: startDateTime,
+        endDateTime: eventEndDateTime,
+        actualStatus: eventEndDateTime < now ? 'past' : 'upcoming'
+      };
+    })
+    .filter(event => event.actualStatus === 'upcoming' && event.parsedDateTime > now) // Only future events
     .sort((a, b) => a.parsedDateTime.getTime() - b.parsedDateTime.getTime());
   
   // Return the closest upcoming event, or default event if none exist
@@ -104,9 +113,26 @@ export function isEventToday(event: Event): boolean {
   );
 }
 
-// Get events by status
+// Get events by status with automatic status updates
 export function getEventsByStatus(status: 'upcoming' | 'past'): Event[] {
-  return allEvents.filter(event => event.status === status);
+  const now = new Date();
+  
+  return allEvents
+    .map(event => {
+      // Extract end time from time range (e.g., "11:00 AM - 12:00 PM" -> "12:00 PM")
+      const timeRange = event.time.split(' - ');
+      const endTime = timeRange.length > 1 ? timeRange[1] : timeRange[0];
+      const eventEndDateTime = new Date(`${event.date} ${endTime}`);
+      
+      // Determine actual status based on current date/time
+      const actualStatus = eventEndDateTime < now ? 'past' : 'upcoming';
+      
+      return {
+        ...event,
+        status: actualStatus
+      };
+    })
+    .filter(event => event.status === status);
 }
 
 // Update event status based on current date/time
