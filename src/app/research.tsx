@@ -7,12 +7,12 @@ import { Navbar } from "../components/navbar"; // Import Navbar
 // Export the array so it can be imported in ResearchInitiatives.tsx
 export const researchProjects = [
     {
-      id: 1,
+      id:3,
       title: 'Dopamine Driving through Dashboard (DDD)',
       status: 'ongoing',
       description: 'The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at DLED Lab, enabling intuitive decision-making.',
       focusArea: 'Educational Technology',
-      team: ['Sakshi Sharma'],
+      team: [''],
       partners: ['DLED Lab'],
       timeline: '2023-2025',
       outcomes: [
@@ -30,7 +30,7 @@ export const researchProjects = [
       status: 'ongoing',
       description: 'PES is a scalable web tool that streamlines peer assessment in education. Designed for transparency, fairness, and quality feedback, PES supports structured evaluations for both individual and group activities, providing data-driven insights to instructors and learners.',
       focusArea: 'Educational Technology',
-      team: ['Rohit Sharma'],
+      team: [''],
       partners: ['-'],
       timeline: '2023-2025',
       outcomes: [
@@ -45,16 +45,12 @@ export const researchProjects = [
     },
 
     {
-    id: 3,
+    id: 4,
     title: 'Poll Automation',
     status: 'ongoing',
     description: 'The Poll Automation project is a real-time classroom tool that uses live audio transcripts to generate lecture summaries and create contextual polls every five minutes- or as set by the instructor. This system boosts interactivity, checks comprehension, and gives instructors instant feedback during teaching sessions.',
     focusArea: 'Educational Technology',
-    team: [
-    'Sakshi Sharma',
-    'Rohit Sharma',
-    'Meenakshi V'
-    ],
+    team: [ '' ],
     // partners: ['Dopamine Driving through Dashboard (DDD)', 'Peer Evaluation System (PES)'],
     timeline: '2025-2025',
     outcomes: [
@@ -67,19 +63,19 @@ export const researchProjects = [
     icon: <FaRobot className="text-primary" size={32} />
     },
     {
-      id:4,
+      id:1,
       title: 'ViBe',
       status: 'ongoing',
       description: 'ViBe is a comprehensive educational platform designed to enhance the learning experience for both students and teachers. It integrates various tools and resources to create a vibrant learning ecosystem, focusing on personalized learning, interactive content, and community engagement.',
       focusArea: 'Educational Technology',
-      team: ['Meenakshi V', 'Sakshi Sharma', 'Aditya BMV (Technical Lead)'],
+      team: [''],
       timeline: '2024-2025',
       outcomes: [
         'A unified platform for educational resources and tools',
         'Personalized learning paths for students',
         'Interactive content and community features for enhanced engagement'
       ],
-      imageUrl: "https://images.unsplash.com/photo-1604014237740-2c8f0b1d3c4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      imageUrl: "https://images.unsplash.com/photo-1576400883215-7083980b6193?q=80&w=1626&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       icon: <FaFlask className="text-warning" size={32} />
     }
 ];
@@ -209,14 +205,16 @@ const Research = () => {
                             <h6 className="text-muted small mb-2">Timeline</h6>
                             <p className="fw-bold">{project.timeline}</p>
                           </div>
-                          <div className="col-md-6">
+
+                          {/* <div className="col-md-6">
                             <h6 className="text-muted small mb-2">Research Team</h6>
                             <ul className="list-unstyled small">
                               {project.team.map((member, i) => (
                                 <li key={i}>{member}</li>
                               ))}
                             </ul>
-                          </div>
+                          </div> */}
+                          
                           <div className="col-md-6">
                             <h6 className="text-muted small mb-2">Key Outcomes</h6>
                             <ul className="small">

@@ -6,7 +6,7 @@ import { ImageCarousel } from './ImageCarousel';
 
 // Sample images for the carousel
 const carouselImages = [
-  {src: "/images/lab/lab3.heic",
+  {src: "/images/lab/lab3.jpg",
     alt: "Lab Images",
     title: "Collaborative Learning",
     description: "A space designed for collaborative learning and innovation"
@@ -15,10 +15,10 @@ const carouselImages = [
     src: "/images/lab/lab1.jpeg",
     alt: "Lab Images",
     title: "Vicharanashala",
-    description: "A place where the ideas are born and nurtured"
+    description: "A place where ideas are born and nurtured"
   },
   {
-    src: "/images/lab/lab4.heic",
+    src: "/images/lab/lab4.jpg",
     alt: "Lab Images",
     title: "Work is Meditation",
     description: "A serene environment where work becomes a form of meditation"
