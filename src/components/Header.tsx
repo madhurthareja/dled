@@ -12,22 +12,28 @@ const carouselImages = [
     description: "A space designed for collaborative learning and innovation"
   },
   {
-    src: "/images/lab/lab1.jpeg",
-    alt: "Lab Images",
-    title: "Vicharanashala",
-    description: "A place where ideas are born and nurtured"
-  },
-  {
     src: "/images/lab/lab4.jpg",
     alt: "Lab Images",
     title: "Work is Meditation",
     description: "A serene environment where work becomes a form of meditation"
   },
   {
-    src: "/images/lab/lab2.jpeg",
-    alt: "Lab Images",
-    title: "Innovation Garage",
-    description: "A place where ideas are transformed into reality"
+    src: "/images/events/1.jpg",
+    alt: "MMTTP",
+    title: "MMTTP sponsored CBPAI by IIT Ropar",
+    description: ""
+  }, 
+  {
+    src: "/images/events/7.png",
+    alt: "MMTTP",
+    title: "MMTTP sponsored CBPAI by IIT Ropar",
+    description: ""
+  }, 
+  {
+    src: "/images/events/16.png",
+    alt: "MMTTP",
+    title: "MMTTP sponsored CBPAI by IIT Ropar",
+    description: ""
   }
 ];
 
