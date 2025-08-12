@@ -11,6 +11,7 @@ export interface Event {
   status: string;
   speakers: string[];
   link: string;
+  registrationLink?: string; // Optional registration link for special events
 }
 
 // All events data - this should be the single source of truth
@@ -29,7 +30,7 @@ export const allEvents: Event[] = [
     link: 'https://zoom.us/j/94299775769?pwd=c6VakDdjWeE8t97eGrORYWAgns9aPy.1'
   },
   {
-    id:2,
+    id: 2,
     title: 'Guru Purnima Meetup',
     date: 'July 10, 2025',
     time: '8:00 PM - 9:00 PM',
@@ -40,6 +41,20 @@ export const allEvents: Event[] = [
     speakers: ['DLED Team'],
     status: 'upcoming',
     link: 'https://zoom.us/j/98466227317?pwd=CaF207puvMhgbtnAvmNRhNYUvPLgqZ.1'
+  },
+  {
+    id: 3,
+    title: 'Faculty Development Program (FDP)',
+    date: 'August 18, 2025',
+    time: '9:00 AM - 5:00 PM',
+    location: 'Virtual Event',
+    description: 'A comprehensive Faculty Development Program organized by Ms. Pavani and Ms. Shreya.',
+    image: '/images/events/FDP.png',
+    category: 'Faculty Development',
+    speakers: ['Ms. Pavani', 'Ms. Shreya'],
+    status: 'upcoming',
+    link: '',
+    registrationLink: 'https://mmc.ugc.ac.in/registration/Index'
   }
 ];
 

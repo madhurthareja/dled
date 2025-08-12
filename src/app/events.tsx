@@ -210,6 +210,22 @@ const Events = () => {
                               </button>
                             </div>
 
+                            {/* Registration button - only for events with registrationLink */}
+                            {event.registrationLink && (
+                              <div className="mt-3">
+                                <a
+                                  href={event.registrationLink}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="btn btn-success w-100 fw-bold"
+                                  title="Register for this event"
+                                >
+                                  <i className="fas fa-user-plus me-2" aria-hidden="true"></i>
+                                  Register Now
+                                </a>
+                              </div>
+                            )}
+
                           </div>
                         </div>
                       </div>

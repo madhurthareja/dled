@@ -4,37 +4,50 @@ import '../styles/header.css';
 import { TypedText } from './TypedText';
 import { ImageCarousel } from './ImageCarousel';
 
-// Sample images for the carousel
+// Sample images and videos for the carousel
 const carouselImages = [
+  {
+    src: "", // Not needed for video
+    alt: "Collaboration Video",
+    title: "DLED Collaboration Showcase",
+    description: "Watch our latest collaboration highlights",
+    type: "video" as const,
+    videoId: "58sR6ewu9FY" // Video first in carousel
+  },
   {src: "/images/lab/lab3.jpg",
     alt: "Lab Images",
     title: "Collaborative Learning",
-    description: "A space designed for collaborative learning and innovation"
+    description: "A space designed for collaborative learning and innovation",
+    type: "image" as const
   },
   {
     src: "/images/lab/lab4.jpg",
     alt: "Lab Images",
     title: "Work is Meditation",
-    description: "A serene environment where work becomes a form of meditation"
+    description: "A serene environment where work becomes a form of meditation",
+    type: "image" as const
   },
   {
     src: "/images/events/1.jpg",
     alt: "MMTTP",
     title: "MMTTP sponsored CBPAI by IIT Ropar",
-    description: ""
+    description: "",
+    type: "image" as const
   }, 
-  {
-    src: "/images/events/7.png",
-    alt: "MMTTP",
-    title: "MMTTP sponsored CBPAI by IIT Ropar",
-    description: ""
-  }, 
-  {
-    src: "/images/events/16.png",
-    alt: "MMTTP",
-    title: "MMTTP sponsored CBPAI by IIT Ropar",
-    description: ""
-  }
+  // {
+  //   src: "/images/events/7.png",
+  //   alt: "MMTTP",
+  //   title: "MMTTP sponsored CBPAI by IIT Ropar",
+  //   description: "",
+  //   type: "image" as const
+  // }, 
+  // {
+  //   src: "/images/events/16.png",
+  //   alt: "MMTTP",
+  //   title: "MMTTP sponsored CBPAI by IIT Ropar",
+  //   description: "",
+  //   type: "image" as const
+  // }
 ];
 
 export const Header: React.FC<{ onLearnMore?: () => void; onContact?: () => void }> = ({
