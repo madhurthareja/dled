@@ -4,15 +4,14 @@ import '../styles/header.css';
 import { TypedText } from './TypedText';
 import { ImageCarousel } from './ImageCarousel';
 
-// Sample images and videos for the carousel
 const carouselImages = [
   {
-    src: "", // Not needed for video
+    src: "", 
     alt: "Collaboration Video",
     title: "DLED Collaboration Showcase",
     description: "Watch our latest collaboration highlights",
     type: "video" as const,
-    videoId: "58sR6ewu9FY" // Video first in carousel
+    videoId: "58sR6ewu9FY" 
   },
   {src: "/images/lab/lab3.jpg",
     alt: "Lab Images",

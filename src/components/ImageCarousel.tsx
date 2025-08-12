@@ -7,8 +7,8 @@ interface CarouselImage {
   alt: string;
   title?: string;
   description?: string;
-  type?: 'image' | 'video'; // Add type to distinguish between image and video
-  videoId?: string; // YouTube video ID for embedded videos
+  type?: 'image' | 'video'; 
+  videoId?: string; 
 }
 
 interface ImageCarouselProps {
@@ -29,15 +29,9 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Check if current slide is a video
   const currentSlideIsVideo = images[currentIndex]?.type === 'video';
 
   useEffect(() => {
-    // Pause auto-advance if:
-    // 1. autoSlide is disabled, OR
-    // 2. mouse is hovered, OR
-    // 3. current slide is a video, OR
-    // 4. there's only one or no images
     if (autoSlide && !isHovered && !currentSlideIsVideo && images.length > 1) {
       const timer = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -75,11 +69,11 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
             >
               {image.type === 'video' && image.videoId ? (
                 <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${image.videoId}?autoplay=1&mute=0&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=1&playsinline=1&cc_load_policy=0&enablejsapi=1`}
+                  src={`https://www.youtube-nocookie.com/embed/${image.videoId}?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0&iv_load_policy=3&fs=1&playsinline=1&cc_load_policy=0&disablekb=1&start=0&end=9999&loop=0&playlist=${image.videoId}`}
                   title={image.alt}
                   className="carousel-video"
                   frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                   allowFullScreen
                 />
               ) : (
