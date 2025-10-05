@@ -10,10 +10,10 @@ export const researchProjects = [
       id:3,
       title: 'Dopamine Driving through Dashboard (DDD)',
       status: 'ongoing',
-      description: 'The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at DLED Lab, enabling intuitive decision-making.',
+      description: 'The DDD project develops centralized, interactive dashboards to drive motivation and engagement among stakeholders in educational research and development. Built with the MERN stack, DDD visualizes project progress, participation, and analytics across multiple initiatives at VLED Lab, enabling intuitive decision-making.',
       focusArea: 'Educational Technology',
       team: [''],
-      partners: ['DLED Lab'],
+      partners: ['VLED Lab'],
       timeline: '2023-2025',
       outcomes: [
         'Modular dashboard system for live tracking of research and product initiatives',
@@ -102,7 +102,7 @@ const Research = () => {
             <div className="col-lg-8">
 
               <h1 className="display-4 text-black fw-bold mb-4 mt-4" style={{ marginLeft: '-4px' }}>
-                Research at DLED
+                Research at VLED
               </h1>
               <p className="lead mb-4 fs-4 text-secondary">
                 Pioneering the future of education through technology and innovation

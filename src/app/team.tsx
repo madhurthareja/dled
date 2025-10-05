@@ -4,9 +4,7 @@ import drSudarshan from '/images/dr-sudarshan2.png';
 import sakshi from '/images/sakshi-sharma2.jpg';
 import meenakshi from '/images/meenakshi2.png';
 import rohit from '/images/rohit-sharma.jpg';
-import aditya from '/images/aditya2.jpeg';
 import shivani from '/images/shivani-aggarwal2.png';
-import rajan from '/images/rajan.png';
 import { Navbar } from "../components/navbar";
 
 const Team = () => {
@@ -42,7 +40,7 @@ const Team = () => {
       name: 'Sakshi Sharma',
       role: 'PhD Researcher',
       department: 'Computer Science',
-      bio: 'An educator and research scholar at DLED Lab, IIT Ropar. My work centers around education design, integrating technology and innovation to create impactful learning experiences.',
+      bio: 'An educator and research scholar at VLED Lab, IIT Ropar. My work centers around education design, integrating technology and innovation to create impactful learning experiences.',
       research: 'DDD, ViBe, PES, Poll Automation, ',
       img: sakshi,
       category: 'students',
@@ -85,28 +83,6 @@ const Team = () => {
       linkedin:'https://www.linkedin.com/in/shivani-aggarwal-5865b639/',
       email: 'shivani.aggarwal@vicharanashala.ai'
     },
-    {
-      id: 6,
-      name: 'Aditya BMV',
-      role: 'Software Developer',
-      bio: 'Software engineer with a passion for creating user-friendly educational applications and tools.',
-      research: 'ViBe/CAL',
-      img: aditya,
-      category: 'staff',
-      linkedin:'https://www.linkedin.com/in/bvmukunda/',
-      email: 'aditya.bmv@vicharanashala.ai'
-    },
-    {
-      id: 7,
-      name: 'Rajan Gupta',
-      role: 'Software Developer',
-      bio: 'Weaving technology, education, and collaboration into transformative initiatives. Passionate about storytelling and upskilling, driving scalable impact for communities.',
-      research: 'ViBe/CAL',
-      img: rajan,
-      category: 'staff',
-      linkedin:'https://www.linkedin.com/in/rajankrsna/',
-      email: 'rajan.gupta@vicharanashala.ai'
-    }
   ];
 
   const filteredMembers = activeFilter === 'all' 

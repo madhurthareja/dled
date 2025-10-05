@@ -4,7 +4,7 @@ import "../styles/aboutDled.css";
 
 export const AboutDLED: React.FC = () => {
   // const navigate = useNavigate();
-  const title = "Learn DLED's Story";
+  const title = "Learn VLED's Story";
 
   return (
     <section className="about-dled-section">
@@ -21,7 +21,7 @@ export const AboutDLED: React.FC = () => {
           ))}
         </h1>
         <p className="description">
-          Discover the vision, values, and innovations driving DLED Lab as we
+          Discover the vision, values, and innovations driving VLED Lab as we
           explore how design, research, and technology come together to
           transform education.
         </p>

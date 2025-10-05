@@ -32,7 +32,7 @@ export const ResearchApproach: React.FC = () => {
         </h2>
         
         <p className="research-description">
-          At DLED Lab, we blend rigorous academic research with real-world implementation to create impactful, practical solutions.
+          At VLED Lab, we blend rigorous academic research with real-world implementation to create impactful, practical solutions.
         </p>
         
         {/* <button className="about-button" onClick={ButtonClickContactPage} >

@@ -55,7 +55,7 @@ const Careers = () => {
               {/* <HomeButton/> <-- Remove this line */}
               <h1 className="display-4 text-black fw-bold mb-4 mt-4">Shape the Future of Education</h1>
               <p className="lead mb-4 fs-4 text-secondary">
-                Join DLED and contribute to innovative educational technologies through development and research.
+                Join VLED and contribute to innovative educational technologies through development and research.
               </p>
               <Link to="/#contact">
                 <button className="btn btn-lg px-4 text-light dark-button" style= {{ backgroundColor: 'rgb(233, 103, 52)', borderColor: 'rgb(233, 103, 52)' }}>

@@ -16,10 +16,10 @@ export const FooterWrapper = () => {
             <img 
               className="footer-logo" 
               src={logo}
-              alt="DLED Logo"
+              alt="VLED Logo"
             />
             <p className="footer-description">
-              The Dhananjaya Lab for Education Design (DLED) at IIT Ropar is pioneering 
+              The Vicharanashala Lab for Education of Design (VLED) at IIT Ropar is pioneering 
               transformative approaches to learning in the digital age.
             </p>
             <div className="footer-social">
@@ -33,7 +33,7 @@ export const FooterWrapper = () => {
               <FaLinkedin />
               </a>
               <a
-              href="https://youtube.com/@dledlabs?si=zFC1fmeqjkFCRY8Y"
+              href="https://youtube.com/@vledlabs?si=zFC1fmeqjkFCRY8Y"
               className="social-link"
               aria-label="YouTube"
               target="_blank"
@@ -72,7 +72,7 @@ export const FooterWrapper = () => {
               <div className="contact-item">
                 <FaMapMarkerAlt className="contact-icon" />
                 <div>
-                  <p>DLED, Super Academic Block</p>
+                  <p>VLED, Super Academic Block</p>
                   <p>Indian Institute of Technology, Ropar</p>
                   <p>Rupnagar, Punjab 140001</p>
                 </div>
@@ -80,7 +80,7 @@ export const FooterWrapper = () => {
               <div className="contact-item">
                 <FaEnvelope className="contact-icon" />
                 <div>
-                  <p>dled@iitrpr.ac.in</p>
+                  <p>vled@iitrpr.ac.in</p>
                 </div>
               </div>
             </div>
@@ -91,7 +91,7 @@ export const FooterWrapper = () => {
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <p>&copy; 2024 DLED, IIT Ropar. All rights reserved.</p>
+            <p>&copy; 2024 VLED, IIT Ropar. All rights reserved.</p>
             <div className="footer-bottom-links">
               <Link to="/privacy">Privacy Policy</Link>
               <Link to="/terms">Terms of Service</Link>

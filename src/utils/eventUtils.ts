@@ -26,7 +26,7 @@ export const allEvents: Event[] = [
     image: '/images/events/vibe.jpg',
     category: 'Product Launch',
     status: 'upcoming',
-    speakers: ['Dr. Sudarshan Iyengar', 'DLED Research Team'],
+    speakers: ['Dr. Sudarshan Iyengar', 'VLED Research Team'],
     link: 'https://zoom.us/j/94299775769?pwd=c6VakDdjWeE8t97eGrORYWAgns9aPy.1'
   },
   {
@@ -38,7 +38,7 @@ export const allEvents: Event[] = [
     description: 'A special online gathering to celebrate Guru Purnima.',
     image: '/images/events/gurupurnima.png',
     category: 'Community Meetup',
-    speakers: ['DLED Team'],
+    speakers: ['VLED Team'],
     status: 'upcoming',
     link: 'https://zoom.us/j/98466227317?pwd=CaF207puvMhgbtnAvmNRhNYUvPLgqZ.1'
   },
@@ -48,7 +48,7 @@ export const allEvents: Event[] = [
     date: 'August 22, 2025',
     time: '9:00 AM - 5:00 PM',
     location: 'Virtual Event',
-    description: 'A comprehensive Faculty Development Program organized by DLED Lab, IIT Ropar',
+    description: 'A comprehensive Faculty Development Program organized by VLED Lab, IIT Ropar',
     image: '/images/events/FDP.jpg',
     category: 'Faculty Development',
     speakers: ['Ms. Pavani', 'Ms. Shreya'],
@@ -69,7 +69,7 @@ export const defaultEvent: Event = {
   image: '/images/lab/lab1.jpeg',
   category: 'Announcement',
   status: 'upcoming',
-  speakers: ['DLED Team'],
+  speakers: ['VLED Team'],
   link: '#'
 };
 

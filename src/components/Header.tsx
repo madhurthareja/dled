@@ -8,7 +8,7 @@ const carouselImages = [
   {
     src: "", 
     alt: "Collaboration Video",
-    title: "DLED Collaboration Showcase",
+    title: "VLED Collaboration Showcase",
     description: "Watch our latest collaboration highlights",
     type: "video" as const,
     videoId: "58sR6ewu9FY" 
@@ -61,7 +61,7 @@ export const Header: React.FC<{ onLearnMore?: () => void; onContact?: () => void
           <TypedText text="Redefining Education Through Innovation" />
         </h1>
         <p className="description">
-          The Dhananjaya Lab for Education Design (DLED) at IIT Ropar is pioneering
+          The Vicharanashala Lab for Education of Design (VLED) at IIT Ropar is pioneering
           transformative approaches to learning in the digital age.
         </p>
         <div className="cta-buttons">

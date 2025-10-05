@@ -4,7 +4,7 @@ import "../styles/meetTheMinds.css";
 
 export const MeetTheMinds: React.FC = () => {
   const navigate = useNavigate();
-  const title = "Meet the Minds Powering DLED";
+  const title = "Meet the Minds Powering VLED";
 
   const ButtonClickTeam = () => {
     navigate('/team'); 

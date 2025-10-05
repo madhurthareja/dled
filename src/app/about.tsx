@@ -22,7 +22,7 @@ const About = () => {
                 Redefining Education Through Innovation
               </h1>
               <p className="lead text-secondary mb-4">
-                The Dhananjaya Lab for Education Design (DLED) at IIT Ropar is pioneering 
+                The Vicharanashala Lab for Education of Design (VLED) at IIT Ropar is pioneering 
                 transformative approaches to learning in the digital age.
               </p>
               <div className="d-flex gap-3">
@@ -38,7 +38,7 @@ const About = () => {
                 <div className="floating-shape shape-3 bg-danger rounded-circle"></div>
                 <img 
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
-                  alt="DLED Team" 
+                  alt="VLED Team" 
                   className="img-fluid rounded-4 shadow-lg position-relative"
                 />
               </div>

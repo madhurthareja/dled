@@ -14,7 +14,7 @@ const collaborationData = [
     status: 'Active',
     duration: 'Ongoing',
     participants: '500+ Faculty Members',
-    link: 'https://dled.iitrpr.ac.in/fdp/',
+    link: 'https://vled.iitrpr.ac.in/fdp/',
     supportedBy: [
       { name: 'IIT Ropar', logo: '/images/collaborations/iitrpr.png' },
       { name: 'MMTTP', logo: '/images/collaborations/mmtts.jpeg' }

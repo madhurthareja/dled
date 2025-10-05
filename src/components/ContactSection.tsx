@@ -59,7 +59,7 @@ export const ContactSection: React.FC = () => {
           ))}
         </h2>
         <p className="contact-description">
-          Discover the vision, values, and innovations driving DLED Lab as we explore how design, research, and technology come together to transform education.
+          Discover the vision, values, and innovations driving VLED Lab as we explore how design, research, and technology come together to transform education.
         </p>
       </div>
       

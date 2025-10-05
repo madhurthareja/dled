@@ -14,13 +14,14 @@ export const Navbar: React.FC = () => {
       <div className="bg-bottom"></div>
       <div className="header-top">
         <Link to="/">
-          <img src={logo} alt="DLED and IIT Logos" className="header-logo" />
+          <img src={logo} alt="VLED and IIT Logos" className="header-logo" />
         </Link>
         <nav className="nav-bar">
           <div className="nav-links">
             <Link to="/research" className="nav-text">Research</Link>
             <Link to="/team" className="nav-text">Team</Link>
             <Link to="/events" className="nav-text">Events</Link>
+            <Link to="/fdp" className="nav-text">FDP</Link>
             <Link to="/careers" className="nav-text">Careers</Link>
             <Link to="/comingsoon" className="nav-text">Blog</Link>
           </div>
@@ -34,7 +35,7 @@ export const Navbar: React.FC = () => {
       <button
         className="menu-icon"
         aria-label="Menu"
-        aria-expanded={menuOpen}
+        aria-expanded={menuOpen ? 'true' : 'false'}
         onClick={() => setMenuOpen(!menuOpen)}
       ></button>
       {menuOpen && (
@@ -42,6 +43,7 @@ export const Navbar: React.FC = () => {
           <Link to="/research" className="nav-text" onClick={handleNavLinkClick}>Research</Link>
           <Link to="/team" className="nav-text" onClick={handleNavLinkClick}>Team</Link>
           <Link to="/events" className="nav-text" onClick={handleNavLinkClick}>Events</Link>
+          <Link to="/fdp" className="nav-text" onClick={handleNavLinkClick}>FDP</Link>
           <Link to="/careers" className="nav-text" onClick={handleNavLinkClick}>Careers</Link>
           <Link to="/comingsoon" className="nav-text" onClick={handleNavLinkClick}>Blog</Link>
           <Link to="/collaborations">
